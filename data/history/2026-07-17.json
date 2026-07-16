@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
   "reportDate": "2026-07-17",
-  "generatedAt": "2026-07-16T16:14:50.981Z",
+  "generatedAt": "2026-07-16T20:25:50.413Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
-    "courtCode": "B000281",
+    "courtCode": "",
     "courtName": "홍성지원",
     "searchUrl": "https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00",
     "readOnly": true
@@ -14,7 +14,7 @@
   "completeness": {
     "complete": false,
     "countsKnown": false,
-    "courtCode": "B000281",
+    "courtCode": "",
     "totalCount": null,
     "pageSize": 100,
     "expectedPages": 0,
@@ -27,13 +27,13 @@
     "reviewCount": 0,
     "fetchMode": "http",
     "blocked": false,
-    "errorCode": "UPSTREAM_ERROR",
-    "errorMessage": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
-    "errorStatusCode": 400,
-    "upstreamUrl": "/pgj/pgjsearch/searchControllerMain.on",
-    "upstreamMessage": "사용에 불편을 드려서 죄송합니다. 잠시 후 다시 이용해 주십시오. (동일한 상황이 지속되는 경우 사용자지원센터로 문의주시기 바랍니다.)",
-    "startedAt": "2026-07-16T16:13:52.573Z",
-    "finishedAt": "2026-07-16T16:14:50.981Z"
+    "errorCode": "NETWORK_ERROR",
+    "errorMessage": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
+    "errorStatusCode": null,
+    "upstreamUrl": "/pgj/index.on",
+    "upstreamMessage": null,
+    "startedAt": "2026-07-16T20:25:08.963Z",
+    "finishedAt": "2026-07-16T20:25:50.413Z"
   },
   "summary": {
     "totalCount": null,
