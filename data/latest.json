@@ -2,283 +2,49 @@
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
   "reportDate": "2026-07-16",
-  "generatedAt": "2026-07-16T13:02:15.721Z",
+  "generatedAt": "2026-07-16T13:45:23.926Z",
   "timezone": "Asia/Seoul",
   "source": {
-    "mode": "fixture",
-    "courtCode": "B000281",
+    "mode": "live",
+    "courtCode": "",
     "courtName": "홍성지원",
     "searchUrl": "https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00",
     "readOnly": true
   },
   "completeness": {
-    "complete": true,
-    "countsKnown": true,
-    "courtCode": "B000281",
-    "totalCount": 7,
+    "complete": false,
+    "countsKnown": false,
+    "courtCode": "",
+    "totalCount": null,
     "pageSize": 100,
-    "expectedPages": 1,
-    "fetchedPages": 1,
+    "expectedPages": 0,
+    "fetchedPages": 0,
     "failedPages": [],
-    "fetchedRawCount": 8,
-    "fetchedUniqueCount": 7,
-    "missingCount": 0,
-    "matchedResidentialCount": 2,
-    "reviewCount": 3,
+    "fetchedRawCount": 0,
+    "fetchedUniqueCount": 0,
+    "missingCount": null,
+    "matchedResidentialCount": 0,
+    "reviewCount": 0,
     "fetchMode": "http",
     "blocked": false,
-    "errorCode": null,
-    "errorMessage": null,
-    "startedAt": "2026-07-16T13:02:15.717Z",
-    "finishedAt": "2026-07-16T13:02:15.721Z"
+    "errorCode": "NETWORK_ERROR",
+    "errorMessage": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
+    "startedAt": "2026-07-16T13:44:42.693Z",
+    "finishedAt": "2026-07-16T13:45:23.926Z"
   },
   "summary": {
-    "totalCount": 7,
-    "checkedCount": 7,
-    "missingCount": 0,
-    "residentialCount": 2,
-    "reviewCount": 3,
-    "success": true,
-    "countsKnown": true
+    "totalCount": null,
+    "checkedCount": 0,
+    "missingCount": null,
+    "residentialCount": 0,
+    "reviewCount": 0,
+    "success": false,
+    "countsKnown": false
   },
-  "items": [
-    {
-      "id": "2025타경10001-1",
-      "caseNumber": "2025타경10001",
-      "itemNumber": "1",
-      "usage": "공동주택(아파트)",
-      "address": "충청남도 홍성군 홍성읍 법원로 10, 101동 1203호",
-      "appraisedPrice": 320000000,
-      "minimumSalePrice": 224000000,
-      "priceRatio": 70,
-      "failedBidCount": 2,
-      "saleDate": "2026-08-18",
-      "status": "매각진행",
-      "remarks": [
-        "대항력",
-        "임차인"
-      ],
-      "remarksEvidence": [
-        {
-          "keyword": "대항력",
-          "field": "remarks",
-          "sourceText": "대항력 있는 임차인 여부는 매각물건명세서 확인 필요"
-        },
-        {
-          "keyword": "임차인",
-          "field": "remarks",
-          "sourceText": "대항력 있는 임차인 여부는 매각물건명세서 확인 필요"
-        },
-        {
-          "keyword": "임차인",
-          "field": "raw.list.printSt",
-          "sourceText": "임차인 현황은 매각물건명세서 참조"
-        },
-        {
-          "keyword": "대항력",
-          "field": "raw.case.printSt",
-          "sourceText": "대항력 있는 임차인 여부는 매각물건명세서 확인 필요"
-        },
-        {
-          "keyword": "임차인",
-          "field": "raw.case.printSt",
-          "sourceText": "대항력 있는 임차인 여부는 매각물건명세서 확인 필요"
-        }
-      ],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [],
-      "sourceUpdatedAt": "2026-07-16T13:02:15.721Z",
-      "detailStatus": "전일 상세정보 재사용",
-      "listFingerprint": "80bd9f6bfeaedb15abf7060e3ed8bcc94e9573d7a9b3179699287f28124a8ec8",
-      "region": "홍성군"
-    },
-    {
-      "id": "2025타경10002-1",
-      "caseNumber": "2025타경10002",
-      "itemNumber": "1",
-      "usage": "단독주택 및 부속건물",
-      "address": "충남 예산군 예산읍 아리랑로 25",
-      "appraisedPrice": 210000000,
-      "minimumSalePrice": 147000000,
-      "priceRatio": 70,
-      "failedBidCount": 1,
-      "saleDate": "2026-08-25",
-      "status": "매각진행",
-      "remarks": [
-        "일괄매각"
-      ],
-      "remarksEvidence": [
-        {
-          "keyword": "일괄매각",
-          "field": "remarks",
-          "sourceText": "건물과 토지를 일괄매각"
-        },
-        {
-          "keyword": "일괄매각",
-          "field": "raw.case.printSt",
-          "sourceText": "건물과 토지를 일괄매각"
-        }
-      ],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [],
-      "sourceUpdatedAt": "2026-07-16T13:02:15.721Z",
-      "detailStatus": "전일 상세정보 재사용",
-      "listFingerprint": "3e35897681fd3b8dc82033978c0a0f71e82d81b6a70d792bad2f21a9a29e8b7c",
-      "region": "예산군"
-    }
-  ],
-  "reviewItems": [
-    {
-      "item": {
-        "id": "2025타경10003-1",
-        "caseNumber": "2025타경10003",
-        "itemNumber": "1",
-        "usage": "주상복합 중 주거부분과 근린생활시설이 함께 있음",
-        "address": "충청남도 홍성군 광천읍 광천로 77",
-        "appraisedPrice": 480000000,
-        "minimumSalePrice": 336000000,
-        "priceRatio": 70,
-        "failedBidCount": 1,
-        "saleDate": "2026-09-01",
-        "status": "매각진행",
-        "remarks": [
-          "일괄매각"
-        ],
-        "remarksEvidence": [
-          {
-            "keyword": "일괄매각",
-            "field": "remarks",
-            "sourceText": "일괄매각"
-          },
-          {
-            "keyword": "일괄매각",
-            "field": "raw.printSt",
-            "sourceText": "일괄매각"
-          }
-        ],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-07-16T13:02:15.721Z",
-        "detailStatus": "수동확인 필요",
-        "listFingerprint": "127d6115640dcf9bfd33bfc7b461eaab2642640eb449925f67905b05993fd11f"
-      },
-      "reasonCode": "MIXED_USE",
-      "reason": "복합용도·수동확인 필요",
-      "matchedKeywords": {
-        "residential": [
-          "주상복합 중 주거부분"
-        ],
-        "excluded": [
-          "근린생활시설",
-          "상가"
-        ]
-      }
-    },
-    {
-      "item": {
-        "id": "2025타경10007-1",
-        "caseNumber": "2025타경10007",
-        "itemNumber": "1",
-        "usage": "단독주택과 토지 일괄매각",
-        "address": "충남 홍성군 금마면 금마로 43",
-        "appraisedPrice": 270000000,
-        "minimumSalePrice": 189000000,
-        "priceRatio": 70,
-        "failedBidCount": 1,
-        "saleDate": "2026-09-29",
-        "status": "매각진행",
-        "remarks": [
-          "일괄매각"
-        ],
-        "remarksEvidence": [
-          {
-            "keyword": "일괄매각",
-            "field": "propertyDescription",
-            "sourceText": "단독주택과 토지 일괄매각"
-          }
-        ],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-07-16T13:02:15.721Z",
-        "detailStatus": "수동확인 필요",
-        "listFingerprint": "6ca76dc36349b1783458a4a79bd5d8b558c8d9880fdcf6f92313a60f64fab230"
-      },
-      "reasonCode": "MIXED_USE",
-      "reason": "복합용도·수동확인 필요",
-      "matchedKeywords": {
-        "residential": [
-          "단독주택",
-          "주택"
-        ],
-        "excluded": [
-          "전"
-        ]
-      }
-    },
-    {
-      "item": {
-        "id": "2025타경10005-1",
-        "caseNumber": "2025타경10005",
-        "itemNumber": "1",
-        "usage": "다세대주택",
-        "address": "",
-        "appraisedPrice": 160000000,
-        "minimumSalePrice": 112000000,
-        "priceRatio": 70,
-        "failedBidCount": 1,
-        "saleDate": "2026-09-15",
-        "status": "매각진행",
-        "remarks": [],
-        "remarksEvidence": [],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-07-16T13:02:15.721Z",
-        "detailStatus": "전일 상세정보 재사용",
-        "listFingerprint": "8e0a964389d56af41faa5a6cfeff658babd996adc10b657caf63a8ab54ed40ea",
-        "region": null
-      },
-      "reasonCode": "ADDRESS_UNDETERMINED",
-      "reason": "주소 확인 필요",
-      "matchedKeywords": {
-        "residential": [
-          "공동주택",
-          "다세대주택",
-          "주택"
-        ],
-        "excluded": []
-      }
-    }
-  ],
+  "items": [],
+  "reviewItems": [],
   "withdrawnItems": [],
-  "sourceItemIds": [
-    "2025타경10001-1",
-    "2025타경10002-1",
-    "2025타경10003-1",
-    "2025타경10004-1",
-    "2025타경10005-1",
-    "2025타경10006-1",
-    "2025타경10007-1"
-  ],
+  "sourceItemIds": [],
   "withdrawalCandidates": {},
   "detailSummary": {
     "requested": 0,
@@ -288,7 +54,7 @@
     "pending": 0,
     "blocked": false
   },
-  "lastGoodGeneratedAt": "2026-07-16T13:02:15.721Z",
+  "lastGoodGeneratedAt": null,
   "notices": [
     "매각물건명세서·현황조사서 미검증",
     "감정평가서 미검증",
