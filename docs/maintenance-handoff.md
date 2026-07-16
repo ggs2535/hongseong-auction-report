@@ -175,7 +175,7 @@ Playwright는 세 곳을 동시에 맞춥니다.
 ```bash
 npm install
 npm ls playwright playwright-core rebrowser-playwright
-npx playwright install chromium
+node node_modules/playwright/cli.js install chromium
 npm test
 npm run update:fixture
 docker build -t hongseong-auction-report:test .

@@ -32,7 +32,10 @@ test("GitHub Actions workflow YAML이 유효하고 필수 단계와 최소 권�
     .map((step) => `${step.name || ""} ${step.run || ""} ${step.uses || ""}`)
     .join("\n");
   assert.match(stepText, /npm ci/u);
-  assert.match(stepText, /playwright install --with-deps chromium/u);
+  assert.match(
+    stepText,
+    /node node_modules\/playwright\/cli\.js install --with-deps chromium/u,
+  );
   assert.match(stepText, /npm test/u);
   assert.match(stepText, /npm run update/u);
   assert.match(stepText, /git add -- data public/u);
