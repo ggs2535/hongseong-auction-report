@@ -18,10 +18,19 @@
 
 2026-07-16 최초 운영 실행은 workflow와 Pages 배포까지 성공했습니다. 법원 초기 화면
 탐색은 GitHub 호스팅 실행기에서 30초 timeout이 발생해 `NETWORK_ERROR`,
-`complete=false`로 안전하게 저장되었습니다. 최초 실행이라 live `last-good`은 아직
-없습니다. 불완전 결과를 0건의 정상 결과로 승격하지 말고 다음 예약 실행을 관찰합니다.
+`complete=false`로 안전하게 저장되었습니다.
 
-제작 과정에서는 법원 실사이트에 요청하지 않았습니다. fixture 기반 기능과 패키지 공개 API/설치 파일을 기준으로 live adapter를 구현했습니다.
+같은 날 즉시 조회 기능을 PR #1로 배포한 뒤 이슈 #2로 실동작을 검증했습니다. 소유자
+gate, 61개 테스트, durable 예약, live 수집, 결과 커밋, Pages 배포, 결과 댓글과
+이슈 자동 종료가 모두 성공했습니다. 이 실행의 법원 원본 응답은
+`UPSTREAM_ERROR`, `complete=false`였고, 같은 시각 공식 `/pgj/index.on` 공개 GET도
+HTTP 500이었습니다. 공개 Pages는 HTTP 200이며 즉시 조회 버튼과 최신 결과 버튼이
+배포되어 있습니다. live `last-good`은 아직 없습니다. 불완전 결과를 0건의 정상
+결과로 승격하지 말고 다음 예약 실행을 관찰합니다.
+
+- 기능 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/1>
+- 검증 이슈: <https://github.com/ggs2535/hongseong-auction-report/issues/2>
+- 검증 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/runs/29508963985>
 
 ## 2. 새 컴퓨터에서 재개하는 순서
 
@@ -214,6 +223,11 @@ Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 8. UI 문제는 `public/index.html` 내장 JSON과 `public/app.js`를 분리해 확인합니다.
 9. 즉시 조회가 시작되지 않으면 이슈 제목이 정확히 `[즉시조회]`인지, 작성자와 로그인 계정이 `ggs2535`인지 확인합니다.
 10. 즉시 조회 이슈의 자동 댓글에서 대기시간 또는 당일 차단 거부 사유를 확인합니다.
+11. `UPSTREAM_ERROR`와 함께 공식 `/pgj/index.on`도 HTTP 500이면 클라이언트 요청을
+    반복하거나 상한을 늘리지 말고 법원 서비스 회복을 기다립니다.
+12. 사용 중인 `court-auction-notice-search@0.3.0`보다 새 버전이 있더라도 changelog와
+    전송 코드를 먼저 비교합니다. 2026-07-16 기준 최신 0.3.2는 공용 브라우저 런타임
+    통합 변경이며 검색 endpoint/body 오류 수정은 아니므로 무조건 올리지 않았습니다.
 
 ## 12. 테스트 승인 기준
 
@@ -245,7 +259,7 @@ npm run check
 
 ## 13. 알려진 제약과 다음 유지보수 후보
 
-- 실사이트 응답은 제작 시 호출하지 않아 첫 운영에서 실제 field mapping을 관찰해야 합니다.
+- 아직 `complete=true`인 첫 live 응답을 얻지 못해 실제 정상 field mapping 검증이 남아 있습니다.
 - 상세 문서를 다운로드하지 않으므로 문서 검증 상태는 항상 false입니다.
 - first-page 이전 차단은 미확인 건수 산정 불가입니다.
 - 날짜별 history는 같은 날 재실행을 모두 보존하지 않습니다.
@@ -256,7 +270,7 @@ npm run check
 
 다음 작업 우선순위:
 
-1. 첫 live 수동 실행의 response shape를 로그에서 민감정보 없이 검증
+1. 법원 서비스 회복 후 첫 `complete=true` live response shape를 민감정보 없이 검증
 2. live fixture를 익명화해 회귀 fixture로 추가
 3. 저장 테스트에서 incomplete last-good hash 불변을 강화
 4. Cloud Run을 실제 사용할 때 WIF 기반 publish-only workflow 추가
