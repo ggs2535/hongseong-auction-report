@@ -2,6 +2,9 @@
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const {
+  buildPropertySearchBody,
+} = require("court-auction-notice-search");
 
 const {
   calculateMissingCount,
@@ -75,6 +78,20 @@ test("101건이면 100건 페이지와 1건 페이지를 모두 순차 조회한
   );
   assert.equal(calls[0].usage.large, "건물");
   assert.equal(calls[0].pageSize, 100);
+  assert.deepEqual(calls[0].saleDate, {
+    from: "20260716",
+    to: "20260730",
+  });
+  assert.deepEqual(calls[1].saleDate, calls[0].saleDate);
+  const requestBody = buildPropertySearchBody(calls[0]);
+  assert.equal(
+    requestBody.dma_srchGdsDtlSrchInfo.bidBgngYmd,
+    "20260716",
+  );
+  assert.equal(
+    requestBody.dma_srchGdsDtlSrchInfo.bidEndYmd,
+    "20260730",
+  );
   assert.equal(calls[0].includeRaw, true);
   assert.equal(calls[0].fallbackOnBlocked, false);
   assert.equal(result.items.length, 101);
