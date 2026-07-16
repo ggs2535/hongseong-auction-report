@@ -5,7 +5,7 @@
 ## 1. 현재 완성 상태
 
 - 프로젝트: `hongseong-auction-report`
-- 기준일: 2026-07-16
+- 기준일: 2026-07-17
 - 런타임: Node.js 20 이상, 권장 22 LTS
 - 수집 패키지: `court-auction-notice-search@0.3.0`
 - 브라우저: `playwright@1.60.0`, `playwright-core@1.60.0`
@@ -20,17 +20,26 @@
 탐색은 GitHub 호스팅 실행기에서 30초 timeout이 발생해 `NETWORK_ERROR`,
 `complete=false`로 안전하게 저장되었습니다.
 
-같은 날 즉시 조회 기능을 PR #1로 배포한 뒤 이슈 #2로 실동작을 검증했습니다. 소유자
-gate, 61개 테스트, durable 예약, live 수집, 결과 커밋, Pages 배포, 결과 댓글과
-이슈 자동 종료가 모두 성공했습니다. 이 실행의 법원 원본 응답은
-`UPSTREAM_ERROR`, `complete=false`였고, 같은 시각 공식 `/pgj/index.on` 공개 GET도
-HTTP 500이었습니다. 공개 Pages는 HTTP 200이며 즉시 조회 버튼과 최신 결과 버튼이
-배포되어 있습니다. live `last-good`은 아직 없습니다. 불완전 결과를 0건의 정상
-결과로 승격하지 말고 다음 예약 실행을 관찰합니다.
+같은 날 즉시 조회 기능을 PR #1로 배포한 뒤 이슈 #2와 #4로 실동작을 검증했습니다.
+소유자 gate, 테스트, durable 예약, live 수집, 결과 커밋, Pages 배포, 결과 댓글과
+이슈 자동 종료가 모두 성공했습니다. 두 실행 모두 법원코드는 확인했지만 첫 목록
+요청 전 `UPSTREAM_ERROR`, `complete=false`였습니다. 공식 PGJ151 화면은
+2026-07-17 00:25 KST에 HTTP 200, 00:35와 00:40에는 HTTP 500이었고, 회복된 XML의
+endpoint와 데이터맵은 설치 패키지의 계약과 일치했습니다. 회사 네트워크나 요청
+형식 변경보다 법원 서비스의 간헐적 HTTP 500 장애가 원인이라는 증거가 우세합니다.
+
+PR #5는 `errorStatusCode`, `upstreamUrl`, `upstreamMessage`를 보고서·Actions·
+휴대폰 UI와 댓글에 보존합니다. PR #6은 warmup GET 5xx에서 POST와 Playwright를
+실행하지 않고 30초 뒤 한 번만 재확인합니다. 이 변경까지 전체 67개 테스트가
+통과했습니다. 공개 Pages는 HTTP 200이며 live `last-good`은 아직 없습니다.
+불완전 결과를 0건의 정상 결과로 승격하지 말고 다음 예약 실행을 관찰합니다.
 
 - 기능 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/1>
 - 검증 이슈: <https://github.com/ggs2535/hongseong-auction-report/issues/2>
 - 검증 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/runs/29508963985>
+- 반복 검증: <https://github.com/ggs2535/hongseong-auction-report/issues/4>
+- 진단 보완: <https://github.com/ggs2535/hongseong-auction-report/pull/5>
+- 500 조기중단: <https://github.com/ggs2535/hongseong-auction-report/pull/6>
 
 ## 2. 새 컴퓨터에서 재개하는 순서
 
@@ -70,6 +79,7 @@ HTTP 500이었습니다. 공개 Pages는 HTTP 200이며 즉시 조회 버튼과 
 16. GitHub 토큰을 HTML, JavaScript, service worker, localStorage에 저장하지 않습니다.
 17. `data/instant-query-state.json`은 실제 호출 전에 커밋하며, 손상 시 fail-closed합니다.
 18. 승인되지 않은 issue workflow는 정상 수집과 다른 concurrency 그룹으로 격리합니다.
+19. 법원 warmup GET이 HTTP 5xx이면 검색 POST나 Playwright fallback으로 확대하지 않습니다.
 
 ## 4. 파일 지도
 
@@ -213,7 +223,7 @@ Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 
 ## 11. 장애 진단 순서
 
-1. Actions Summary의 `blocked`, `errorCode`, page 수를 봅니다.
+1. Actions Summary의 `blocked`, `errorCode`, `errorStatusCode`, 원본 경로와 page 수를 봅니다.
 2. `data/latest.json`과 `data/last-good.json`의 `generatedAt`을 비교합니다.
 3. incomplete인데 last-good이 바뀌었다면 즉시 저장 로직 회귀로 취급합니다.
 4. `COURT_NOT_FOUND`이면 court response fixture와 live name/branchName을 확인합니다. 코드를 하드코딩하지 않습니다.
@@ -223,8 +233,9 @@ Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 8. UI 문제는 `public/index.html` 내장 JSON과 `public/app.js`를 분리해 확인합니다.
 9. 즉시 조회가 시작되지 않으면 이슈 제목이 정확히 `[즉시조회]`인지, 작성자와 로그인 계정이 `ggs2535`인지 확인합니다.
 10. 즉시 조회 이슈의 자동 댓글에서 대기시간 또는 당일 차단 거부 사유를 확인합니다.
-11. `UPSTREAM_ERROR`와 함께 공식 `/pgj/index.on`도 HTTP 500이면 클라이언트 요청을
-    반복하거나 상한을 늘리지 말고 법원 서비스 회복을 기다립니다.
+11. `UPSTREAM_ERROR`·HTTP 5xx와 함께 공식 `/pgj/index.on`도 5xx이면 클라이언트
+    요청을 반복하거나 상한을 늘리지 말고 법원 서비스 회복을 기다립니다. warmup
+    보호가 POST와 브라우저 fallback을 건너뛰는지 확인합니다.
 12. 사용 중인 `court-auction-notice-search@0.3.0`보다 새 버전이 있더라도 changelog와
     전송 코드를 먼저 비교합니다. 2026-07-16 기준 최신 0.3.2는 공용 브라우저 런타임
     통합 변경이며 검색 endpoint/body 오류 수정은 아니므로 무조건 올리지 않았습니다.
