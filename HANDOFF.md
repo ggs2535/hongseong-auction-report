@@ -9,14 +9,26 @@
 - 자동 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/workflows/update-auction.yml>
 - 예약 시각: 매일 18:37 KST (`37 9 * * *`)
 - 최초 배포 성공 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/runs/29503452625>
+- 즉시 조회 기능 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/1>
+- 최초 즉시 조회 요청: <https://github.com/ggs2535/hongseong-auction-report/issues/2>
+- 최초 즉시 조회 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/runs/29508963985>
 
 최초 운영 실행에서는 테스트, Chromium 설치, 수집 프로그램, 결과 커밋, Pages 배포가
 모두 성공했습니다. 다만 GitHub 호스팅 실행기에서 법원 초기 화면 탐색이 30초 안에
 끝나지 않아 최신 보고서는 `NETWORK_ERROR`와 `complete=false`로 기록되었습니다.
-현재 공개 화면에 불완전 수집 경고가 보이는 것은 의도한 안전 동작이며, 이를 0건의
-정상 조회로 바꾸거나 `last-good`으로 저장하면 안 됩니다. 다음 예약 실행에서
-네트워크가 회복되면 자동으로 다시 수집합니다. 같은 오류가 반복되면
-[`docs/cloud-run.md`](docs/cloud-run.md)의 이전 절차를 검토합니다.
+2026-07-16의 최초 실제 즉시 조회에서는 소유자 gate, 61개 테스트, durable 예약,
+live 수집, 결과 저장, Pages 배포, 이슈 댓글과 자동 종료가 모두 성공했습니다.
+법원 원본은 `UPSTREAM_ERROR`를 반환해 보고서는 `complete=false`로 정확히
+기록되었습니다. 같은 시각 공식 `https://www.courtauction.go.kr/pgj/index.on`
+화면도 공개 GET 요청에 HTTP 500을 반환했으므로, 현재 증거는 회사 컴퓨터가 아니라
+법원 서비스 측 장애를 가리킵니다. 공개 Pages 자체는 HTTP 200이며 즉시 조회와
+최신 결과 버튼이 모두 배포되어 있습니다.
+
+현재 공개 화면에 불완전 수집 경고가 보이는 것은 의도한 안전 동작입니다. 이를 0건의
+정상 조회로 바꾸거나 `last-good`으로 저장하면 안 됩니다. 법원 서비스가 회복되면
+다음 예약 실행 또는 10분 대기 후 새 즉시 조회가 다시 시도합니다. 같은 오류가
+반복되면 [`docs/cloud-run.md`](docs/cloud-run.md)의 이전 절차를 검토하되, 플랫폼
+이동을 차단 회피 수단으로 사용하지 않습니다.
 
 `.npmrc`의 `omit=optional` 정책 때문에 npm이 `playwright` 실행 바로가기를 만들지
 않을 수 있습니다. `npx playwright ...` 대신
