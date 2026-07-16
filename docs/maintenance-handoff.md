@@ -12,6 +12,14 @@
 - 테스트: Node 내장 test runner
 - 기본 모드: 네트워크를 사용하지 않는 fixture
 - 운영 모드: GitHub Actions 또는 Cloud Run Job의 `AUCTION_MODE=live`
+- GitHub 저장소: <https://github.com/ggs2535/hongseong-auction-report>
+- GitHub Pages: <https://ggs2535.github.io/hongseong-auction-report/>
+- 운영 workflow: <https://github.com/ggs2535/hongseong-auction-report/actions/workflows/update-auction.yml>
+
+2026-07-16 최초 운영 실행은 workflow와 Pages 배포까지 성공했습니다. 법원 초기 화면
+탐색은 GitHub 호스팅 실행기에서 30초 timeout이 발생해 `NETWORK_ERROR`,
+`complete=false`로 안전하게 저장되었습니다. 최초 실행이라 live `last-good`은 아직
+없습니다. 불완전 결과를 0건의 정상 결과로 승격하지 말고 다음 예약 실행을 관찰합니다.
 
 제작 과정에서는 법원 실사이트에 요청하지 않았습니다. fixture 기반 기능과 패키지 공개 API/설치 파일을 기준으로 live adapter를 구현했습니다.
 
@@ -182,6 +190,8 @@ docker build -t hongseong-auction-report:test .
 ```
 
 `.npmrc`의 `omit=optional`을 제거하면 court 패키지의 optional `rebrowser-playwright`가 설치될 수 있으므로 제거하지 않습니다.
+이 설정에서는 npm의 bin 충돌로 `npx playwright`가 생성되지 않을 수 있으므로
+Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 
 ## 11. 장애 진단 순서
 

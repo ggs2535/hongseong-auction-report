@@ -6,6 +6,16 @@
 
 > 이 보고서는 검색 보조 자료입니다. 입찰 전에는 반드시 법원 원문과 매각물건명세서, 현황조사서, 감정평가서를 직접 확인하세요. 이 프로젝트는 문서를 다운로드해 검증하지 않으므로 보고서에 항상 **“매각물건명세서·현황조사서 미검증”**을 표시합니다.
 
+## 현재 배포
+
+- [공개 모바일 보고서](https://ggs2535.github.io/hongseong-auction-report/)
+- [자동 실행 상태](https://github.com/ggs2535/hongseong-auction-report/actions/workflows/update-auction.yml)
+- [운영·제작 인수인계 시작점](HANDOFF.md)
+
+2026-07-16 최초 배포는 성공했지만 법원 초기 화면이 GitHub 실행기에서 timeout되어
+현재 보고서는 `NETWORK_ERROR`, `complete=false` 경고 상태입니다. 이는 빈 결과를
+정상 조회로 오인하지 않기 위한 안전 동작입니다.
+
 ## 무엇을 보장하는가
 
 - 로그인, 입찰, 문서 제출 기능이 없습니다.
@@ -82,7 +92,7 @@ git push -u origin main
 
 **Actions → Update auction report → Run workflow**를 누릅니다. 순서는 의존성 설치, 테스트, Chromium 설치, live 조회, 결과 커밋, Pages 배포입니다.
 
-첫 실행이 성공하면 `data/last-good.json`의 `source.mode`가 `live`로 바뀝니다. fixture 예제와 live 데이터는 비교하거나 섞지 않습니다.
+첫 live 수집이 `complete=true`로 끝나면 `data/last-good.json`의 `source.mode`가 `live`로 바뀝니다. fixture 예제와 live 데이터는 비교하거나 섞지 않습니다.
 
 ### 6. 휴대폰에서 열기
 
