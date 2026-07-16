@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
   "reportDate": "2026-07-17",
-  "generatedAt": "2026-07-16T16:03:03.071Z",
+  "generatedAt": "2026-07-16T16:14:50.981Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -31,9 +31,9 @@
     "errorMessage": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
     "errorStatusCode": 400,
     "upstreamUrl": "/pgj/pgjsearch/searchControllerMain.on",
-    "upstreamMessage": null,
-    "startedAt": "2026-07-16T16:02:05.028Z",
-    "finishedAt": "2026-07-16T16:03:03.071Z"
+    "upstreamMessage": "사용에 불편을 드려서 죄송합니다. 잠시 후 다시 이용해 주십시오. (동일한 상황이 지속되는 경우 사용자지원센터로 문의주시기 바랍니다.)",
+    "startedAt": "2026-07-16T16:13:52.573Z",
+    "finishedAt": "2026-07-16T16:14:50.981Z"
   },
   "summary": {
     "totalCount": null,
