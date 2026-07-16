@@ -1,0 +1,150 @@
+{
+  "2025타경10001": {
+    "found": true,
+    "caseInfo": {
+      "courtCode": "B000281",
+      "courtName": "대전지방법원 홍성지원",
+      "caseNumber": "2025타경10001",
+      "caseName": "부동산임의경매"
+    },
+    "schedule": [
+      {
+        "saleDate": "2026-08-18",
+        "minimumSalePrice": 224000000,
+        "status": "매각진행"
+      }
+    ],
+    "items": [
+      {
+        "itemNumber": "1",
+        "usage": "아파트",
+        "address": "충청남도 홍성군 홍성읍 법원로 10, 101동 1203호",
+        "propertyDescription": "공동주택(아파트)",
+        "remarks": "대항력 있는 임차인 여부는 매각물건명세서 확인 필요",
+        "raw": {
+          "dspslGdsSeq": 1,
+          "printSt": "대항력 있는 임차인 여부는 매각물건명세서 확인 필요"
+        }
+      }
+    ]
+  },
+  "2025타경10002": {
+    "found": true,
+    "caseInfo": {
+      "courtCode": "B000281",
+      "courtName": "대전지방법원 홍성지원",
+      "caseNumber": "2025타경10002",
+      "caseName": "부동산강제경매"
+    },
+    "schedule": [
+      {
+        "saleDate": "2026-08-25",
+        "minimumSalePrice": 147000000,
+        "status": "매각진행"
+      }
+    ],
+    "items": [
+      {
+        "itemNumber": "1",
+        "usage": "단독주택",
+        "address": "충남 예산군 예산읍 아리랑로 25",
+        "propertyDescription": "단독주택과 부속건물",
+        "remarks": "건물과 토지를 일괄매각",
+        "raw": {
+          "dspslGdsSeq": 1,
+          "printSt": "건물과 토지를 일괄매각"
+        }
+      }
+    ]
+  },
+  "2025타경10003": {
+    "found": true,
+    "caseInfo": {
+      "courtCode": "B000281",
+      "courtName": "대전지방법원 홍성지원",
+      "caseNumber": "2025타경10003",
+      "caseName": "부동산임의경매"
+    },
+    "schedule": [
+      {
+        "saleDate": "2026-09-01",
+        "minimumSalePrice": 336000000,
+        "status": "매각진행"
+      }
+    ],
+    "items": [
+      {
+        "itemNumber": "1",
+        "usage": "주상복합",
+        "address": "충청남도 홍성군 광천읍 광천로 77",
+        "propertyDescription": "1층 근린생활시설, 2층 주거부분",
+        "remarks": "일괄매각",
+        "raw": {
+          "dspslGdsSeq": 1,
+          "printSt": "일괄매각"
+        }
+      }
+    ]
+  },
+  "2025타경10005": {
+    "found": true,
+    "caseInfo": {
+      "courtCode": "B000281",
+      "courtName": "대전지방법원 홍성지원",
+      "caseNumber": "2025타경10005",
+      "caseName": "부동산임의경매"
+    },
+    "schedule": [
+      {
+        "saleDate": "2026-09-15",
+        "minimumSalePrice": 112000000,
+        "status": "매각진행"
+      }
+    ],
+    "items": [
+      {
+        "itemNumber": "1",
+        "usage": "다세대주택",
+        "address": "",
+        "propertyDescription": "상세 화면에서도 소재지 누락",
+        "remarks": "",
+        "raw": {
+          "dspslGdsSeq": 1,
+          "printSt": ""
+        }
+      }
+    ]
+  },
+  "2025타경10007": {
+    "found": true,
+    "caseInfo": {
+      "courtCode": "B000281",
+      "courtName": "대전지방법원 홍성지원",
+      "caseNumber": "2025타경10007",
+      "caseName": "부동산강제경매"
+    },
+    "schedule": [
+      {
+        "saleDate": "2026-09-29",
+        "minimumSalePrice": 189000000,
+        "status": "매각진행"
+      }
+    ],
+    "items": [
+      {
+        "itemNumber": "1",
+        "usage": "단독주택",
+        "address": "충남 홍성군 금마면 금마로 43",
+        "landCategoryList": [
+          "전"
+        ],
+        "propertyDescription": "단독주택과 토지",
+        "remarks": "토지 지목 전, 일괄매각",
+        "raw": {
+          "dspslGdsSeq": 1,
+          "printSt": "토지 지목 전, 일괄매각"
+        }
+      }
+    ]
+  }
+}

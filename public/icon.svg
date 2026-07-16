@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">홍성·예산 법원경매 보고서</title>
+  <rect width="512" height="512" rx="112" fill="#17324d"/>
+  <path d="M111 355h290v42H111z" fill="#d6b15d"/>
+  <path d="M164 313h184v42H164z" fill="#fff"/>
+  <path d="m180 119 156 0 0 44-156 0z" fill="#fff" transform="rotate(34 258 141)"/>
+  <path d="m149 183 62-92 45 30-62 92z" fill="#d6b15d"/>
+  <path d="m285 275 62-92 45 30-62 92z" fill="#d6b15d"/>
+  <path d="m257 187 34 23-84 126-34-23z" fill="#fff"/>
+</svg>

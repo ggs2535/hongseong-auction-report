@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17324d">
+    <meta
+      name="description"
+      content="홍성지원의 홍성군·예산군 주거용 법원경매를 매일 확인하는 모바일 보고서"
+    >
+    <title>홍성·예산 주거용 법원경매 보고서</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div>
+          <p class="eyebrow">대한민국 법원경매정보 · 홍성지원</p>
+          <span id="mode-badge" class="mode-badge" hidden>예제 fixture 데이터</span>
+          <h1>홍성·예산 주거용 경매</h1>
+          <p class="updated-line">
+            마지막 갱신 <strong id="updated-at">확인 중</strong>
+          </p>
+        </div>
+        <div class="header-actions">
+          <a
+            class="button button-primary"
+            href="https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&amp;pgjId=151F00"
+            target="_blank"
+            rel="noopener noreferrer"
+          >법원 원문 검색</a>
+          <span id="network-status" class="network-status" role="status">온라인</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section
+        id="incomplete-warning"
+        class="alert alert-danger"
+        aria-labelledby="warning-title"
+        hidden
+      >
+        <div class="alert-icon" aria-hidden="true">!</div>
+        <div>
+          <h2 id="warning-title">법원 원본 전체조회 실패</h2>
+          <p><strong id="warning-missing">미확인 경매 0건</strong></p>
+          <p id="warning-pages">확인 페이지 0/0</p>
+          <p id="warning-last-good">마지막 정상 전체조회 기록 없음</p>
+          <p class="alert-help">
+            아래 목록은 오늘의 부분 수집 결과로 바꾸지 않고 마지막 정상 보고서를
+            유지합니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="stats-section" aria-label="오늘 조회 현황">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>전체 건수</span>
+            <strong id="stat-total">0건</strong>
+          </article>
+          <article class="stat-card">
+            <span>확인 건수</span>
+            <strong id="stat-checked">0건</strong>
+          </article>
+          <article class="stat-card">
+            <span>미확인 건수</span>
+            <strong id="stat-missing">0건</strong>
+          </article>
+          <article class="stat-card">
+            <span>주거용 결과</span>
+            <strong id="stat-residential">0건</strong>
+          </article>
+          <article id="success-card" class="stat-card stat-status">
+            <span>조회 성공 여부</span>
+            <strong id="stat-success">확인 중</strong>
+          </article>
+        </div>
+        <p id="display-source-note" class="display-source-note" role="status"></p>
+      </section>
+
+      <section class="notice-card" aria-label="문서 확인 안내">
+        <strong>매각물건명세서·현황조사서 미검증</strong>
+        <p>
+          이 보고서는 공개 검색목록을 기준으로 하며 입찰 전 법원 원문과 관련
+          문서를 직접 확인해야 합니다. 감정평가서도 미검증 상태입니다.
+        </p>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="results-heading">
+          <div>
+            <p class="section-kicker">마지막 정상 보고서 기준</p>
+            <h2 id="results-title">주거용 경매 목록</h2>
+          </div>
+          <strong id="visible-count" class="visible-count">0건 표시</strong>
+        </div>
+
+        <div class="filter-panel" aria-label="목록 필터">
+          <fieldset>
+            <legend>지역</legend>
+            <div class="filter-row" data-filter-group="region">
+              <button type="button" class="filter-button" data-region="ALL" aria-pressed="true">전체</button>
+              <button type="button" class="filter-button" data-region="홍성군" aria-pressed="false">홍성군</button>
+              <button type="button" class="filter-button" data-region="예산군" aria-pressed="false">예산군</button>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>변경</legend>
+            <div class="filter-row" data-filter-group="change">
+              <button type="button" class="filter-button" data-change="ALL" aria-pressed="true">전체</button>
+              <button type="button" class="filter-button" data-change="NEW" aria-pressed="false">신규</button>
+              <button type="button" class="filter-button" data-change="PRICE_DOWN" aria-pressed="false">가격하락</button>
+              <button type="button" class="filter-button" data-change="FAILED_BID_INCREMENT" aria-pressed="false">유찰증가</button>
+            </div>
+          </fieldset>
+        </div>
+
+        <p id="detail-summary" class="detail-summary" role="status" hidden></p>
+
+        <div class="desktop-table">
+          <table>
+            <caption class="sr-only">
+              사건번호, 용도, 주소, 감정가, 최저가, 비율, 유찰, 매각기일,
+              특이사항과 변경점
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">사건번호</th>
+                <th scope="col">용도·주소</th>
+                <th scope="col">감정가</th>
+                <th scope="col">현재 최저가</th>
+                <th scope="col">감정가 대비</th>
+                <th scope="col">유찰</th>
+                <th scope="col">매각기일</th>
+                <th scope="col">특이사항</th>
+                <th scope="col">전일 대비</th>
+              </tr>
+            </thead>
+            <tbody id="auction-table-body"></tbody>
+          </table>
+        </div>
+
+        <div id="auction-cards" class="mobile-cards" aria-live="polite"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <strong>조건에 맞는 경매가 없습니다.</strong>
+          <p>다른 지역이나 변경 필터를 선택해 보세요.</p>
+        </div>
+      </section>
+
+      <section
+        id="review-section"
+        class="review-section"
+        aria-labelledby="review-title"
+        hidden
+      >
+        <div class="results-heading">
+          <div>
+            <p class="section-kicker">자동 포함하지 않음</p>
+            <h2 id="review-title">수동 확인 목록</h2>
+          </div>
+          <strong id="review-count" class="visible-count">0건</strong>
+        </div>
+        <p class="review-help">
+          주소를 판정할 수 없거나 주거·제외 용도가 함께 확인된 물건입니다.
+          법원 원문을 확인하기 전에는 주거용 결과로 해석하지 마세요.
+        </p>
+        <div id="review-cards" class="review-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        공개 경매정보를 읽기 전용으로 정리한 참고 보고서입니다. 입찰·권리분석의
+        최종 판단은 법원 원문을 기준으로 하세요.
+      </p>
+    </footer>
+
+    <div id="copy-toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+      <div class="noscript">목록을 보려면 브라우저에서 JavaScript를 켜 주세요.</div>
+    </noscript>
+
+    <!-- REPORT_DATA_START -->
+<script id="report-data" type="application/json">{"schemaVersion":1,"latest":{"generatedAt":"2026-07-16T13:02:15.721Z","reportDate":"2026-07-16","completeness":{"complete":true,"countsKnown":true,"courtCode":"B000281","totalCount":7,"pageSize":100,"expectedPages":1,"fetchedPages":1,"failedPages":[],"fetchedRawCount":8,"fetchedUniqueCount":7,"missingCount":0,"matchedResidentialCount":2,"reviewCount":3,"fetchMode":"http","blocked":false,"errorCode":null,"errorMessage":null,"startedAt":"2026-07-16T13:02:15.717Z","finishedAt":"2026-07-16T13:02:15.721Z"},"source":{"mode":"fixture","courtCode":"B000281","courtName":"홍성지원","searchUrl":"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml\u0026pgjId=151F00","readOnly":true}},"display":{"generatedAt":"2026-07-16T13:02:15.721Z","reportDate":"2026-07-16","completeness":{"complete":true,"countsKnown":true,"courtCode":"B000281","totalCount":7,"pageSize":100,"expectedPages":1,"fetchedPages":1,"failedPages":[],"fetchedRawCount":8,"fetchedUniqueCount":7,"missingCount":0,"matchedResidentialCount":2,"reviewCount":3,"fetchMode":"http","blocked":false,"errorCode":null,"errorMessage":null,"startedAt":"2026-07-16T13:02:15.717Z","finishedAt":"2026-07-16T13:02:15.721Z"},"source":{"mode":"fixture","courtCode":"B000281","courtName":"홍성지원","searchUrl":"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml\u0026pgjId=151F00","readOnly":true},"items":[{"id":"2025타경10001-1","caseNumber":"2025타경10001","itemNumber":"1","usage":"공동주택(아파트)","address":"충청남도 홍성군 홍성읍 법원로 10, 101동 1203호","appraisedPrice":320000000,"minimumSalePrice":224000000,"priceRatio":70,"failedBidCount":2,"saleDate":"2026-08-18","status":"매각진행","remarks":["대항력","임차인"],"remarksEvidence":[{"keyword":"대항력","field":"remarks","sourceText":"대항력 있는 임차인 여부는 매각물건명세서 확인 필요"},{"keyword":"임차인","field":"remarks","sourceText":"대항력 있는 임차인 여부는 매각물건명세서 확인 필요"},{"keyword":"임차인","field":"raw.list.printSt","sourceText":"임차인 현황은 매각물건명세서 참조"},{"keyword":"대항력","field":"raw.case.printSt","sourceText":"대항력 있는 임차인 여부는 매각물건명세서 확인 필요"},{"keyword":"임차인","field":"raw.case.printSt","sourceText":"대항력 있는 임차인 여부는 매각물건명세서 확인 필요"}],"documentVerification":{"saleSpecificationChecked":false,"fieldSurveyChecked":false,"appraisalChecked":false},"changeType":[],"sourceUpdatedAt":"2026-07-16T13:02:15.721Z","detailStatus":"전일 상세정보 재사용","listFingerprint":"80bd9f6bfeaedb15abf7060e3ed8bcc94e9573d7a9b3179699287f28124a8ec8","region":"홍성군"},{"id":"2025타경10002-1","caseNumber":"2025타경10002","itemNumber":"1","usage":"단독주택 및 부속건물","address":"충남 예산군 예산읍 아리랑로 25","appraisedPrice":210000000,"minimumSalePrice":147000000,"priceRatio":70,"failedBidCount":1,"saleDate":"2026-08-25","status":"매각진행","remarks":["일괄매각"],"remarksEvidence":[{"keyword":"일괄매각","field":"remarks","sourceText":"건물과 토지를 일괄매각"},{"keyword":"일괄매각","field":"raw.case.printSt","sourceText":"건물과 토지를 일괄매각"}],"documentVerification":{"saleSpecificationChecked":false,"fieldSurveyChecked":false,"appraisalChecked":false},"changeType":[],"sourceUpdatedAt":"2026-07-16T13:02:15.721Z","detailStatus":"전일 상세정보 재사용","listFingerprint":"3e35897681fd3b8dc82033978c0a0f71e82d81b6a70d792bad2f21a9a29e8b7c","region":"예산군"}],"reviewItems":[{"item":{"id":"2025타경10003-1","caseNumber":"2025타경10003","itemNumber":"1","usage":"주상복합 중 주거부분과 근린생활시설이 함께 있음","address":"충청남도 홍성군 광천읍 광천로 77","appraisedPrice":480000000,"minimumSalePrice":336000000,"priceRatio":70,"failedBidCount":1,"saleDate":"2026-09-01","status":"매각진행","remarks":["일괄매각"],"remarksEvidence":[{"keyword":"일괄매각","field":"remarks","sourceText":"일괄매각"},{"keyword":"일괄매각","field":"raw.printSt","sourceText":"일괄매각"}],"documentVerification":{"saleSpecificationChecked":false,"fieldSurveyChecked":false,"appraisalChecked":false},"changeType":[],"sourceUpdatedAt":"2026-07-16T13:02:15.721Z","detailStatus":"수동확인 필요","listFingerprint":"127d6115640dcf9bfd33bfc7b461eaab2642640eb449925f67905b05993fd11f"},"reasonCode":"MIXED_USE","reason":"복합용도·수동확인 필요","matchedKeywords":{"residential":["주상복합 중 주거부분"],"excluded":["근린생활시설","상가"]}},{"item":{"id":"2025타경10007-1","caseNumber":"2025타경10007","itemNumber":"1","usage":"단독주택과 토지 일괄매각","address":"충남 홍성군 금마면 금마로 43","appraisedPrice":270000000,"minimumSalePrice":189000000,"priceRatio":70,"failedBidCount":1,"saleDate":"2026-09-29","status":"매각진행","remarks":["일괄매각"],"remarksEvidence":[{"keyword":"일괄매각","field":"propertyDescription","sourceText":"단독주택과 토지 일괄매각"}],"documentVerification":{"saleSpecificationChecked":false,"fieldSurveyChecked":false,"appraisalChecked":false},"changeType":[],"sourceUpdatedAt":"2026-07-16T13:02:15.721Z","detailStatus":"수동확인 필요","listFingerprint":"6ca76dc36349b1783458a4a79bd5d8b558c8d9880fdcf6f92313a60f64fab230"},"reasonCode":"MIXED_USE","reason":"복합용도·수동확인 필요","matchedKeywords":{"residential":["단독주택","주택"],"excluded":["전"]}},{"item":{"id":"2025타경10005-1","caseNumber":"2025타경10005","itemNumber":"1","usage":"다세대주택","address":"","appraisedPrice":160000000,"minimumSalePrice":112000000,"priceRatio":70,"failedBidCount":1,"saleDate":"2026-09-15","status":"매각진행","remarks":[],"remarksEvidence":[],"documentVerification":{"saleSpecificationChecked":false,"fieldSurveyChecked":false,"appraisalChecked":false},"changeType":[],"sourceUpdatedAt":"2026-07-16T13:02:15.721Z","detailStatus":"전일 상세정보 재사용","listFingerprint":"8e0a964389d56af41faa5a6cfeff658babd996adc10b657caf63a8ab54ed40ea","region":null},"reasonCode":"ADDRESS_UNDETERMINED","reason":"주소 확인 필요","matchedKeywords":{"residential":["공동주택","다세대주택","주택"],"excluded":[]}}],"detailSummary":{"requested":0,"attempted":0,"succeeded":0,"failed":0,"pending":0,"blocked":false}},"displaySource":"latest","lastGoodGeneratedAt":"2026-07-16T13:02:15.721Z","cacheSafe":false}</script>
+<!-- REPORT_DATA_END -->
+    <script src="./app.js" defer></script>
+  </body>
+</html>

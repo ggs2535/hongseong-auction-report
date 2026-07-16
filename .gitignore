@@ -1,0 +1,10 @@
+node_modules/
+.env
+.DS_Store
+playwright-report/
+test-results/
+coverage/
+npm-debug.log*
+update.log
+test.log
+.fixture-output/

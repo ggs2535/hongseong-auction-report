@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+coverage
+test
+test-results
+playwright-report
+update.log
+test.log
+.fixture-output
+*.zip
+.env
+.DS_Store
+npm-debug.log*

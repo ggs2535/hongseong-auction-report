@@ -1,0 +1,26 @@
+{
+  "name": "hongseong-auction-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "홍성지원의 홍성군·예산군 주거용 법원경매를 안전하게 수집해 GitHub Pages 보고서로 만드는 프로젝트",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "update": "node src/index.js",
+    "update:fixture": "node src/index.js --fixture",
+    "update:live": "node src/index.js --live",
+    "test": "node --test --test-reporter=spec",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "check": "node --check src/index.js && node --check public/app.js && node --test"
+  },
+  "dependencies": {
+    "court-auction-notice-search": "0.3.0",
+    "playwright": "1.60.0",
+    "playwright-core": "1.60.0"
+  },
+  "devDependencies": {
+    "yaml": "2.9.0"
+  }
+}

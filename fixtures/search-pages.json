@@ -1,0 +1,294 @@
+{
+  "1": {
+    "requestedFilters": {
+      "courtCode": "B000281",
+      "usage": {
+        "large": "건물"
+      },
+      "page": 1,
+      "pageSize": 100
+    },
+    "page": {
+      "pageNo": 1,
+      "pageSize": 100,
+      "totalCount": 7
+    },
+    "count": 7,
+    "items": [
+      {
+        "caseNumber": "2025타경10001",
+        "displayCaseNumber": "2025타경10001",
+        "itemNumber": "1",
+        "address": "충청남도 홍성군 홍성읍 법원로 10, 101동 1203호",
+        "appraisedPrice": 320000000,
+        "minimumSalePrice": 224000000,
+        "flbdCount": 2,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1001",
+        "judgeDeptName": "경매1계",
+        "saleDate": "2026-08-18",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "공동주택",
+            "smallName": "아파트"
+          }
+        ],
+        "buildingList": [
+          "철근콘크리트조 아파트 84.92㎡"
+        ],
+        "propertyDescription": "공동주택(아파트)",
+        "remarks": "임차인 현황은 매각물건명세서 참조",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10001",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "충청남도 홍성군 홍성읍",
+          "printSt": "임차인 현황은 매각물건명세서 참조"
+        }
+      },
+      {
+        "caseNumber": "2025타경10002",
+        "displayCaseNumber": "2025타경10002",
+        "itemNumber": "1",
+        "address": "충남 예산군 예산읍 아리랑로 25",
+        "appraisedPrice": 210000000,
+        "minimumSalePrice": 147000000,
+        "flbdCount": 1,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1002",
+        "judgeDeptName": "경매2계",
+        "saleDate": "2026-08-25",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "주택",
+            "smallName": "단독주택"
+          }
+        ],
+        "buildingList": [
+          "벽돌조 단독주택 112.40㎡"
+        ],
+        "propertyDescription": "단독주택 및 부속건물",
+        "remarks": "",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10002",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "충남 예산군 예산읍",
+          "printSt": ""
+        }
+      },
+      {
+        "caseNumber": "2025타경10003",
+        "displayCaseNumber": "2025타경10003",
+        "itemNumber": "1",
+        "address": "충청남도 홍성군 광천읍 광천로 77",
+        "appraisedPrice": 480000000,
+        "minimumSalePrice": 336000000,
+        "flbdCount": 1,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1001",
+        "judgeDeptName": "경매1계",
+        "saleDate": "2026-09-01",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "주상복합",
+            "smallName": "주상복합"
+          }
+        ],
+        "buildingList": [
+          "1층 상가, 2층 주거부분"
+        ],
+        "propertyDescription": "주상복합 중 주거부분과 근린생활시설이 함께 있음",
+        "remarks": "일괄매각",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10003",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "충청남도 홍성군 광천읍",
+          "printSt": "일괄매각"
+        }
+      },
+      {
+        "caseNumber": "2025타경10004",
+        "displayCaseNumber": "2025타경10004",
+        "itemNumber": "1",
+        "address": "충청남도 보령시 중앙로 88, 105동 401호",
+        "appraisedPrice": 190000000,
+        "minimumSalePrice": 133000000,
+        "flbdCount": 1,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1002",
+        "judgeDeptName": "경매2계",
+        "saleDate": "2026-09-08",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "공동주택",
+            "smallName": "아파트"
+          }
+        ],
+        "buildingList": [
+          "아파트 59.80㎡"
+        ],
+        "propertyDescription": "아파트",
+        "remarks": "",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10004",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "충청남도 보령시",
+          "printSt": ""
+        }
+      },
+      {
+        "caseNumber": "2025타경10005",
+        "displayCaseNumber": "2025타경10005",
+        "itemNumber": "1",
+        "address": "",
+        "appraisedPrice": 160000000,
+        "minimumSalePrice": 112000000,
+        "flbdCount": 1,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1001",
+        "judgeDeptName": "경매1계",
+        "saleDate": "2026-09-15",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "공동주택",
+            "smallName": "다세대주택"
+          }
+        ],
+        "buildingList": [
+          "다세대주택 71.12㎡"
+        ],
+        "propertyDescription": "다세대주택이나 목록 주소 누락",
+        "remarks": "",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10005",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "",
+          "printSt": ""
+        }
+      },
+      {
+        "caseNumber": "2025타경10006",
+        "displayCaseNumber": "2025타경10006",
+        "itemNumber": "1",
+        "address": "충청남도 예산군 삽교읍 산업단지로 9",
+        "appraisedPrice": 650000000,
+        "minimumSalePrice": 455000000,
+        "flbdCount": 1,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1002",
+        "judgeDeptName": "경매2계",
+        "saleDate": "2026-09-22",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "근린생활시설",
+            "smallName": "상가"
+          }
+        ],
+        "buildingList": [
+          "일반철골구조 근린생활시설 318.50㎡"
+        ],
+        "propertyDescription": "근린생활시설(상가)",
+        "remarks": "",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10006",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "충청남도 예산군 삽교읍",
+          "printSt": ""
+        }
+      },
+      {
+        "caseNumber": "2025타경10007",
+        "displayCaseNumber": "2025타경10007",
+        "itemNumber": "1",
+        "address": "충남 홍성군 금마면 금마로 43",
+        "appraisedPrice": 270000000,
+        "minimumSalePrice": 189000000,
+        "flbdCount": 1,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1001",
+        "judgeDeptName": "경매1계",
+        "saleDate": "2026-09-29",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "주택",
+            "smallName": "단독주택"
+          }
+        ],
+        "landCategoryList": [
+          "전"
+        ],
+        "buildingList": [
+          "단독주택 96.30㎡"
+        ],
+        "propertyDescription": "단독주택과 토지 일괄매각",
+        "remarks": "토지 지목: 전",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10007",
+          "dspslGdsSeq": 1,
+          "rprsLtnoAddr": "충남 홍성군 금마면",
+          "printSt": "토지 지목: 전"
+        }
+      },
+      {
+        "caseNumber": "2025타경10001",
+        "displayCaseNumber": "2025타경10001",
+        "itemNumber": "1",
+        "address": "충청남도 홍성군 홍성읍 법원로 10, 101동 1203호",
+        "appraisedPrice": 320000000,
+        "minimumSalePrice": 224000000,
+        "flbdCount": 2,
+        "progressStatusName": "매각진행",
+        "courtCode": "B000281",
+        "courtName": "대전지방법원 홍성지원",
+        "judgeDeptCode": "1001",
+        "judgeDeptName": "경매1계",
+        "saleDate": "2026-08-18",
+        "usageCodes": [
+          {
+            "largeName": "건물",
+            "mediumName": "공동주택",
+            "smallName": "아파트"
+          }
+        ],
+        "buildingList": [
+          "철근콘크리트조 아파트 84.92㎡"
+        ],
+        "propertyDescription": "공동주택(아파트)",
+        "remarks": "중복 행: 첫 번째 행이 보존되어야 함",
+        "raw": {
+          "cortOfcCd": "B000281",
+          "csNo": "2025타경10001",
+          "dspslGdsSeq": 1,
+          "duplicateFixture": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "홍성·예산 주거용 법원경매 보고서",
+  "short_name": "홍성경매",
+  "description": "홍성지원의 홍성군·예산군 주거용 법원경매 일일 보고서",
+  "lang": "ko-KR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f6f7",
+  "theme_color": "#17324d",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
