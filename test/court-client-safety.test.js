@@ -305,6 +305,85 @@ test("일반 HTTP 400만 브라우저 fallback을 정확히 한 번 사용한다
   await source.close();
 });
 
+test("브라우저 fallback도 실패하면 최초 HTTP 400 오류 메시지를 보존한다", async () => {
+  let browserClients = 0;
+  class HttpClient {
+    constructor(options) {
+      this.fetchImpl = options.fetchImpl;
+    }
+  }
+  class BrowserClient {
+    constructor() {
+      browserClients += 1;
+    }
+    async warmup() {}
+    async close() {}
+  }
+  const library = {
+    CourtAuctionHttpClient: HttpClient,
+    CourtAuctionPlaywrightClient: BrowserClient,
+    async searchProperties({ client }) {
+      if (client instanceof BrowserClient) {
+        const error = new Error("browser request failed");
+        error.code = "UPSTREAM_ERROR";
+        error.statusCode = 400;
+        error.upstreamUrl = "/pgj/pgjsearch/searchControllerMain.on";
+        throw error;
+      }
+      try {
+        await client.fetchImpl(
+          "https://www.courtauction.go.kr/pgj/pgjsearch/searchControllerMain.on",
+          { method: "POST" },
+        );
+      } catch (cause) {
+        const error = new Error("Court Auction network error");
+        error.code = "NETWORK_ERROR";
+        error.cause = cause;
+        throw error;
+      }
+      throw new Error("HTTP 400 must not be returned as a success");
+    },
+  };
+  const source = createLiveSource(config(), {
+    library,
+    fetchImpl: async () =>
+      Response.json(
+        {
+          errors: {
+            errorMessage: "bidBgngYmd is required\nrequest rejected",
+          },
+        },
+        { status: 400 },
+      ),
+    pacer: {
+      run: async (operation) => operation(),
+      wait: async () => {},
+    },
+  });
+
+  await assert.rejects(
+    () =>
+      source.searchProperties({
+        courtCode: "B000281",
+        usage: { large: "건물" },
+        page: 1,
+        pageSize: 100,
+      }),
+    (error) => {
+      const diagnostics = extractOperationalDiagnostics(error);
+      return (
+        diagnostics.errorStatusCode === 400 &&
+        diagnostics.upstreamUrl ===
+          "/pgj/pgjsearch/searchControllerMain.on" &&
+        diagnostics.upstreamMessage ===
+          "bidBgngYmd is required request rejected"
+      );
+    },
+  );
+  assert.equal(browserClients, 1);
+  await source.close();
+});
+
 test("10페이지를 넘는 검색은 추가 호출 없이 incomplete가 된다", async () => {
   const calls = [];
   const source = {

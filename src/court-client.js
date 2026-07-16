@@ -176,23 +176,39 @@ function extractOperationalDiagnostics(error) {
   };
 }
 
-function createWarmupServerError(response, input) {
+function responsePayloadMessage(payload) {
+  const candidate =
+    payload?.errors?.errorMessage ||
+    payload?.message ||
+    payload?.errorMessage ||
+    (typeof payload?.error === "string" ? payload.error : null);
+  return diagnosticText(candidate, 1000);
+}
+
+function createHttpResponseError(response, input, payload) {
   const rawUrl =
     typeof input === "string" || input instanceof URL
       ? String(input)
       : String(input?.url || "");
-  let upstreamUrl = "/pgj/index.on";
+  let upstreamUrl = "";
   try {
     upstreamUrl = new URL(rawUrl).pathname;
   } catch {
-    // Keep the fixed court warmup path without retaining a malformed URL.
+    // Do not retain malformed or query-bearing request URLs.
   }
   const error = new Error(
-    `Court Auction search page returned HTTP ${response.status}`,
+    `Court Auction request returned HTTP ${response.status}`,
   );
   error.code = "UPSTREAM_ERROR";
   error.statusCode = response.status;
   error.upstreamUrl = upstreamUrl;
+  error.upstreamMessage = responsePayloadMessage(payload);
+  return error;
+}
+
+function createWarmupServerError(response, input, payload) {
+  const error = createHttpResponseError(response, input, payload);
+  error.message = `Court Auction search page returned HTTP ${response.status}`;
   return error;
 }
 
@@ -285,21 +301,24 @@ function createLiveSource(config, options = {}) {
     pacer.run(async () => {
       const response = await nativeFetch(...args);
       if (response?.ok === false && typeof response.clone === "function") {
+        let payload = null;
+        let text = "";
         try {
-          const payload = await response.clone().json();
-          if (blockedPayload(payload)) {
-            const error = new Error("Court Auction HTTP response reported BLOCKED");
-            error.code = "BLOCKED";
-            error.upstreamPayload = payload;
-            throw error;
-          }
-        } catch (error) {
-          if (isBlockedError(error)) throw error;
-          // A non-JSON HTTP error is handled by the package as an upstream error.
+          text = await response.clone().text();
+          payload = JSON.parse(text);
+        } catch {
+          // Non-JSON bodies are intentionally discarded from diagnostics.
+        }
+        if (blockedPayload(payload) || blockedPayload(text)) {
+          const error = new Error("Court Auction HTTP response reported BLOCKED");
+          error.code = "BLOCKED";
+          if (payload) error.upstreamPayload = payload;
+          throw error;
         }
         if (isWarmupServerFailure(response, args[0], args[1])) {
-          throw createWarmupServerError(response, args[0]);
+          throw createWarmupServerError(response, args[0], payload);
         }
+        throw createHttpResponseError(response, args[0], payload);
       }
       return response;
     });
@@ -401,8 +420,19 @@ function createLiveSource(config, options = {}) {
     } catch (error) {
       if (isBlockedError(error)) throw error;
       if (!eligibleForBrowserFallback(error)) throw error;
-      const result = await browserPost(method, params, kind);
-      return { ...result, _fetchMode: "playwright" };
+      try {
+        const result = await browserPost(method, params, kind);
+        return { ...result, _fetchMode: "playwright" };
+      } catch (fallbackError) {
+        if (
+          fallbackError &&
+          typeof fallbackError === "object" &&
+          !fallbackError.cause
+        ) {
+          fallbackError.cause = error;
+        }
+        throw fallbackError;
+      }
     }
   }
 
@@ -654,6 +684,7 @@ module.exports = {
   createFixtureSource,
   createLiveSource,
   createPacer,
+  createHttpResponseError,
   createSaleDateWindow,
   createWarmupServerError,
   delay,
