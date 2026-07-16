@@ -66,6 +66,7 @@ test("GitHub Actions workflow YAML이 유효하고 필수 단계와 최소 권�
     report_complete: "${{ steps.instant_outcome.outputs.complete }}",
     report_blocked: "${{ steps.instant_outcome.outputs.blocked }}",
     report_error_code: "${{ steps.instant_outcome.outputs.error_code }}",
+    report_error_status: "${{ steps.instant_outcome.outputs.error_status }}",
     report_result: "${{ steps.instant_outcome.outputs.result }}",
   });
   assert.deepEqual(deploy.permissions, {
@@ -114,6 +115,8 @@ test("GitHub Actions workflow YAML이 유효하고 필수 단계와 최소 권�
   assert.match(finishScript, /DEPLOY_RESULT/u);
   assert.match(finishScript, /REPORT_COMPLETE/u);
   assert.match(finishScript, /REPORT_BLOCKED/u);
+  assert.match(finishScript, /REPORT_ERROR_STATUS/u);
+  assert.match(finishScript, /HTTP \$\{REPORT_ERROR_STATUS\}/u);
   assert.match(finishScript, /state_unavailable/u);
   assert.match(finishScript, /uncertain_today/u);
   assert.ok(

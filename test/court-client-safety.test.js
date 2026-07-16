@@ -80,6 +80,145 @@ test("일반 페이지 실패는 30초 후 정확히 한 번만 재시도한다"
   assert.deepEqual(result.completeness.failedPages, []);
 });
 
+test("첫 페이지 HTTP 500 진단을 보존하고 한 번만 재시도한다", async () => {
+  let searchCalls = 0;
+  const sleeps = [];
+  const source = {
+    async getCourtCodes() {
+      return {
+        items: [{ code: "B000281", branchName: "홍성지원" }],
+      };
+    },
+    async searchProperties() {
+      searchCalls += 1;
+      const error = new Error(
+        "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
+      );
+      error.code = "UPSTREAM_ERROR";
+      error.statusCode = 500;
+      error.upstreamUrl =
+        "https://www.courtauction.go.kr/pgj/pgjsearch/searchControllerMain.on?token=do-not-store";
+      error.upstreamMessage = "Temporary\nserver failure";
+      throw error;
+    },
+  };
+  const result = await collectAllProperties({
+    source,
+    config: config(),
+    sleep: async (ms) => sleeps.push(ms),
+    now: () => new Date("2026-07-17T00:00:00.000Z"),
+  });
+
+  assert.equal(searchCalls, 2);
+  assert.deepEqual(sleeps, [30000]);
+  assert.equal(result.completeness.complete, false);
+  assert.equal(result.completeness.countsKnown, false);
+  assert.equal(result.completeness.errorCode, "UPSTREAM_ERROR");
+  assert.equal(result.completeness.errorStatusCode, 500);
+  assert.equal(
+    result.completeness.upstreamUrl,
+    "/pgj/pgjsearch/searchControllerMain.on",
+  );
+  assert.equal(
+    result.completeness.upstreamMessage,
+    "Temporary server failure",
+  );
+});
+
+test("HTTP 500은 브라우저 fallback으로 확대하지 않는다", async () => {
+  let searchCalls = 0;
+  let browserClients = 0;
+  class HttpClient {}
+  class BrowserClient {
+    constructor() {
+      browserClients += 1;
+    }
+    async warmup() {}
+    async close() {}
+  }
+  const library = {
+    CourtAuctionHttpClient: HttpClient,
+    CourtAuctionPlaywrightClient: BrowserClient,
+    async searchProperties() {
+      searchCalls += 1;
+      const error = new Error("upstream 500");
+      error.code = "UPSTREAM_ERROR";
+      error.statusCode = 500;
+      throw error;
+    },
+  };
+  const source = createLiveSource(config(), {
+    library,
+    pacer: {
+      run: async (operation) => operation(),
+      wait: async () => {},
+    },
+  });
+
+  await assert.rejects(
+    () =>
+      source.searchProperties({
+        courtCode: "B000281",
+        usage: { large: "건물" },
+        page: 1,
+        pageSize: 100,
+      }),
+    (error) =>
+      error.code === "UPSTREAM_ERROR" && error.statusCode === 500,
+  );
+  assert.equal(searchCalls, 1);
+  assert.equal(browserClients, 0);
+  await source.close();
+});
+
+test("일반 HTTP 400만 브라우저 fallback을 정확히 한 번 사용한다", async () => {
+  let searchCalls = 0;
+  let browserClients = 0;
+  class HttpClient {}
+  class BrowserClient {
+    constructor() {
+      browserClients += 1;
+    }
+    async warmup() {}
+    async close() {}
+  }
+  const library = {
+    CourtAuctionHttpClient: HttpClient,
+    CourtAuctionPlaywrightClient: BrowserClient,
+    async searchProperties({ client }) {
+      searchCalls += 1;
+      if (client instanceof BrowserClient) {
+        return {
+          page: { totalCount: 0, pageSize: 100 },
+          items: [],
+        };
+      }
+      const error = new Error("generic WAF 400");
+      error.code = "UPSTREAM_ERROR";
+      error.statusCode = 400;
+      throw error;
+    },
+  };
+  const source = createLiveSource(config(), {
+    library,
+    pacer: {
+      run: async (operation) => operation(),
+      wait: async () => {},
+    },
+  });
+
+  const result = await source.searchProperties({
+    courtCode: "B000281",
+    usage: { large: "건물" },
+    page: 1,
+    pageSize: 100,
+  });
+  assert.equal(result._fetchMode, "playwright");
+  assert.equal(searchCalls, 2);
+  assert.equal(browserClients, 1);
+  await source.close();
+});
+
 test("10페이지를 넘는 검색은 추가 호출 없이 incomplete가 된다", async () => {
   const calls = [];
   const source = {

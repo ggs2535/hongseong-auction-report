@@ -28,6 +28,14 @@ function normalizeErrorCode(value) {
     .slice(0, 80);
 }
 
+function normalizeErrorStatusCode(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const status = Number(value);
+  return Number.isInteger(status) && status >= 100 && status <= 599
+    ? status
+    : null;
+}
+
 function isDateOnly(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/u.test(String(value || ""))) return false;
   const [year, month, day] = value.split("-").map(Number);
@@ -244,6 +252,10 @@ function finalizeState(state, options = {}) {
     updateSucceeded && freshReport
       ? normalizeErrorCode(latest?.completeness?.errorCode)
       : "WORKFLOW_FAILED";
+  const errorStatusCode =
+    updateSucceeded && freshReport
+      ? normalizeErrorStatusCode(latest?.completeness?.errorStatusCode)
+      : null;
   const lastResult = blocked
     ? "blocked"
     : complete
@@ -266,6 +278,7 @@ function finalizeState(state, options = {}) {
       complete,
       blocked,
       errorCode,
+      errorStatusCode,
       result: lastResult,
     },
   };
@@ -284,6 +297,7 @@ function writeOutcomeOutputs(filePath, outcome) {
       `complete=${String(outcome.complete)}`,
       `blocked=${String(outcome.blocked)}`,
       `error_code=${outcome.errorCode || ""}`,
+      `error_status=${outcome.errorStatusCode || ""}`,
       `result=${outcome.result}`,
       "",
     ].join("\n"),
@@ -355,6 +369,7 @@ module.exports = {
   isDateOnly,
   isValidLatest,
   normalizeErrorCode,
+  normalizeErrorStatusCode,
   reserveState,
   validateInstantQueryState,
   writeOutcomeOutputs,

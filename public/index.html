@@ -11,7 +11,7 @@
     <title>홍성·예산 주거용 법원경매 보고서</title>
     <link rel="manifest" href="./manifest.webmanifest?v=2">
     <link rel="icon" href="./icon.svg?v=2" type="image/svg+xml">
-    <link rel="stylesheet" href="./style.css?v=2">
+    <link rel="stylesheet" href="./style.css?v=3">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문으로 바로가기</a>
@@ -52,6 +52,29 @@
           <p><strong id="warning-missing">미확인 경매 0건</strong></p>
           <p id="warning-pages">확인 페이지 0/0</p>
           <p id="warning-last-good">마지막 정상 전체조회 기록 없음</p>
+          <div
+            id="warning-error-details"
+            class="alert-diagnostic"
+            aria-label="조회 실패 원인"
+            hidden
+          >
+            <p class="alert-diagnostic-summary">
+              <strong id="warning-error-summary">법원 원본 조회 오류</strong>
+            </p>
+            <details id="warning-error-technical">
+              <summary>오류 상세 보기</summary>
+              <dl>
+                <div>
+                  <dt>오류 메시지</dt>
+                  <dd id="warning-error-message"></dd>
+                </div>
+                <div id="warning-error-path-row" hidden>
+                  <dt>원본 요청 경로</dt>
+                  <dd><code id="warning-error-path"></code></dd>
+                </div>
+              </dl>
+            </details>
+          </div>
           <p class="alert-help">
             아래 목록은 오늘의 부분 수집 결과로 바꾸지 않고 마지막 정상 보고서를
             유지합니다.
@@ -240,6 +263,6 @@
     <!-- REPORT_DATA_START -->
 <script id="report-data" type="application/json">{"schemaVersion":1,"latest":{"generatedAt":"2026-07-16T15:16:39.110Z","reportDate":"2026-07-17","completeness":{"complete":false,"countsKnown":false,"courtCode":"B000281","totalCount":null,"pageSize":100,"expectedPages":0,"fetchedPages":0,"failedPages":[],"fetchedRawCount":0,"fetchedUniqueCount":0,"missingCount":null,"matchedResidentialCount":0,"reviewCount":0,"fetchMode":"http","blocked":false,"errorCode":"UPSTREAM_ERROR","errorMessage":"Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on","startedAt":"2026-07-16T15:15:37.346Z","finishedAt":"2026-07-16T15:16:39.110Z"},"source":{"mode":"live","courtCode":"B000281","courtName":"홍성지원","searchUrl":"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml\u0026pgjId=151F00","readOnly":true}},"display":null,"displaySource":"none","lastGoodGeneratedAt":null,"cacheSafe":false}</script>
 <!-- REPORT_DATA_END -->
-    <script src="./app.js?v=2" defer></script>
+    <script src="./app.js?v=3" defer></script>
   </body>
 </html>

@@ -94,6 +94,56 @@ function errorWithCode(code, message, cause) {
   return error;
 }
 
+function diagnosticText(value, maxLength = 500) {
+  if (value === null || value === undefined || value === "") return null;
+  const text = String(value)
+    .replace(/[\u0000-\u001f\u007f]/gu, " ")
+    .replace(/\s+/gu, " ")
+    .trim();
+  return text ? text.slice(0, maxLength) : null;
+}
+
+function diagnosticUpstreamPath(value) {
+  const text = diagnosticText(value);
+  if (!text) return null;
+  try {
+    const url = new URL(text, "https://www.courtauction.go.kr");
+    return url.pathname.startsWith("/pgj/") ? url.pathname.slice(0, 500) : null;
+  } catch {
+    return null;
+  }
+}
+
+function errorChainValue(error, key) {
+  const seen = new WeakSet();
+  let current = error;
+  while (current && typeof current === "object") {
+    if (seen.has(current)) return null;
+    seen.add(current);
+    if (current[key] !== null && current[key] !== undefined) {
+      return current[key];
+    }
+    current = current.cause;
+  }
+  return null;
+}
+
+function extractOperationalDiagnostics(error) {
+  const rawStatus = Number(errorChainValue(error, "statusCode"));
+  const errorStatusCode =
+    Number.isInteger(rawStatus) && rawStatus >= 100 && rawStatus <= 599
+      ? rawStatus
+      : null;
+  return {
+    errorStatusCode,
+    upstreamUrl: diagnosticUpstreamPath(errorChainValue(error, "upstreamUrl")),
+    upstreamMessage: diagnosticText(
+      errorChainValue(error, "upstreamMessage"),
+      1000,
+    ),
+  };
+}
+
 function findHongseongCourt(courtsResponse, fragment = "홍성지원") {
   const items = Array.isArray(courtsResponse)
     ? courtsResponse
@@ -341,17 +391,24 @@ function baseCompleteness(startedAt) {
     blocked: false,
     errorCode: null,
     errorMessage: null,
+    errorStatusCode: null,
+    upstreamUrl: null,
+    upstreamMessage: null,
     startedAt,
     finishedAt: "",
   };
 }
 
 function setOperationalError(completeness, error, fallbackCode) {
+  const diagnostics = extractOperationalDiagnostics(error);
   completeness.blocked = isBlockedError(error);
   completeness.errorCode = completeness.blocked
     ? "BLOCKED"
     : error?.code || fallbackCode;
   completeness.errorMessage = String(error?.message || error || "알 수 없는 오류");
+  completeness.errorStatusCode = diagnostics.errorStatusCode;
+  completeness.upstreamUrl = diagnostics.upstreamUrl;
+  completeness.upstreamMessage = diagnostics.upstreamMessage;
 }
 
 async function fetchPageWithRetry(source, params, config, sleep) {
@@ -517,6 +574,7 @@ module.exports = {
   createLiveSource,
   createPacer,
   delay,
+  extractOperationalDiagnostics,
   findHongseongCourt,
   isBlockedError,
   randomDelayMs,
