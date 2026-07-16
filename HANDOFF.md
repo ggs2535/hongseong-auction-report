@@ -2,7 +2,7 @@
 
 이 저장소를 다른 컴퓨터나 다른 Codex가 이어받는 경우 다음 순서로 시작합니다.
 
-## 현재 운영 상태 (2026-07-16)
+## 현재 운영 상태 (2026-07-17)
 
 - GitHub 저장소: <https://github.com/ggs2535/hongseong-auction-report>
 - 공개 보고서: <https://ggs2535.github.io/hongseong-auction-report/>
@@ -12,21 +12,32 @@
 - 즉시 조회 기능 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/1>
 - 최초 즉시 조회 요청: <https://github.com/ggs2535/hongseong-auction-report/issues/2>
 - 최초 즉시 조회 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/runs/29508963985>
+- 반복 확인 요청: <https://github.com/ggs2535/hongseong-auction-report/issues/4>
+- 반복 확인 실행: <https://github.com/ggs2535/hongseong-auction-report/actions/runs/29510276570>
+- 실패 진단 보완 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/5>
+- HTTP 500 조기중단 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/6>
 
 최초 운영 실행에서는 테스트, Chromium 설치, 수집 프로그램, 결과 커밋, Pages 배포가
 모두 성공했습니다. 다만 GitHub 호스팅 실행기에서 법원 초기 화면 탐색이 30초 안에
 끝나지 않아 최신 보고서는 `NETWORK_ERROR`와 `complete=false`로 기록되었습니다.
 2026-07-16의 최초 실제 즉시 조회에서는 소유자 gate, 61개 테스트, durable 예약,
 live 수집, 결과 저장, Pages 배포, 이슈 댓글과 자동 종료가 모두 성공했습니다.
-법원 원본은 `UPSTREAM_ERROR`를 반환해 보고서는 `complete=false`로 정확히
-기록되었습니다. 같은 시각 공식 `https://www.courtauction.go.kr/pgj/index.on`
-화면도 공개 GET 요청에 HTTP 500을 반환했으므로, 현재 증거는 회사 컴퓨터가 아니라
-법원 서비스 측 장애를 가리킵니다. 공개 Pages 자체는 HTTP 200이며 즉시 조회와
-최신 결과 버튼이 모두 배포되어 있습니다.
+두 즉시 조회 모두 법원코드는 정상 확인했으나 첫 목록 요청 전에
+`UPSTREAM_ERROR`, `complete=false`로 끝났습니다. 공식 PGJ151 화면은
+2026-07-17 00:25 KST에 HTTP 200으로 회복됐다가 00:35와 00:40에 다시 HTTP 500을
+반환했습니다. 회복 시점의 공식 XML에서 endpoint와 데이터맵 계약이 기존 수집기와
+같은 것도 확인했습니다. 따라서 현재 증거는 회사 컴퓨터나 요청 형식이 아니라 법원
+서비스의 간헐적 HTTP 500 장애를 가리킵니다.
+
+PR #5부터 HTTP 상태, 원본 `/pgj/` 경로, 원본 메시지를 Actions 요약·휴대폰 댓글·
+붉은 경고에 보존합니다. PR #6부터 warmup GET이 5xx이면 검색 POST와 Playwright를
+실행하지 않고, 기존 정책대로 30초 뒤 한 번만 재확인합니다. 공개 Pages 자체는
+HTTP 200이며 즉시 조회와 최신 결과 버튼이 배포되어 있습니다.
 
 현재 공개 화면에 불완전 수집 경고가 보이는 것은 의도한 안전 동작입니다. 이를 0건의
-정상 조회로 바꾸거나 `last-good`으로 저장하면 안 됩니다. 법원 서비스가 회복되면
-다음 예약 실행 또는 10분 대기 후 새 즉시 조회가 다시 시도합니다. 같은 오류가
+정상 조회로 바꾸거나 `last-good`으로 저장하면 안 됩니다. 00:40 KST 확인에서도
+법원 화면이 500이어서 수정 후 실조회는 의도적으로 실행하지 않았습니다. 법원
+서비스가 회복되면 다음 예약 실행 또는 10분 대기 후 새 즉시 조회가 다시 시도합니다. 같은 오류가
 반복되면 [`docs/cloud-run.md`](docs/cloud-run.md)의 이전 절차를 검토하되, 플랫폼
 이동을 차단 회피 수단으로 사용하지 않습니다.
 
