@@ -144,6 +144,41 @@ function extractOperationalDiagnostics(error) {
   };
 }
 
+function createWarmupServerError(response, input) {
+  const rawUrl =
+    typeof input === "string" || input instanceof URL
+      ? String(input)
+      : String(input?.url || "");
+  let upstreamUrl = "/pgj/index.on";
+  try {
+    upstreamUrl = new URL(rawUrl).pathname;
+  } catch {
+    // Keep the fixed court warmup path without retaining a malformed URL.
+  }
+  const error = new Error(
+    `Court Auction search page returned HTTP ${response.status}`,
+  );
+  error.code = "UPSTREAM_ERROR";
+  error.statusCode = response.status;
+  error.upstreamUrl = upstreamUrl;
+  return error;
+}
+
+function isWarmupServerFailure(response, input, init = {}) {
+  if (!response || response.ok !== false || response.status < 500) return false;
+  const method = String(init?.method || input?.method || "GET").toUpperCase();
+  if (method !== "GET") return false;
+  const rawUrl =
+    typeof input === "string" || input instanceof URL
+      ? String(input)
+      : String(input?.url || "");
+  try {
+    return new URL(rawUrl).pathname === "/pgj/index.on";
+  } catch {
+    return false;
+  }
+}
+
 function findHongseongCourt(courtsResponse, fragment = "홍성지원") {
   const items = Array.isArray(courtsResponse)
     ? courtsResponse
@@ -230,6 +265,9 @@ function createLiveSource(config, options = {}) {
           if (isBlockedError(error)) throw error;
           // A non-JSON HTTP error is handled by the package as an upstream error.
         }
+        if (isWarmupServerFailure(response, args[0], args[1])) {
+          throw createWarmupServerError(response, args[0]);
+        }
       }
       return response;
     });
@@ -279,6 +317,8 @@ function createLiveSource(config, options = {}) {
   }
 
   function eligibleForBrowserFallback(error) {
+    const { errorStatusCode } = extractOperationalDiagnostics(error);
+    if (errorStatusCode !== null && errorStatusCode >= 500) return false;
     return (
       (error?.code === "UPSTREAM_ERROR" && error?.statusCode === 400) ||
       error?.code === "NETWORK_ERROR"
@@ -404,7 +444,10 @@ function setOperationalError(completeness, error, fallbackCode) {
   completeness.blocked = isBlockedError(error);
   completeness.errorCode = completeness.blocked
     ? "BLOCKED"
-    : error?.code || fallbackCode;
+    : diagnostics.errorStatusCode !== null &&
+        diagnostics.errorStatusCode >= 500
+      ? "UPSTREAM_ERROR"
+      : error?.code || fallbackCode;
   completeness.errorMessage = String(error?.message || error || "알 수 없는 오류");
   completeness.errorStatusCode = diagnostics.errorStatusCode;
   completeness.upstreamUrl = diagnostics.upstreamUrl;
@@ -573,9 +616,11 @@ module.exports = {
   createFixtureSource,
   createLiveSource,
   createPacer,
+  createWarmupServerError,
   delay,
   extractOperationalDiagnostics,
   findHongseongCourt,
   isBlockedError,
+  isWarmupServerFailure,
   randomDelayMs,
 };

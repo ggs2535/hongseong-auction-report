@@ -6,6 +6,7 @@ const assert = require("node:assert/strict");
 const {
   collectAllProperties,
   createLiveSource,
+  extractOperationalDiagnostics,
   isBlockedError,
   randomDelayMs,
 } = require("../src/court-client");
@@ -91,14 +92,17 @@ test("첫 페이지 HTTP 500 진단을 보존하고 한 번만 재시도한다",
     },
     async searchProperties() {
       searchCalls += 1;
-      const error = new Error(
+      const upstream = new Error(
         "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
       );
-      error.code = "UPSTREAM_ERROR";
-      error.statusCode = 500;
-      error.upstreamUrl =
+      upstream.code = "UPSTREAM_ERROR";
+      upstream.statusCode = 500;
+      upstream.upstreamUrl =
         "https://www.courtauction.go.kr/pgj/pgjsearch/searchControllerMain.on?token=do-not-store";
-      error.upstreamMessage = "Temporary\nserver failure";
+      upstream.upstreamMessage = "Temporary\nserver failure";
+      const error = new Error("Court Auction network error");
+      error.code = "NETWORK_ERROR";
+      error.cause = upstream;
       throw error;
     },
   };
@@ -167,6 +171,73 @@ test("HTTP 500은 브라우저 fallback으로 확대하지 않는다", async () 
       error.code === "UPSTREAM_ERROR" && error.statusCode === 500,
   );
   assert.equal(searchCalls, 1);
+  assert.equal(browserClients, 0);
+  await source.close();
+});
+
+test("검색 화면 warmup HTTP 500은 POST나 브라우저 fallback 전에 중단한다", async () => {
+  let fetchCalls = 0;
+  let browserClients = 0;
+  class HttpClient {
+    constructor(options) {
+      this.fetchImpl = options.fetchImpl;
+    }
+  }
+  class BrowserClient {
+    constructor() {
+      browserClients += 1;
+    }
+    async warmup() {}
+    async close() {}
+  }
+  const library = {
+    CourtAuctionHttpClient: HttpClient,
+    CourtAuctionPlaywrightClient: BrowserClient,
+    async searchProperties({ client }) {
+      try {
+        await client.fetchImpl(
+          "https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml",
+          { method: "GET" },
+        );
+      } catch (cause) {
+        const error = new Error("Court Auction network error during warmup");
+        error.code = "NETWORK_ERROR";
+        error.cause = cause;
+        throw error;
+      }
+      throw new Error("property POST must not run after warmup HTTP 500");
+    },
+  };
+  const source = createLiveSource(config(), {
+    library,
+    fetchImpl: async () => {
+      fetchCalls += 1;
+      return new Response("", { status: 500 });
+    },
+    pacer: {
+      run: async (operation) => operation(),
+      wait: async () => {},
+    },
+  });
+
+  await assert.rejects(
+    () =>
+      source.searchProperties({
+        courtCode: "B000281",
+        usage: { large: "건물" },
+        page: 1,
+        pageSize: 100,
+      }),
+    (error) => {
+      const diagnostics = extractOperationalDiagnostics(error);
+      return (
+        error.code === "NETWORK_ERROR" &&
+        diagnostics.errorStatusCode === 500 &&
+        diagnostics.upstreamUrl === "/pgj/index.on"
+      );
+    },
+  );
+  assert.equal(fetchCalls, 1);
   assert.equal(browserClients, 0);
   await source.close();
 });
