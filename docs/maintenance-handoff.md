@@ -35,6 +35,7 @@
 8. `.fixture-output/data/latest.json`의 `complete=true`, `missingCount=0`을 확인합니다.
 9. `git diff -- data public`가 비어 있어 fixture가 운영 snapshot을 건드리지 않았는지 봅니다.
 10. live 운영 전 GitHub Actions 권한과 Pages 설정을 확인합니다.
+11. 휴대폰의 즉시 조회 링크는 `ggs2535`로 로그인한 상태에서만 사용합니다.
 
 다른 Codex에게는 다음 요청으로 시작하면 됩니다.
 
@@ -55,6 +56,11 @@
 11. incomplete 실행은 withdrawal 부재 횟수를 변경하지 않습니다.
 12. 특이사항은 원문 근거가 있을 때만 생성합니다.
 13. 보고서에서 문서 미검증 고지를 제거하지 않습니다.
+14. 즉시 조회는 저장소·actor·triggering actor·이슈 작성자·OWNER 관계·정확한 제목을 모두 확인합니다.
+15. 즉시 조회의 10분 대기시간을 줄이거나 당일 `BLOCKED` 금지를 우회하지 않습니다.
+16. GitHub 토큰을 HTML, JavaScript, service worker, localStorage에 저장하지 않습니다.
+17. `data/instant-query-state.json`은 실제 호출 전에 커밋하며, 손상 시 fail-closed합니다.
+18. 승인되지 않은 issue workflow는 정상 수집과 다른 concurrency 그룹으로 격리합니다.
 
 ## 4. 파일 지도
 
@@ -71,6 +77,9 @@
 | `src/render.js` | self-contained HTML과 PWA cache 버전 생성 |
 | `public/app.js` | 필터, 정렬, table/card 렌더, 복사 |
 | `src/actions-summary.js` | Actions summary 생성 |
+| `src/instant-query-policy.js` | 즉시 조회 10분 대기와 당일 BLOCKED 재실행 금지 |
+| `src/instant-query-state.js` | 실제 호출 전 durable 예약과 complete/blocked/incomplete 결과 기록 |
+| `data/instant-query-state.json` | workflow 실패·취소 후에도 남는 조회 안전 상태 |
 | `.github/workflows/update-auction.yml` | 테스트, live 갱신, 커밋, Pages 배포 |
 | `fixtures/` | 네트워크 없는 개발 시나리오 |
 | `.fixture-output/` | git에서 제외되는 fixture 전용 상태와 보고서 |
@@ -203,6 +212,8 @@ Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 6. `CALL_LIMIT`이면 억지로 상한을 늘리지 말고 incomplete를 유지합니다.
 7. `BLOCKED`이면 반복 실행하지 않습니다.
 8. UI 문제는 `public/index.html` 내장 JSON과 `public/app.js`를 분리해 확인합니다.
+9. 즉시 조회가 시작되지 않으면 이슈 제목이 정확히 `[즉시조회]`인지, 작성자와 로그인 계정이 `ggs2535`인지 확인합니다.
+10. 즉시 조회 이슈의 자동 댓글에서 대기시간 또는 당일 차단 거부 사유를 확인합니다.
 
 ## 12. 테스트 승인 기준
 
@@ -225,6 +236,11 @@ npm run check
 - mixed-use와 주소 미상은 review
 - last-good이 incomplete 실행에서 byte-for-byte 유지
 - workflow YAML parser 통과
+- 외부 사용자·fork·유사 제목의 즉시 조회 workflow가 gate에서 skipped
+- 즉시 조회 10분 대기와 당일 BLOCKED 재실행 금지
+- 실제 호출 전 durable 예약 커밋과 비정상 종료 후 당일 재조회 금지
+- complete/blocked/incomplete 결과 댓글이 서로 구분됨
+- 공개 HTML/JS/service worker에 GitHub 토큰이 없음
 - `npm ls`에 rebrowser가 없음
 
 ## 13. 알려진 제약과 다음 유지보수 후보

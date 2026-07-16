@@ -598,9 +598,94 @@
     });
   }
 
+  function payloadFromHtml(html) {
+    const parsed = new DOMParser().parseFromString(html, "text/html");
+    const dataElement = parsed.getElementById("report-data");
+    if (!dataElement) throw new Error("report-data not found");
+    return JSON.parse(dataElement.textContent || "{}");
+  }
+
+  let refreshInProgress = false;
+  async function checkLatestReport() {
+    if (refreshInProgress) return;
+
+    const button = document.getElementById("refresh-report-button");
+    const status = document.getElementById("instant-query-status");
+    if (!button || !status) return;
+
+    if (!navigator.onLine) {
+      status.textContent =
+        "오프라인에서는 새 결과를 확인할 수 없습니다. 현재 저장된 보고서를 유지합니다.";
+      return;
+    }
+
+    refreshInProgress = true;
+    let navigating = false;
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    button.textContent = "확인 중…";
+    status.textContent = "새로 게시된 결과가 있는지 확인하는 중입니다.";
+
+    try {
+      const url = new URL("./index.html", window.location.href);
+      url.searchParams.set("reportRefresh", String(Date.now()));
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`report refresh failed: ${response.status}`);
+
+      const nextPayload = payloadFromHtml(await response.text());
+      const currentTimestamp = Date.parse(String(latest.generatedAt || ""));
+      const nextTimestamp = Date.parse(
+        String(nextPayload?.latest?.generatedAt || ""),
+      );
+      const hasNewReport =
+        Number.isFinite(nextTimestamp) &&
+        (!Number.isFinite(currentTimestamp) || nextTimestamp > currentTimestamp);
+
+      if (hasNewReport) {
+        navigating = true;
+        status.textContent = "새 결과가 게시되어 화면을 갱신합니다.";
+        const canonicalUrl = new URL("./index.html", window.location.href);
+        canonicalUrl.search = "";
+        canonicalUrl.hash = "";
+        window.setTimeout(() => window.location.replace(canonicalUrl.href), 350);
+        return;
+      }
+
+      status.textContent = `현재 화면이 최신입니다. 마지막 갱신 ${formatTimestamp(
+        latest.generatedAt,
+      )}`;
+    } catch (error) {
+      console.warn("최신 보고서를 확인하지 못했습니다.", error);
+      status.textContent =
+        "최신 결과를 확인하지 못했습니다. 인터넷 연결을 확인한 뒤 다시 눌러 주세요.";
+    } finally {
+      if (!navigating) {
+        refreshInProgress = false;
+        button.disabled = false;
+        button.removeAttribute("aria-busy");
+        button.textContent = "최신 결과 확인";
+      }
+    }
+  }
+
+  function installInstantQueryControls() {
+    const requestLink = document.getElementById("instant-query-link");
+    const refreshButton = document.getElementById("refresh-report-button");
+    const status = document.getElementById("instant-query-status");
+
+    requestLink?.addEventListener("click", () => {
+      if (status) {
+        status.textContent =
+          "GitHub 요청 화면에서 Submit new issue를 누르세요. 완료 댓글 알림 후 이 화면에서 최신 결과를 확인할 수 있습니다.";
+      }
+    });
+    refreshButton?.addEventListener("click", checkLatestReport);
+  }
+
   updateSummary();
   installFilters();
   installCopyHandler();
+  installInstantQueryControls();
   renderItems();
   renderReviewItems();
   updateNetworkStatus();

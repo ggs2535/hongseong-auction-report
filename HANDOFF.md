@@ -22,6 +22,15 @@
 않을 수 있습니다. `npx playwright ...` 대신
 `node node_modules/playwright/cli.js ...`를 사용합니다.
 
+휴대폰의 **즉시 조회 요청**은 공개 페이지에서 토큰을 사용하지 않습니다.
+`ggs2535/hongseong-auction-report`에서 `ggs2535` 소유자가 정확히
+`[즉시조회]` 제목으로 새 이슈를 만든 경우에만 workflow gate가 열립니다. 실행 완료
+또는 안전 정책 거부 결과는 이슈 댓글에 기록되고 요청 이슈는 자동으로 닫힙니다.
+`src/instant-query-policy.js`의 10분 대기와 당일 `BLOCKED` 재실행 금지를 제거하지
+마세요. `data/instant-query-state.json`은 실제 호출 전에 원격 저장소에 먼저
+커밋되는 durable 안전 상태입니다. 손상되거나 누락되면 즉시 조회를 허용하지 않는
+fail-closed 동작을 유지해야 합니다.
+
 1. [전체 유지보수 인수인계서](docs/maintenance-handoff.md)를 끝까지 읽습니다.
 2. `npm ci`
 3. `npm test`
