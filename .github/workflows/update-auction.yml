@@ -80,6 +80,7 @@ jobs:
       report_complete: ${{ steps.instant_outcome.outputs.complete }}
       report_blocked: ${{ steps.instant_outcome.outputs.blocked }}
       report_error_code: ${{ steps.instant_outcome.outputs.error_code }}
+      report_error_status: ${{ steps.instant_outcome.outputs.error_status }}
       report_result: ${{ steps.instant_outcome.outputs.result }}
     steps:
       - name: Check out repository
@@ -230,10 +231,15 @@ jobs:
           REPORT_COMPLETE: ${{ needs.update.outputs.report_complete }}
           REPORT_BLOCKED: ${{ needs.update.outputs.report_blocked }}
           REPORT_ERROR_CODE: ${{ needs.update.outputs.report_error_code }}
+          REPORT_ERROR_STATUS: ${{ needs.update.outputs.report_error_status }}
           REPORT_RESULT: ${{ needs.update.outputs.report_result }}
         run: |
           run_url="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           report_url="https://ggs2535.github.io/hongseong-auction-report/"
+          error_label="${REPORT_ERROR_CODE}"
+          if [[ -n "${REPORT_ERROR_STATUS}" ]]; then
+            error_label="${error_label} (HTTP ${REPORT_ERROR_STATUS})"
+          fi
 
           if [[ "${POLICY_ALLOWED}" != "true" ]]; then
             if [[ "${POLICY_REASON}" == "blocked_today" ]]; then
@@ -249,11 +255,11 @@ jobs:
               body="안전 정책에 따라 이번 즉시 조회 요청을 실행하지 않았습니다."
             fi
           elif [[ "${REPORT_BLOCKED}" == "true" ]]; then
-            body="법원 사이트 차단이 감지되어 전체조회는 완료되지 않았습니다. 배포 상태와 관계없이 오늘은 다시 요청하지 마세요. 오류: ${REPORT_ERROR_CODE} 보고서: ${report_url} 실행 기록: ${run_url}"
+            body="법원 사이트 차단이 감지되어 전체조회는 완료되지 않았습니다. 배포 상태와 관계없이 오늘은 다시 요청하지 마세요. 오류: ${error_label} 보고서: ${report_url} 실행 기록: ${run_url}"
           elif [[ "${UPDATE_RESULT}" == "success" && "${DEPLOY_RESULT}" == "success" && "${REPORT_COMPLETE}" == "true" ]]; then
             body="즉시 전체조회와 보고서 배포가 완료되었습니다. 보고서: ${report_url} 실행 기록: ${run_url}"
           elif [[ "${UPDATE_RESULT}" == "success" && "${DEPLOY_RESULT}" == "success" ]]; then
-            body="보고서는 배포했지만 법원 원본 전체조회는 완료되지 않았습니다. 오류: ${REPORT_ERROR_CODE} 상태: ${REPORT_RESULT} 보고서: ${report_url} 실행 기록: ${run_url}"
+            body="보고서는 배포했지만 법원 원본 전체조회는 완료되지 않았습니다. 오류: ${error_label} 상태: ${REPORT_RESULT} 보고서: ${report_url} 실행 기록: ${run_url}"
           else
             body="즉시 조회 자동화가 완료되지 않았습니다. 실행 기록에서 실패 단계를 확인해 주세요. 실행 기록: ${run_url}"
           fi

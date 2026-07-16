@@ -282,6 +282,62 @@ h3 {
   font-size: 0.88rem;
 }
 
+.alert-diagnostic {
+  margin-top: 0.75rem;
+  padding: 0.75rem 0.8rem;
+  color: #541a1e;
+  background: rgb(255 255 255 / 62%);
+  border: 1px solid rgb(177 39 48 / 24%);
+  border-radius: var(--radius-sm);
+}
+
+.alert-diagnostic-summary {
+  margin: 0;
+  color: var(--red-800);
+  font-size: 0.9rem;
+}
+
+.alert-diagnostic details {
+  margin-top: 0.35rem;
+}
+
+.alert-diagnostic summary {
+  display: flex;
+  min-height: 2.75rem;
+  width: fit-content;
+  align-items: center;
+  color: #743137;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.alert-diagnostic dl {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.25rem 0 0;
+}
+
+.alert-diagnostic dt {
+  margin-bottom: 0.12rem;
+  color: #7c4a4e;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.alert-diagnostic dd {
+  margin: 0;
+  color: #54252a;
+  font-size: 0.76rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.alert-diagnostic code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  word-break: break-word;
+}
+
 .instant-query-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;

@@ -9,6 +9,7 @@ const assert = require("node:assert/strict");
 const {
   finalizeState,
   normalizeErrorCode,
+  normalizeErrorStatusCode,
   reserveState,
   validateInstantQueryState,
   writeOutcomeOutputs,
@@ -90,6 +91,7 @@ test("새 완전 보고서는 complete 결과로 durable 상태에 기록한다"
     complete: true,
     blocked: false,
     errorCode: null,
+    errorStatusCode: null,
     result: "complete",
   });
 });
@@ -121,6 +123,7 @@ test("incomplete와 workflow 실패를 완료 조회로 보고하지 않는다",
         complete: false,
         blocked: false,
         errorCode: "NETWORK_ERROR",
+        errorStatusCode: 503,
       },
     }),
     updateOutcome: "success",
@@ -128,6 +131,7 @@ test("incomplete와 workflow 실패를 완료 조회로 보고하지 않는다",
   });
   assert.equal(incomplete.state.lastResult, "incomplete");
   assert.equal(incomplete.outcome.errorCode, "NETWORK_ERROR");
+  assert.equal(incomplete.outcome.errorStatusCode, 503);
 
   const failed = finalizeState(reserved, {
     latest: report({ generatedAt: "2026-07-16T11:00:00.000Z" }),
@@ -140,6 +144,7 @@ test("incomplete와 workflow 실패를 완료 조회로 보고하지 않는다",
     complete: false,
     blocked: false,
     errorCode: "WORKFLOW_FAILED",
+    errorStatusCode: null,
     result: "failed",
   });
 });
@@ -225,6 +230,9 @@ test("원격 오류 코드는 GitHub output 줄을 주입할 수 없게 정규�
     normalizeErrorCode("BLOCKED\ncomplete=true"),
     "BLOCKED_complete_true",
   );
+  assert.equal(normalizeErrorStatusCode(500), 500);
+  assert.equal(normalizeErrorStatusCode("400"), 400);
+  assert.equal(normalizeErrorStatusCode("500\ncomplete=true"), null);
 });
 
 test("완전성 outcome을 GitHub job output으로 기록한다", (t) => {
@@ -237,10 +245,11 @@ test("완전성 outcome을 GitHub job output으로 기록한다", (t) => {
     complete: false,
     blocked: true,
     errorCode: "BLOCKED",
+    errorStatusCode: 403,
     result: "blocked",
   });
   assert.equal(
     fs.readFileSync(outputPath, "utf8"),
-    "fresh=true\ncomplete=false\nblocked=true\nerror_code=BLOCKED\nresult=blocked\n",
+    "fresh=true\ncomplete=false\nblocked=true\nerror_code=BLOCKED\nerror_status=403\nresult=blocked\n",
   );
 });

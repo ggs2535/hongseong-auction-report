@@ -17,6 +17,107 @@
     "PRICE_DOWN",
     "FAILED_BID_INCREMENT",
   ]);
+  const FAILURE_LABELS = {
+    BLOCKED: "법원 사이트 접근 제한",
+    IP_BLOCKED: "법원 사이트 접근 제한",
+    UPSTREAM_ERROR: "법원 서버 오류",
+    HTTP_ERROR: "법원 서버 오류",
+    NETWORK_ERROR: "법원 사이트 연결 오류",
+    TIMEOUT: "법원 사이트 응답 시간 초과",
+    COURT_NOT_FOUND: "홍성지원 정보 확인 실패",
+    INVALID_PAGE_META: "법원 응답 건수 확인 실패",
+    CALL_LIMIT: "안전 호출 한도 도달",
+    CALL_LIMIT_EXCEEDED: "안전 호출 한도 도달",
+    PAGE_FETCH_FAILED: "일부 페이지 조회 실패",
+  };
+
+  function extractHttpStatus(completeness, message) {
+    const explicit = Number(
+      completeness?.errorStatusCode ??
+        completeness?.httpStatus ??
+        completeness?.statusCode,
+    );
+    if (Number.isInteger(explicit) && explicit >= 100 && explicit <= 599) {
+      return String(explicit);
+    }
+
+    const match =
+      String(message || "").match(
+        /\bHTTP(?:\s+(?:error|status|상태))?\s*[:=]?\s*(\d{3})\b/iu,
+      ) ||
+      String(message || "").match(
+        /\bstatus(?:Code)?\s*[:=]\s*(\d{3})\b/iu,
+      );
+    if (!match) return "";
+    const status = Number(match[1]);
+    return status >= 100 && status <= 599 ? String(status) : "";
+  }
+
+  function normalizeOriginalPath(value) {
+    const text = String(value || "")
+      .trim()
+      .replace(/[.,;]+$/u, "");
+    if (!text) return "";
+    try {
+      const url = new URL(text, "https://www.courtauction.go.kr");
+      return url.pathname.startsWith("/pgj/") ? url.pathname : "";
+    } catch {
+      return "";
+    }
+  }
+
+  function extractOriginalPath(completeness, message) {
+    const explicit = [
+      completeness?.upstreamUrl,
+      completeness?.errorPath,
+      completeness?.requestPath,
+      completeness?.sourcePath,
+    ].find((value) => String(value || "").trim());
+    if (explicit) return normalizeOriginalPath(explicit);
+
+    const text = String(message || "");
+    const urlMatch = text.match(/https?:\/\/[^\s"'<>]+/iu);
+    if (urlMatch) {
+      const fromUrl = normalizeOriginalPath(urlMatch[0]);
+      if (fromUrl) return fromUrl;
+    }
+
+    const pathMatch =
+      text.match(/(?:for|at|path)\s+(\/[^\s"'<>)]*)/iu) ||
+      text.match(/(\/pgj\/[^\s"'<>)]*)/iu);
+    return pathMatch ? normalizeOriginalPath(pathMatch[1]) : "";
+  }
+
+  function buildFailureDiagnostic(completeness) {
+    const errorMessage = String(completeness?.errorMessage || "").trim();
+    const upstreamMessage = String(completeness?.upstreamMessage || "").trim();
+    const message = [...new Set([upstreamMessage, errorMessage].filter(Boolean))]
+      .join(" · ");
+    const code = String(
+      completeness?.errorCode || (completeness?.blocked ? "BLOCKED" : ""),
+    )
+      .trim()
+      .toUpperCase();
+    const label =
+      FAILURE_LABELS[code] ||
+      (completeness?.blocked
+        ? FAILURE_LABELS.BLOCKED
+        : "법원 원본 조회 오류");
+    const httpStatus = extractHttpStatus(completeness, message);
+    const summary = [
+      label,
+      httpStatus ? `HTTP ${httpStatus}` : "",
+      code,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+
+    return {
+      summary,
+      message: message || "상세 오류 메시지가 제공되지 않았습니다.",
+      originalPath: extractOriginalPath(completeness, message),
+    };
+  }
 
   function readPayload() {
     const element = document.getElementById("report-data");
@@ -426,8 +527,12 @@
     document.body.dataset.reportState = complete ? "complete" : "incomplete";
 
     const warning = document.getElementById("incomplete-warning");
+    const diagnosticElement = document.getElementById("warning-error-details");
+    const errorPathRow = document.getElementById("warning-error-path-row");
     warning.hidden = complete;
+    diagnosticElement.hidden = complete;
     if (!complete) {
+      const diagnostic = buildFailureDiagnostic(completeness);
       setText(
         "warning-missing",
         `미확인 경매 ${formatCount(completeness.missingCount)}`,
@@ -442,6 +547,10 @@
           ? `마지막 정상 전체조회 ${formatTimestamp(payload.lastGoodGeneratedAt)}`
           : "마지막 정상 전체조회 기록 없음",
       );
+      setText("warning-error-summary", diagnostic.summary);
+      setText("warning-error-message", diagnostic.message);
+      setText("warning-error-path", diagnostic.originalPath);
+      errorPathRow.hidden = !diagnostic.originalPath;
     }
 
     const fixtureMode = latest?.source?.mode === "fixture";
