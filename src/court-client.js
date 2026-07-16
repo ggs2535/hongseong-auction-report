@@ -8,6 +8,7 @@ const {
   calculateTotalPages,
   mergePageResults,
 } = require("./pagination");
+const { dateInTimezone } = require("./storage");
 
 function delay(ms) {
   if (!Number.isFinite(ms) || ms <= 0) return Promise.resolve();
@@ -16,6 +17,37 @@ function delay(ms) {
 
 function randomDelayMs(minDelayMs, jitterMs, random = Math.random) {
   return Math.max(0, minDelayMs) + Math.floor(random() * (Math.max(0, jitterMs) + 1));
+}
+
+function addDaysToDateOnly(value, days) {
+  const match = String(value || "").match(
+    /^(\d{4})-(\d{2})-(\d{2})$/u,
+  );
+  if (!match || !Number.isInteger(days)) {
+    throw new TypeError("date and days must be valid");
+  }
+  const date = new Date(
+    Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]) + days),
+  );
+  return date.toISOString().slice(0, 10);
+}
+
+function createSaleDateWindow(
+  date,
+  timezone = "Asia/Seoul",
+  windowDays = 14,
+) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
+    throw new TypeError("date must be valid");
+  }
+  if (!Number.isInteger(windowDays) || windowDays < 0 || windowDays > 14) {
+    throw new TypeError("windowDays must be an integer from 0 to 14");
+  }
+  const fromDate = dateInTimezone(date, timezone);
+  return {
+    from: fromDate.replaceAll("-", ""),
+    to: addDaysToDateOnly(fromDate, windowDays).replaceAll("-", ""),
+  };
 }
 
 function createPacer(options = {}) {
@@ -479,8 +511,13 @@ async function collectAllProperties(options) {
   const { source, config } = options;
   const sleep = options.sleep || delay;
   const now = options.now || (() => new Date());
-  const startedAt = now().toISOString();
+  const startedDate = now();
+  const startedAt = startedDate.toISOString();
   const completeness = baseCompleteness(startedAt);
+  const saleDate = createSaleDateWindow(
+    startedDate,
+    config.timezone || "Asia/Seoul",
+  );
   const pageResults = [];
   const successfulPages = [];
   const fetchModes = [];
@@ -501,6 +538,7 @@ async function collectAllProperties(options) {
     usage: { large: "건물" },
     page,
     pageSize: config.pageSize,
+    saleDate,
     includeRaw: true,
     fallback: false,
     fallbackOnBlocked: false,
@@ -616,6 +654,7 @@ module.exports = {
   createFixtureSource,
   createLiveSource,
   createPacer,
+  createSaleDateWindow,
   createWarmupServerError,
   delay,
   extractOperationalDiagnostics,

@@ -6,6 +6,7 @@ const assert = require("node:assert/strict");
 const {
   collectAllProperties,
   createLiveSource,
+  createSaleDateWindow,
   extractOperationalDiagnostics,
   isBlockedError,
   randomDelayMs,
@@ -42,6 +43,20 @@ function rawProperty(index) {
 test("요청 지연 난수는 3~5초 범위를 벗어나지 않는다", () => {
   assert.equal(randomDelayMs(3000, 2000, () => 0), 3000);
   assert.equal(randomDelayMs(3000, 2000, () => 0.999999), 5000);
+});
+
+test("법원 필수 검색기간은 KST 오늘부터 14일 뒤까지다", () => {
+  assert.deepEqual(
+    createSaleDateWindow(new Date("2026-07-16T15:30:00.000Z")),
+    {
+      from: "20260717",
+      to: "20260731",
+    },
+  );
+  assert.throws(
+    () => createSaleDateWindow(new Date("2026-07-16T15:30:00.000Z"), "Asia/Seoul", 15),
+    /0 to 14/u,
+  );
 });
 
 test("일반 페이지 실패는 30초 후 정확히 한 번만 재시도한다", async () => {
