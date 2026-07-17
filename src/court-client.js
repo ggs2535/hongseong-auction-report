@@ -9,6 +9,10 @@ const {
   mergePageResults,
 } = require("./pagination");
 const { dateInTimezone } = require("./storage");
+const {
+  submitPropertySearchUi,
+  submitPropertySearchUiPage,
+} = require("./court-ui-search");
 
 function delay(ms) {
   if (!Number.isFinite(ms) || ms <= 0) return Promise.resolve();
@@ -346,6 +350,7 @@ function createLiveSource(config, options = {}) {
   let playwrightClient = null;
   let listTransportCalls = 0;
   let detailTransportCalls = 0;
+  let propertySearchUiReady = false;
 
   function consumeBudget(kind) {
     if (kind === "list") {
@@ -386,25 +391,99 @@ function createLiveSource(config, options = {}) {
     return playwrightClient;
   }
 
+  async function normalizePropertySearchPayload(params, payload) {
+    return library.searchProperties({
+      ...params,
+      client: { postJson: async () => payload },
+      fallback: false,
+      fallbackOnBlocked: false,
+    });
+  }
+
   async function browserPost(method, params, kind) {
-    consumeBudget(kind);
     const client = getPlaywrightClient();
     // Warmup navigation and POST are separated by the same global safety pacer.
     await pacer.run(() => client.warmup(method === "searchProperties" ? "propertySearch" : "caseDetail"));
     await pacer.wait();
-    const result =
-      method === "searchProperties"
-        ? await library.searchProperties({
-            ...params,
-            client,
-            fallback: false,
-            fallbackOnBlocked: false,
-          })
-        : await library.getCaseByCaseNumber({ ...params, client });
-    return assertNotBlocked(result);
+
+    if (method === "searchProperties" && propertySearchUiReady) {
+      consumeBudget(kind);
+      try {
+        const uiResult = await submitPropertySearchUiPage(
+          client.page,
+          params.page,
+          config.timeoutMs,
+        );
+        return assertNotBlocked(
+          await normalizePropertySearchPayload(params, uiResult.payload),
+        );
+      } catch (error) {
+        propertySearchUiReady = false;
+        throw error;
+      }
+    }
+
+    if (
+      method === "searchProperties" &&
+      !propertySearchUiReady &&
+      client.page &&
+      typeof client.page.locator === "function"
+    ) {
+      if (Number(params.page) !== 1) {
+        const error = new Error(
+          "Court UI fallback must start from property search page 1",
+        );
+        error.code = "UI_PAGINATION_MISMATCH";
+        throw error;
+      }
+      consumeBudget(kind);
+      const uiResult = await submitPropertySearchUi(client.page, {
+        courtName: params.courtName || config.courtNameFragment,
+        courtCode: params.courtCode,
+        usageLarge: params.usage?.large,
+        saleDate: params.saleDate,
+        timeoutMs: config.timeoutMs,
+      });
+      assertNotBlocked(uiResult.payload);
+      propertySearchUiReady = true;
+      return assertNotBlocked(
+        await normalizePropertySearchPayload(params, uiResult.payload),
+      );
+    }
+
+    if (method === "searchProperties") {
+      const error = new Error(
+        "Court UI fallback is unavailable; synthetic browser POST is disabled",
+      );
+      error.code = "UI_UNAVAILABLE";
+      throw error;
+    }
+
+    consumeBudget(kind);
+    try {
+      const result =
+        method === "searchProperties"
+          ? await library.searchProperties({
+              ...params,
+              client,
+              fallback: false,
+              fallbackOnBlocked: false,
+            })
+          : await library.getCaseByCaseNumber({ ...params, client });
+      return assertNotBlocked(result);
+    } catch (error) {
+      if (method === "searchProperties") {
+        propertySearchUiReady = false;
+      }
+      throw error;
+    }
   }
 
   async function withControlledFallback(method, params, client, kind) {
+    if (method === "searchProperties" && propertySearchUiReady) {
+      const result = await browserPost(method, params, kind);
+      return { ...result, _fetchMode: "playwright" };
+    }
     consumeBudget(kind);
     try {
       const result =
@@ -470,6 +549,8 @@ function createLiveSource(config, options = {}) {
     },
     async close() {
       if (playwrightClient?.close) await playwrightClient.close().catch(() => {});
+      playwrightClient = null;
+      propertySearchUiReady = false;
     },
   };
 }
@@ -522,7 +603,13 @@ async function fetchPageWithRetry(source, params, config, sleep) {
   } catch (error) {
     if (
       isBlockedError(error) ||
-      ["CALL_LIMIT", "BUDGET_EXCEEDED"].includes(error?.code)
+      [
+        "CALL_LIMIT",
+        "BUDGET_EXCEEDED",
+        "UI_CONTRACT_MISMATCH",
+        "UI_PAGINATION_MISMATCH",
+        "UI_UNAVAILABLE",
+      ].includes(error?.code)
     ) {
       throw error;
     }
@@ -565,6 +652,7 @@ async function collectAllProperties(options) {
 
   const makeParams = (page) => ({
     courtCode: court.code,
+    courtName: court.branchName || court.name || config.courtNameFragment,
     usage: { large: "건물" },
     page,
     pageSize: config.pageSize,
