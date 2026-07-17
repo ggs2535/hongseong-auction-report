@@ -1,11 +1,11 @@
 "use strict";
 
 const CACHE_PREFIX = "hongseong-auction-report-";
-const STATIC_CACHE_NAME = `${CACHE_PREFIX}static-v3`;
+const STATIC_CACHE_NAME = `${CACHE_PREFIX}static-v4`;
 const REPORT_CACHE_NAME = `${CACHE_PREFIX}report`;
 const STATIC_ASSETS = [
-  "./app.js?v=3",
-  "./style.css?v=3",
+  "./app.js?v=4",
+  "./style.css?v=4",
   "./manifest.webmanifest?v=2",
   "./icon.svg?v=2",
 ];
