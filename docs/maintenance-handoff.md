@@ -249,6 +249,8 @@ Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 4. `COURT_NOT_FOUND`이면 court response fixture와 live name/branchName을 확인합니다. 코드를 하드코딩하지 않습니다.
 5. `INVALID_PAGE_META`이면 패키지 normalize response를 확인합니다.
 6. `CALL_LIMIT`이면 억지로 상한을 늘리지 말고 incomplete를 유지합니다.
+   공식 UI fallback은 첫 10건 응답 후 `페이지당 40`으로 전환해야 하며, 직접 HTTP의
+   정책값 `pageSize:100`과 구분합니다. 크기 변경 POST도 호출 예산 1회로 계산합니다.
 7. `BLOCKED`이면 반복 실행하지 않습니다.
 8. UI 문제는 `public/index.html` 내장 JSON과 `public/app.js`를 분리해 확인합니다.
 9. 즉시 조회가 시작되지 않으면 이슈 제목이 정확히 `[즉시조회]`인지, 작성자와 로그인 계정이 `ggs2535`인지 확인합니다.

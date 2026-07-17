@@ -10,8 +10,10 @@ const {
 } = require("./pagination");
 const { dateInTimezone } = require("./storage");
 const {
+  PROPERTY_SEARCH_PAGE_SIZE,
   submitPropertySearchUi,
   submitPropertySearchUiPage,
+  submitPropertySearchUiPageSize,
 } = require("./court-ui-search");
 
 function delay(ms) {
@@ -351,6 +353,7 @@ function createLiveSource(config, options = {}) {
   let listTransportCalls = 0;
   let detailTransportCalls = 0;
   let propertySearchUiReady = false;
+  let propertySearchUiRequestBody = null;
 
   function consumeBudget(kind) {
     if (kind === "list") {
@@ -413,12 +416,15 @@ function createLiveSource(config, options = {}) {
           client.page,
           params.page,
           config.timeoutMs,
+          propertySearchUiRequestBody,
         );
+        propertySearchUiRequestBody = uiResult.requestBody;
         return assertNotBlocked(
           await normalizePropertySearchPayload(params, uiResult.payload),
         );
       } catch (error) {
         propertySearchUiReady = false;
+        propertySearchUiRequestBody = null;
         throw error;
       }
     }
@@ -437,18 +443,37 @@ function createLiveSource(config, options = {}) {
         throw error;
       }
       consumeBudget(kind);
-      const uiResult = await submitPropertySearchUi(client.page, {
+      const uiOptions = {
         courtName: params.courtName || config.courtNameFragment,
         courtCode: params.courtCode,
         usageLarge: params.usage?.large,
         saleDate: params.saleDate,
         timeoutMs: config.timeoutMs,
-      });
+      };
+      let uiResult = await submitPropertySearchUi(client.page, uiOptions);
       assertNotBlocked(uiResult.payload);
-      propertySearchUiReady = true;
-      return assertNotBlocked(
+      let normalized = assertNotBlocked(
         await normalizePropertySearchPayload(params, uiResult.payload),
       );
+      if (
+        Number(normalized.page?.totalCount) >
+          Number(normalized.page?.pageSize) &&
+        Number(normalized.page?.pageSize) !== PROPERTY_SEARCH_PAGE_SIZE
+      ) {
+        consumeBudget(kind);
+        await pacer.wait();
+        uiResult = await submitPropertySearchUiPageSize(client.page, {
+          ...uiOptions,
+          pageSize: PROPERTY_SEARCH_PAGE_SIZE,
+        });
+        assertNotBlocked(uiResult.payload);
+        normalized = assertNotBlocked(
+          await normalizePropertySearchPayload(params, uiResult.payload),
+        );
+      }
+      propertySearchUiRequestBody = uiResult.requestBody;
+      propertySearchUiReady = true;
+      return normalized;
     }
 
     if (method === "searchProperties") {
@@ -474,6 +499,7 @@ function createLiveSource(config, options = {}) {
     } catch (error) {
       if (method === "searchProperties") {
         propertySearchUiReady = false;
+        propertySearchUiRequestBody = null;
       }
       throw error;
     }
@@ -551,6 +577,7 @@ function createLiveSource(config, options = {}) {
       if (playwrightClient?.close) await playwrightClient.close().catch(() => {});
       playwrightClient = null;
       propertySearchUiReady = false;
+      propertySearchUiRequestBody = null;
     },
   };
 }

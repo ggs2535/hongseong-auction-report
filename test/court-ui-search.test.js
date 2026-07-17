@@ -12,6 +12,7 @@ const {
   PROPERTY_SEARCH_PATH,
   submitPropertySearchUi,
   submitPropertySearchUiPage,
+  submitPropertySearchUiPageSize,
 } = require("../src/court-ui-search");
 
 function searchParams(page = 1, pageSize = 100) {
@@ -93,7 +94,7 @@ function fakeUiPage({
             dma_pageInfo: {
               pageNo: spec.body.dma_pageInfo.pageNo,
               pageSize: spec.body.dma_pageInfo.pageSize,
-              totalCnt: 0,
+              totalCnt: spec.totalCount ?? 0,
               totalYn: "Y",
             },
             dlt_srchResult: [],
@@ -241,18 +242,89 @@ test("UI fallback preserves a non-JSON HTTP status", async () => {
 });
 
 test("UI pagination clicks the requested official page link", async () => {
+  const pageOneBody = courtLibrary.buildPropertySearchBody(
+    searchParams(1, 10),
+  );
   const pageTwoBody = courtLibrary.buildPropertySearchBody(
     searchParams(2, 10),
   );
   const { page, operations } = fakeUiPage({ body: pageTwoBody });
 
-  const result = await submitPropertySearchUiPage(page, 2, 1000);
+  const result = await submitPropertySearchUiPage(
+    page,
+    2,
+    1000,
+    pageOneBody,
+  );
 
   assert.equal(result.requestBody.dma_pageInfo.pageNo, 2);
   assert.ok(
     operations.some(
       ([operation, selector]) =>
         operation === "click" && selector.endsWith("_page_2"),
+    ),
+  );
+});
+
+test("UI pagination fails closed if the 40-item page size is lost", async () => {
+  const pageOneBody = courtLibrary.buildPropertySearchBody(
+    searchParams(1, 10),
+  );
+  pageOneBody.dma_pageInfo.pageSize = 40;
+  const pageTwoBody = courtLibrary.buildPropertySearchBody(
+    searchParams(2, 10),
+  );
+  const { page } = fakeUiPage({ body: pageTwoBody });
+
+  await assert.rejects(
+    () => submitPropertySearchUiPage(page, 2, 1000, pageOneBody),
+    (error) => error.code === "UI_CONTRACT_MISMATCH",
+  );
+});
+
+test("UI pagination fails closed if a search filter changes", async () => {
+  const pageOneBody = courtLibrary.buildPropertySearchBody(
+    searchParams(1, 10),
+  );
+  pageOneBody.dma_pageInfo.pageSize = 40;
+  const pageTwoBody = courtLibrary.buildPropertySearchBody(
+    searchParams(2, 10),
+  );
+  pageTwoBody.dma_pageInfo.pageSize = 40;
+  pageTwoBody.dma_srchGdsDtlSrchInfo.cortOfcCd = "B000999";
+  const { page } = fakeUiPage({ body: pageTwoBody });
+
+  await assert.rejects(
+    () => submitPropertySearchUiPage(page, 2, 1000, pageOneBody),
+    (error) =>
+      error.code === "UI_CONTRACT_MISMATCH" &&
+      error.message.includes("cortOfcCd"),
+  );
+});
+
+test("UI page size change requests 40 items on the first page", async () => {
+  const resizedBody = courtLibrary.buildPropertySearchBody(
+    searchParams(1, 10),
+  );
+  resizedBody.dma_pageInfo.pageSize = 40;
+  const { page, operations } = fakeUiPage({ body: resizedBody });
+
+  const result = await submitPropertySearchUiPageSize(page, {
+    courtCode: "B000281",
+    usageLarge: "건물",
+    saleDate: searchParams().saleDate,
+    pageSize: 40,
+    timeoutMs: 1000,
+  });
+
+  assert.equal(result.requestBody.dma_pageInfo.pageNo, 1);
+  assert.equal(result.requestBody.dma_pageInfo.pageSize, 40);
+  assert.ok(
+    operations.some(
+      ([operation, selector, value]) =>
+        operation === "selectOption" &&
+        selector === "#mf_wfm_mainFrame_sbx_pageSize" &&
+        value === "40",
     ),
   );
 });
@@ -296,14 +368,30 @@ test("live source initializes the UI once and reuses that browser session", asyn
   const pageOneBody = courtLibrary.buildPropertySearchBody(
     searchParams(1, 10),
   );
+  const pageOneLargeBody = courtLibrary.buildPropertySearchBody(
+    searchParams(1, 10),
+  );
+  pageOneLargeBody.dma_pageInfo.pageSize = 40;
   const pageTwoBody = courtLibrary.buildPropertySearchBody(
     searchParams(2, 10),
   );
+  pageTwoBody.dma_pageInfo.pageSize = 40;
+  const pageThreeBody = courtLibrary.buildPropertySearchBody(
+    searchParams(3, 10),
+  );
+  pageThreeBody.dma_pageInfo.pageSize = 40;
+  const pageFourBody = courtLibrary.buildPropertySearchBody(
+    searchParams(4, 10),
+  );
+  pageFourBody.dma_pageInfo.pageSize = 40;
   const { page, operations } = fakeUiPage({
     responses: [
-      { body: pageOneBody },
-      { body: pageTwoBody },
-      { body: pageOneBody },
+      { body: pageOneBody, totalCount: 148 },
+      { body: pageOneLargeBody, totalCount: 148 },
+      { body: pageTwoBody, totalCount: 148 },
+      { body: pageThreeBody, totalCount: 148 },
+      { body: pageFourBody, totalCount: 148 },
+      { body: pageOneBody, totalCount: 5 },
     ],
   });
   let httpSearchCalls = 0;
@@ -356,16 +444,20 @@ test("live source initializes the UI once and reuses that browser session", asyn
   );
 
   const first = await source.searchProperties(searchParams(1));
-  assert.equal(first.page.pageSize, 10);
-  assert.equal(source.listTransportCalls, 2);
+  assert.equal(first.page.pageSize, 40);
+  assert.equal(source.listTransportCalls, 3);
   const second = await source.searchProperties(searchParams(2));
+  const third = await source.searchProperties(searchParams(3));
+  const fourth = await source.searchProperties(searchParams(4));
 
   assert.equal(first._fetchMode, "playwright");
   assert.equal(second._fetchMode, "playwright");
+  assert.equal(third._fetchMode, "playwright");
+  assert.equal(fourth._fetchMode, "playwright");
   assert.equal(httpSearchCalls, 1);
-  assert.equal(second.page.pageSize, 10);
+  assert.equal(second.page.pageSize, 40);
   assert.equal(browserPostCalls, 0);
-  assert.equal(source.listTransportCalls, 3);
+  assert.equal(source.listTransportCalls, 6);
   assert.equal(
     operations.filter(
       ([operation, selector]) =>
@@ -381,14 +473,23 @@ test("live source initializes the UI once and reuses that browser session", asyn
     ).length,
     1,
   );
+  assert.equal(
+    operations.filter(
+      ([operation, selector]) =>
+        operation === "click" &&
+        (selector.endsWith("_page_3") || selector.endsWith("_page_4")),
+    ).length,
+    2,
+  );
   await source.close();
 
   const afterClose = await source.searchProperties(searchParams(1));
   assert.equal(afterClose._fetchMode, "playwright");
+  assert.equal(afterClose.page.pageSize, 10);
   assert.equal(httpSearchCalls, 2);
   assert.equal(browserClients, 2);
   assert.equal(browserPostCalls, 0);
-  assert.equal(source.listTransportCalls, 5);
+  assert.equal(source.listTransportCalls, 8);
   assert.equal(
     operations.filter(
       ([operation, selector]) =>
@@ -396,6 +497,15 @@ test("live source initializes the UI once and reuses that browser session", asyn
         selector === "#mf_wfm_mainFrame_btn_gdsDtlSrch",
     ).length,
     2,
+  );
+  assert.equal(
+    operations.filter(
+      ([operation, selector, value]) =>
+        operation === "selectOption" &&
+        selector === "#mf_wfm_mainFrame_sbx_pageSize" &&
+        value === "40",
+    ).length,
+    1,
   );
   await source.close();
 });

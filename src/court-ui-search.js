@@ -1,6 +1,14 @@
 "use strict";
 
 const PROPERTY_SEARCH_PATH = "/pgj/pgjsearch/searchControllerMain.on";
+const PROPERTY_SEARCH_PAGE_SIZE = 40;
+const SEARCH_FILTER_FIELDS = Object.freeze([
+  "cortOfcCd",
+  "lclDspslGdsLstUsgCd",
+  "bidDvsCd",
+  "bidBgngYmd",
+  "bidEndYmd",
+]);
 
 const SELECTORS = Object.freeze({
   court: "#mf_wfm_mainFrame_sbx_rletCortOfc",
@@ -8,6 +16,7 @@ const SELECTORS = Object.freeze({
   bidAll: "#mf_wfm_mainFrame_rad_mvprpBidLst_input_2",
   bidAllLabel:
     'label[for="mf_wfm_mainFrame_rad_mvprpBidLst_input_2"]',
+  pageSize: "#mf_wfm_mainFrame_sbx_pageSize",
   saleDateFrom: "#mf_wfm_mainFrame_cal_rletPerdStr_input",
   saleDateTo: "#mf_wfm_mainFrame_cal_rletPerdEnd_input",
   submit: "#mf_wfm_mainFrame_btn_gdsDtlSrch",
@@ -123,9 +132,52 @@ function validateSubmittedContract(actualBody, options) {
   if (String(actualBody?.dma_pageInfo?.pageNo ?? "") !== "1") {
     mismatches.push("dma_pageInfo.pageNo");
   }
+  if (
+    options.pageSize !== undefined &&
+    String(actualBody?.dma_pageInfo?.pageSize ?? "") !==
+      String(options.pageSize)
+  ) {
+    mismatches.push("dma_pageInfo.pageSize");
+  }
   if (mismatches.length > 0) {
     const error = new Error(
       `Court UI submitted unexpected search fields: ${mismatches.join(", ")}`,
+    );
+    error.code = "UI_CONTRACT_MISMATCH";
+    throw error;
+  }
+}
+
+function validatePaginationContract(actualBody, expectedBody, targetPage) {
+  if (!actualBody || !expectedBody) {
+    const error = new Error(
+      "Court UI pagination request body could not be inspected",
+    );
+    error.code = "UI_CONTRACT_MISMATCH";
+    throw error;
+  }
+
+  const actualFilters = actualBody.dma_srchGdsDtlSrchInfo || {};
+  const expectedFilters = expectedBody.dma_srchGdsDtlSrchInfo || {};
+  const mismatches = SEARCH_FILTER_FIELDS.filter(
+    (field) =>
+      String(actualFilters[field] ?? "") !==
+      String(expectedFilters[field] ?? ""),
+  );
+  if (
+    String(actualBody?.dma_pageInfo?.pageNo ?? "") !== String(targetPage)
+  ) {
+    mismatches.push("dma_pageInfo.pageNo");
+  }
+  if (
+    String(actualBody?.dma_pageInfo?.pageSize ?? "") !==
+    String(expectedBody?.dma_pageInfo?.pageSize ?? "")
+  ) {
+    mismatches.push("dma_pageInfo.pageSize");
+  }
+  if (mismatches.length > 0) {
+    const error = new Error(
+      `Court UI pagination changed search fields: ${mismatches.join(", ")}`,
     );
     error.code = "UI_CONTRACT_MISMATCH";
     throw error;
@@ -260,7 +312,42 @@ async function submitPropertySearchUi(page, options) {
   return result;
 }
 
-async function submitPropertySearchUiPage(page, pageNo, timeoutMs = 30000) {
+async function submitPropertySearchUiPageSize(page, options) {
+  if (!page || typeof page.locator !== "function") {
+    throw new TypeError("A Playwright page is required for Court UI search");
+  }
+  const timeoutMs = Number.isFinite(options?.timeoutMs)
+    ? options.timeoutMs
+    : 30000;
+  const targetPageSize = Number(options?.pageSize);
+  if (![10, 20, 30, 40].includes(targetPageSize)) {
+    throw new TypeError("Court UI page size must be 10, 20, 30, or 40");
+  }
+
+  const pageSize = page.locator(SELECTORS.pageSize);
+  await pageSize.waitFor({ state: "visible", timeout: timeoutMs });
+  const result = await triggerSearchResponse(
+    page,
+    () =>
+      pageSize.selectOption(
+        { label: String(targetPageSize) },
+        { timeout: timeoutMs },
+      ),
+    timeoutMs,
+  );
+  validateSubmittedContract(result.requestBody, {
+    ...options,
+    pageSize: targetPageSize,
+  });
+  return result;
+}
+
+async function submitPropertySearchUiPage(
+  page,
+  pageNo,
+  timeoutMs = 30000,
+  expectedRequestBody,
+) {
   const targetPage = Number(pageNo);
   if (!Number.isInteger(targetPage) || targetPage < 2 || targetPage > 10) {
     throw new TypeError("Court UI page must be an integer from 2 to 10");
@@ -274,21 +361,18 @@ async function submitPropertySearchUiPage(page, pageNo, timeoutMs = 30000) {
     () => pageLink.click({ timeout: timeoutMs }),
     timeoutMs,
   );
-  if (
-    String(result.requestBody?.dma_pageInfo?.pageNo ?? "") !==
-    String(targetPage)
-  ) {
-    const error = new Error(
-      `Court UI submitted page ${result.requestBody?.dma_pageInfo?.pageNo ?? "unknown"} instead of ${targetPage}`,
-    );
-    error.code = "UI_CONTRACT_MISMATCH";
-    throw error;
-  }
+  validatePaginationContract(
+    result.requestBody,
+    expectedRequestBody,
+    targetPage,
+  );
   return result;
 }
 
 module.exports = {
   PROPERTY_SEARCH_PATH,
+  PROPERTY_SEARCH_PAGE_SIZE,
   submitPropertySearchUi,
   submitPropertySearchUiPage,
+  submitPropertySearchUiPageSize,
 };
