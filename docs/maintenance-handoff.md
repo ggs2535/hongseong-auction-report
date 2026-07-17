@@ -36,10 +36,16 @@ PR #5는 `errorStatusCode`, `upstreamUrl`, `upstreamMessage`를 보고서·Actio
 “사용에 불편을 드려서 죄송합니다. 잠시 후 다시 이용해 주십시오.”라는 공통 장애
 안내를 반환했습니다. 01:16 KST 공식 PGJ151 화면도 HTTP 500이었습니다.
 
-이 변경까지 전체 69개 테스트가 통과했습니다. 공개 Pages는 HTTP 200이며 HTTP 400,
-원본 경로와 법원 안내 메시지가 표시됩니다. live `last-good`은 아직 없습니다.
-불완전 결과를 0건의 정상 결과로 승격하거나 수동 조회를 반복하지 말고 다음 예약
-실행을 관찰합니다.
+2026-07-17 재진단에서 공식 PGJ151 화면은 `전체`·`홍성지원`·`건물` 조건으로
+63건을 정상 반환했습니다. 기존 Playwright fallback은 화면을 열기만 한 뒤 HTTP와
+같은 합성 JSON `fetch`를 보내고 있어, 사람이 검색 버튼을 눌러 성공하는 경로와
+달랐습니다. 현재 fallback은 공식 검색 버튼과 페이지 번호를 실제로 조작하며 합성
+브라우저 POST를 사용하지 않습니다. 요청 조건과 페이지 번호도 캡처한 요청 본문으로
+검증합니다.
+
+이 변경까지 전체 76개 테스트와 fixture 전체 생성이 통과했습니다. 공개 Pages는
+HTTP 200이며 HTTP 400, 원본 경로와 법원 안내 메시지가 표시됩니다. live
+`last-good`은 운영 검증 결과가 complete일 때만 생성됩니다.
 
 - 기능 PR: <https://github.com/ggs2535/hongseong-auction-report/pull/1>
 - 검증 이슈: <https://github.com/ggs2535/hongseong-auction-report/issues/2>
@@ -97,6 +103,7 @@ PR #5는 `errorStatusCode`, `upstreamUrl`, `upstreamMessage`를 보고서·Actio
 | --- | --- |
 | `src/index.js` | 전체 실행 조정, 상세 캐시, diff, 저장, 렌더 |
 | `src/court-client.js` | fixture/live source, 속도 제한, fallback, 차단, pagination |
+| `src/court-ui-search.js` | 공식 PGJ151 검색 폼과 페이지 번호 조작, 요청 계약 검증 |
 | `src/pagination.js` | 페이지 수, ID, 중복, 누락 계산 |
 | `src/residential-filter.js` | 지역·주거·제외·복합용도 판정 |
 | `src/special-remarks.js` | 키워드와 원문 evidence 추출 |
@@ -152,7 +159,10 @@ incomplete이면 불필요한 추가 호출을 피하기 위해 상세 조회를
 - `CourtAuctionHttpClient` 옵션 → `timeoutMs`, `minDelayMs`, `jitterMs`, `maxCallsPerSession`, `fetchImpl`
 - `CourtAuctionPlaywrightClient`는 표준 `playwright-core`를 사용
 
-패키지 자체의 자동 fallback은 HTTP 400만 대상으로 하므로 프로젝트 wrapper가 `fallback:false`로 호출한 뒤 일반 HTTP 400 또는 `NETWORK_ERROR`에만 표준 Playwright를 한 번 사용합니다. `BLOCKED`에는 절대 사용하지 않습니다.
+패키지 자체의 자동 fallback은 사용하지 않습니다. 프로젝트 wrapper는 `fallback:false`로
+호출한 뒤 일반 HTTP 400 또는 `NETWORK_ERROR`에서만 표준 Playwright를 엽니다.
+Playwright 경로는 합성 `fetch` 대신 공식 PGJ151 검색 폼과 페이지 번호를 실제로
+조작합니다. `BLOCKED`에는 절대 사용하지 않습니다.
 
 패키지가 응답 필드나 오류 코드를 바꾸면 가장 먼저 `src/court-client.js`와 fixture를 함께 수정합니다.
 

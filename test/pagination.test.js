@@ -77,6 +77,7 @@ test("101건이면 100건 페이지와 1건 페이지를 모두 순차 조회한
     [1, 2],
   );
   assert.equal(calls[0].usage.large, "건물");
+  assert.equal(calls[0].courtName, "홍성지원");
   assert.equal(calls[0].pageSize, 100);
   assert.deepEqual(calls[0].saleDate, {
     from: "20260716",
@@ -92,6 +93,7 @@ test("101건이면 100건 페이지와 1건 페이지를 모두 순차 조회한
     requestBody.dma_srchGdsDtlSrchInfo.bidEndYmd,
     "20260730",
   );
+  assert.equal(requestBody.dma_srchGdsDtlSrchInfo.bidDvsCd, "");
   assert.equal(calls[0].includeRaw, true);
   assert.equal(calls[0].fallbackOnBlocked, false);
   assert.equal(result.items.length, 101);
