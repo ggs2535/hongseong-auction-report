@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-07-17T04:58:01.892Z",
-  "lastEvent": "workflow_dispatch",
-  "lastRunId": "29556091351",
-  "lastResult": "complete",
+  "lastAttemptAt": "2026-07-17T05:21:38.493Z",
+  "lastEvent": "issues",
+  "lastRunId": "29557087615",
+  "lastResult": "started",
   "blockedDate": null,
-  "updatedAt": "2026-07-17T04:59:28.084Z"
+  "updatedAt": "2026-07-17T05:21:38.493Z"
 }
