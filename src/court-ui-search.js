@@ -6,6 +6,8 @@ const SELECTORS = Object.freeze({
   court: "#mf_wfm_mainFrame_sbx_rletCortOfc",
   usageLarge: "#mf_wfm_mainFrame_sbx_rletLclLst",
   bidAll: "#mf_wfm_mainFrame_rad_mvprpBidLst_input_2",
+  bidAllLabel:
+    'label[for="mf_wfm_mainFrame_rad_mvprpBidLst_input_2"]',
   saleDateFrom: "#mf_wfm_mainFrame_cal_rletPerdStr_input",
   saleDateTo: "#mf_wfm_mainFrame_cal_rletPerdEnd_input",
   submit: "#mf_wfm_mainFrame_btn_gdsDtlSrch",
@@ -222,6 +224,7 @@ async function submitPropertySearchUi(page, options) {
   const court = page.locator(SELECTORS.court);
   const usage = page.locator(SELECTORS.usageLarge);
   const bidAll = page.locator(SELECTORS.bidAll);
+  const bidAllLabel = page.locator(SELECTORS.bidAllLabel);
   const from = page.locator(SELECTORS.saleDateFrom);
   const to = page.locator(SELECTORS.saleDateTo);
   const submit = page.locator(SELECTORS.submit);
@@ -232,7 +235,14 @@ async function submitPropertySearchUi(page, options) {
   await court.selectOption({ label: courtLabel }, { timeout: timeoutMs });
   await usage.selectOption({ label: usageLarge }, { timeout: timeoutMs });
   if (!(await bidAll.isChecked({ timeout: timeoutMs }))) {
-    await bidAll.check({ timeout: timeoutMs });
+    await bidAllLabel.click({ timeout: timeoutMs });
+    if (!(await bidAll.isChecked({ timeout: timeoutMs }))) {
+      const error = new Error(
+        "Court UI did not select all bid types after clicking its label",
+      );
+      error.code = "UI_CONTRACT_MISMATCH";
+      throw error;
+    }
   }
   await setDateInput(
     from,
