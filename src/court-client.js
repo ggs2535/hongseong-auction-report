@@ -548,9 +548,24 @@ function createLiveSource(config, options = {}) {
       if (isBlockedError(error)) throw error;
       if (!eligibleForBrowserFallback(error)) throw error;
       const client = getPlaywrightClient();
-      await pacer.run(() => client.warmup("courts"));
-      await pacer.wait();
-      return assertNotBlocked(await library.getCourtCodes({ client }));
+      try {
+        await pacer.run(() => client.warmup("courts"));
+        await pacer.wait();
+        return assertNotBlocked(await library.getCourtCodes({ client }));
+      } catch (fallbackError) {
+        if (client.close) await client.close().catch(() => {});
+        playwrightClient = null;
+        propertySearchUiReady = false;
+        propertySearchUiRequestBody = null;
+        if (
+          fallbackError &&
+          typeof fallbackError === "object" &&
+          !fallbackError.cause
+        ) {
+          fallbackError.cause = error;
+        }
+        throw fallbackError;
+      }
     }
   }
 
@@ -563,6 +578,14 @@ function createLiveSource(config, options = {}) {
       return getCourtCodesWithFallback();
     },
     async searchProperties(params) {
+      if (params.requireUi === true) {
+        const result = await browserPost(
+          "searchProperties",
+          params,
+          "list",
+        );
+        return { ...result, _fetchMode: "playwright" };
+      }
       return withControlledFallback("searchProperties", params, listClient, "list");
     },
     async getCaseByCaseNumber(params) {
@@ -624,6 +647,13 @@ function setOperationalError(completeness, error, fallbackCode) {
   completeness.upstreamMessage = diagnostics.upstreamMessage;
 }
 
+function eligibleForVerifiedCourtFallback(error) {
+  const { errorStatusCode } = extractOperationalDiagnostics(error);
+  if (errorStatusCode !== null && errorStatusCode >= 500) return false;
+  if (error?.code === "NETWORK_ERROR") return true;
+  return error?.code === "UPSTREAM_ERROR" && errorStatusCode === 400;
+}
+
 async function fetchPageWithRetry(source, params, config, sleep) {
   try {
     return await source.searchProperties(params);
@@ -666,15 +696,39 @@ async function collectAllProperties(options) {
   const successfulPages = [];
   const fetchModes = [];
   let court;
+  let requireCourtUiValidation = false;
 
+  let courts;
   try {
-    const courts = assertNotBlocked(await source.getCourtCodes());
-    court = findHongseongCourt(courts, config.courtNameFragment);
-    completeness.courtCode = court.code;
+    courts = assertNotBlocked(await source.getCourtCodes());
   } catch (error) {
-    setOperationalError(completeness, error, "COURT_LOOKUP_FAILED");
-    completeness.finishedAt = now().toISOString();
-    return { items: [], unidentified: [], completeness, court: null };
+    if (
+      !isBlockedError(error) &&
+      config.mode === "live" &&
+      config.courtCodeFallback &&
+      eligibleForVerifiedCourtFallback(error)
+    ) {
+      court = {
+        code: config.courtCodeFallback,
+        branchName: config.courtNameFragment,
+      };
+      completeness.courtCode = court.code;
+      requireCourtUiValidation = true;
+    } else {
+      setOperationalError(completeness, error, "COURT_LOOKUP_FAILED");
+      completeness.finishedAt = now().toISOString();
+      return { items: [], unidentified: [], completeness, court: null };
+    }
+  }
+  if (!court) {
+    try {
+      court = findHongseongCourt(courts, config.courtNameFragment);
+      completeness.courtCode = court.code;
+    } catch (error) {
+      setOperationalError(completeness, error, "COURT_LOOKUP_FAILED");
+      completeness.finishedAt = now().toISOString();
+      return { items: [], unidentified: [], completeness, court: null };
+    }
   }
 
   const makeParams = (page) => ({
@@ -687,6 +741,7 @@ async function collectAllProperties(options) {
     includeRaw: true,
     fallback: false,
     fallbackOnBlocked: false,
+    requireUi: requireCourtUiValidation,
   });
 
   let firstPage;

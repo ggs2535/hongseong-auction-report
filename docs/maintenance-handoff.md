@@ -248,6 +248,8 @@ Playwright CLI 파일을 위 명령처럼 직접 실행합니다.
 3. incomplete인데 last-good이 바뀌었다면 즉시 저장 로직 회귀로 취급합니다.
 4. `COURT_NOT_FOUND`이면 court response fixture와 live name/branchName을 확인합니다. 코드를 하드코딩하지 않습니다.
 5. `INVALID_PAGE_META`이면 패키지 normalize response를 확인합니다.
+   법원 목록 화면만 실패하면 검증된 `COURT_CODE_FALLBACK`을 사용하되, 직접 검색 API는
+   건너뛰고 공식 UI 요청이 같은 코드를 전송할 때만 계속합니다. `BLOCKED`에는 적용하지 않습니다.
 6. `CALL_LIMIT`이면 억지로 상한을 늘리지 말고 incomplete를 유지합니다.
    공식 UI fallback은 첫 10건 응답 후 `페이지당 40`으로 전환해야 하며, 직접 HTTP의
    정책값 `pageSize:100`과 구분합니다. 크기 변경 POST도 호출 예산 1회로 계산합니다.

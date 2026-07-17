@@ -151,4 +151,15 @@ test("fixture 기본 출력은 live data/public과 격리된다", () => {
   assert.equal(fixture.publicDir, path.join(rootDir, ".fixture-output", "public"));
   assert.equal(live.dataDir, path.join(rootDir, "data"));
   assert.equal(live.publicDir, path.join(rootDir, "public"));
+  assert.equal(live.courtCodeFallback, "B000281");
+  assert.throws(
+    () =>
+      createConfig({
+        rootDir,
+        mode: "live",
+        env: { COURT_CODE_FALLBACK: "invalid" },
+        argv: [],
+      }),
+    /official B###### format/u,
+  );
 });

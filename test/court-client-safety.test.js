@@ -59,6 +59,144 @@ test("법원 필수 검색기간은 KST 오늘부터 14일 뒤까지다", () => 
   );
 });
 
+test("법원 목록 네트워크 오류는 검증된 코드로 공식 UI만 사용한다", async () => {
+  let searchParams;
+  const result = await collectAllProperties({
+    source: {
+      async getCourtCodes() {
+        const error = new Error("court list navigation timed out");
+        error.code = "NETWORK_ERROR";
+        throw error;
+      },
+      async searchProperties(params) {
+        searchParams = params;
+        return {
+          page: { totalCount: 0, pageSize: 10 },
+          items: [],
+          _fetchMode: "playwright",
+        };
+      },
+    },
+    config: config({
+      mode: "live",
+      courtCodeFallback: "B000281",
+    }),
+    sleep: async () => {},
+    now: () => new Date("2026-07-17T00:00:00.000Z"),
+  });
+
+  assert.equal(searchParams.courtCode, "B000281");
+  assert.equal(searchParams.courtName, "홍성지원");
+  assert.equal(searchParams.requireUi, true);
+  assert.equal(result.completeness.complete, true);
+});
+
+test("법원 목록 BLOCKED는 검증 코드로 우회하지 않는다", async () => {
+  let searchCalls = 0;
+  const result = await collectAllProperties({
+    source: {
+      async getCourtCodes() {
+        const error = new Error("ipcheck=false");
+        error.code = "BLOCKED";
+        throw error;
+      },
+      async searchProperties() {
+        searchCalls += 1;
+        throw new Error("search must not run after BLOCKED");
+      },
+    },
+    config: config({
+      mode: "live",
+      courtCodeFallback: "B000281",
+    }),
+    now: () => new Date("2026-07-17T00:00:00.000Z"),
+  });
+
+  assert.equal(searchCalls, 0);
+  assert.equal(result.completeness.blocked, true);
+  assert.equal(result.completeness.errorCode, "BLOCKED");
+});
+
+test("법원 목록 HTTP 500은 검증 코드로 우회하지 않는다", async () => {
+  let searchCalls = 0;
+  const result = await collectAllProperties({
+    source: {
+      async getCourtCodes() {
+        const error = new Error("court list unavailable");
+        error.code = "UPSTREAM_ERROR";
+        error.statusCode = 500;
+        throw error;
+      },
+      async searchProperties() {
+        searchCalls += 1;
+        throw new Error("search must not run after court HTTP 500");
+      },
+    },
+    config: config({
+      mode: "live",
+      courtCodeFallback: "B000281",
+    }),
+    now: () => new Date("2026-07-17T00:00:00.000Z"),
+  });
+
+  assert.equal(searchCalls, 0);
+  assert.equal(result.completeness.errorCode, "UPSTREAM_ERROR");
+  assert.equal(result.completeness.errorStatusCode, 500);
+});
+
+test("NETWORK_ERROR로 감싼 법원 목록 HTTP 500도 우회하지 않는다", async () => {
+  let searchCalls = 0;
+  const result = await collectAllProperties({
+    source: {
+      async getCourtCodes() {
+        const upstream = new Error("court list unavailable");
+        upstream.code = "UPSTREAM_ERROR";
+        upstream.statusCode = 500;
+        const error = new Error("court list network wrapper");
+        error.code = "NETWORK_ERROR";
+        error.cause = upstream;
+        throw error;
+      },
+      async searchProperties() {
+        searchCalls += 1;
+        throw new Error("search must not run after wrapped court HTTP 500");
+      },
+    },
+    config: config({
+      mode: "live",
+      courtCodeFallback: "B000281",
+    }),
+    now: () => new Date("2026-07-17T00:00:00.000Z"),
+  });
+
+  assert.equal(searchCalls, 0);
+  assert.equal(result.completeness.errorCode, "UPSTREAM_ERROR");
+  assert.equal(result.completeness.errorStatusCode, 500);
+});
+
+test("정상 법원 목록에 홍성지원이 없으면 검증 코드로 덮지 않는다", async () => {
+  let searchCalls = 0;
+  const result = await collectAllProperties({
+    source: {
+      async getCourtCodes() {
+        return { items: [{ code: "B000999", branchName: "다른 지원" }] };
+      },
+      async searchProperties() {
+        searchCalls += 1;
+        throw new Error("search must not run without Hongseong court");
+      },
+    },
+    config: config({
+      mode: "live",
+      courtCodeFallback: "B000281",
+    }),
+    now: () => new Date("2026-07-17T00:00:00.000Z"),
+  });
+
+  assert.equal(searchCalls, 0);
+  assert.equal(result.completeness.errorCode, "COURT_NOT_FOUND");
+});
+
 test("일반 페이지 실패는 30초 후 정확히 한 번만 재시도한다", async () => {
   let pageTwoCalls = 0;
   const sleeps = [];

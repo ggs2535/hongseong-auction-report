@@ -34,6 +34,9 @@ function createConfig(overrides = {}) {
     String(env.FIXTURE_CANONICAL_OUTPUT || "").toLowerCase() === "true";
   const fixtureOutputRoot = path.join(rootDir, ".fixture-output");
   const storageWriteMode = String(env.STORAGE_WRITE_MODE || "atomic").toLowerCase();
+  const courtCodeFallback = String(
+    env.COURT_CODE_FALLBACK || "B000281",
+  ).trim();
   if (!["atomic", "direct"].includes(storageWriteMode)) {
     throw new TypeError("STORAGE_WRITE_MODE must be atomic or direct");
   }
@@ -42,6 +45,7 @@ function createConfig(overrides = {}) {
     rootDir,
     mode,
     courtNameFragment: "홍성지원",
+    courtCodeFallback,
     pageSize: 100,
     maxListCalls: readPositiveInteger(env.MAX_LIST_CALLS, 10, "MAX_LIST_CALLS"),
     maxDetailCalls: readPositiveInteger(env.MAX_DETAIL_CALLS, 5, "MAX_DETAIL_CALLS"),
@@ -76,6 +80,9 @@ function createConfig(overrides = {}) {
 
   if (config.pageSize !== 100) {
     throw new Error("pageSize is policy-locked to 100");
+  }
+  if (!/^B\d{6}$/u.test(config.courtCodeFallback)) {
+    throw new Error("COURT_CODE_FALLBACK must use the official B###### format");
   }
   if (config.maxListCalls > 10) {
     throw new Error("MAX_LIST_CALLS cannot exceed the safety cap of 10");
