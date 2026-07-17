@@ -30,6 +30,8 @@
     CALL_LIMIT_EXCEEDED: "안전 호출 한도 도달",
     PAGE_FETCH_FAILED: "일부 페이지 조회 실패",
   };
+  const COURT_SEARCH_FALLBACK_URL =
+    "https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00";
 
   function extractHttpStatus(completeness, message) {
     const explicit = Number(
@@ -313,15 +315,123 @@
 
   function copyButton(item) {
     const caseNumber = String(item?.caseNumber || "").trim();
-    const button = element("button", "copy-button", "사건번호 복사");
+    const button = element("button", "copy-button", "전체 사건번호 복사");
     button.type = "button";
     button.dataset.copyValue = caseNumber;
+    button.dataset.copySuccess = "전체 사건번호를 복사했습니다.";
     button.disabled = !caseNumber;
     button.setAttribute(
       "aria-label",
-      caseNumber ? `${caseNumber} 사건번호 복사` : "복사할 사건번호 없음",
+      caseNumber ? `${caseNumber} 전체 사건번호 복사` : "복사할 사건번호 없음",
     );
     return button;
+  }
+
+  function parseCourtCaseNumber(value) {
+    const text = String(value || "").trim().replaceAll(" ", "");
+    const compactMatch = text.match(/^(20\d{2})0130(\d{6})$/u);
+    const displayMatch = text.match(/^(20\d{2})타경(\d{1,7})$/u);
+    const match = compactMatch || displayMatch;
+    if (!match) return null;
+
+    const serial = match[2].replace(/^0+(?=\d)/u, "");
+    return {
+      year: match[1],
+      serial,
+      display: `${match[1]}타경${serial}`,
+    };
+  }
+
+  function resolveCourtSearchUrl(value) {
+    try {
+      const url = new URL(String(value || ""));
+      const path = url.searchParams.get("w2xPath") || "";
+      if (
+        url.origin === "https://www.courtauction.go.kr" &&
+        url.pathname === "/pgj/index.on" &&
+        url.searchParams.get("pgjId") === "151F00" &&
+        path === "/pgj/ui/pgj100/PGJ151F00.xml"
+      ) {
+        return url.href;
+      }
+    } catch {
+      // Fall back to the known official case-search entry below.
+    }
+    return COURT_SEARCH_FALLBACK_URL;
+  }
+
+  function mobileCourtGuide(item) {
+    const parsed = parseCourtCaseNumber(item?.caseNumber);
+    const guide = element("section", "mobile-court-guide");
+    guide.setAttribute("aria-label", "법원 원문에서 사진과 비고 확인");
+
+    const heading = element("div", "mobile-court-heading");
+    heading.append(
+      element("span", "mobile-court-kicker", "OFFICIAL COURT CHECK"),
+      element("h3", "", "법원 원문에서 사진 확인"),
+    );
+    guide.append(heading);
+
+    const meta = element("div", "mobile-court-meta");
+    meta.append(element("span", "", "홍성지원"));
+    if (parsed) {
+      meta.append(
+        element("span", "", `${parsed.year}년`),
+        element("span", "", `타경 ${parsed.serial}`),
+      );
+    } else {
+      meta.append(element("span", "", "사건번호 직접 입력"));
+    }
+    if (item?.itemNumber) {
+      meta.append(element("span", "", `물건 ${item.itemNumber}`));
+    }
+    guide.append(meta);
+
+    const actions = element("div", "mobile-court-actions");
+    actions.setAttribute("role", "group");
+    actions.setAttribute("aria-label", "법원 사건검색 2단계 안내");
+
+    if (parsed) {
+      const copy = element(
+        "button",
+        "mobile-court-action mobile-court-copy",
+        `타경 번호 ${parsed.serial} 복사`,
+      );
+      copy.type = "button";
+      copy.dataset.step = "1";
+      copy.dataset.copyValue = parsed.serial;
+      copy.dataset.copySuccess =
+        `${parsed.display}의 타경 번호 ${parsed.serial}를 복사했습니다.`;
+      copy.setAttribute(
+        "aria-label",
+        `1단계, ${parsed.display}의 타경 번호 ${parsed.serial} 복사`,
+      );
+      actions.append(copy);
+    }
+
+    const link = element(
+      "a",
+      "mobile-court-action mobile-court-link",
+      "법원 사건검색 열기",
+    );
+    link.href = courtSearchUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.dataset.step = parsed ? "2" : "1";
+    link.setAttribute("aria-label", "법원 사건검색 열기 (새 창)");
+    actions.append(link);
+    guide.append(actions);
+
+    guide.append(
+      element(
+        "p",
+        "mobile-court-help",
+        parsed
+          ? `법원 화면에서 홍성지원과 ${parsed.year}년을 선택한 뒤 타경 번호 칸에 붙여넣어 검색하세요. 결과 물건을 열면 사진과 비고를 볼 수 있습니다.`
+          : "위 전체 사건번호를 참고해 법원 화면에 직접 입력하세요. 결과 물건을 열면 사진과 비고를 볼 수 있습니다.",
+      ),
+    );
+    return guide;
   }
 
   function caseBlock(item) {
@@ -444,14 +554,19 @@
     remarks.append(element("h3", "", "특이사항"));
     appendRemarks(remarks, item);
 
-    card.append(top, location, values, remarks);
+    card.append(top, location, values, remarks, mobileCourtGuide(item));
     return card;
   }
 
   async function copyText(value) {
+    let clipboardError = null;
     if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(value);
-      return;
+      try {
+        await navigator.clipboard.writeText(value);
+        return;
+      } catch (error) {
+        clipboardError = error;
+      }
     }
 
     const temporary = document.createElement("textarea");
@@ -459,11 +574,15 @@
     temporary.setAttribute("readonly", "");
     temporary.style.position = "fixed";
     temporary.style.opacity = "0";
-    document.body.append(temporary);
-    temporary.select();
-    const copied = document.execCommand("copy");
-    temporary.remove();
-    if (!copied) throw new Error("copy command failed");
+    let copied = false;
+    try {
+      document.body.append(temporary);
+      temporary.select();
+      copied = document.execCommand("copy");
+    } finally {
+      temporary.remove();
+    }
+    if (!copied) throw clipboardError || new Error("copy command failed");
   }
 
   let toastTimer;
@@ -483,7 +602,9 @@
       if (!button || button.disabled) return;
       try {
         await copyText(button.dataset.copyValue);
-        showToast("사건번호를 복사했습니다.");
+        showToast(
+          button.dataset.copySuccess || "사건번호를 복사했습니다.",
+        );
       } catch {
         showToast("복사하지 못했습니다. 사건번호를 길게 눌러 복사해 주세요.");
       }
@@ -499,6 +620,9 @@
   const latest = payload.latest || {};
   const completeness = latest.completeness || {};
   const display = payload.display || {};
+  const courtSearchUrl = resolveCourtSearchUrl(
+    display?.source?.searchUrl || latest?.source?.searchUrl,
+  );
   const allItems = sortItems(Array.isArray(display.items) ? display.items : []);
   const reviewItems = Array.isArray(display.reviewItems)
     ? display.reviewItems
@@ -640,7 +764,7 @@
     const remarks = element("div", "card-remarks");
     remarks.append(element("h3", "", "특이사항 근거"));
     appendRemarks(remarks, item);
-    card.append(heading, location, remarks);
+    card.append(heading, location, remarks, mobileCourtGuide(item));
     return card;
   }
 
