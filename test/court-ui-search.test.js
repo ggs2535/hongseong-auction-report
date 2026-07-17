@@ -35,6 +35,7 @@ function fakeUiPage({
   status = 200,
 }) {
   const operations = [];
+  let bidAllChecked = false;
   const responseSpecs = responses || [{ body, payload, rawText, status }];
   let responseIndex = 0;
   const page = {
@@ -55,10 +56,10 @@ function fakeUiPage({
         },
         async isChecked() {
           operations.push(["isChecked", selector]);
-          return false;
+          return bidAllChecked;
         },
         async check() {
-          operations.push(["check", selector]);
+          throw new Error(`input check must not be used: ${selector}`);
         },
         async inputValue() {
           operations.push(["inputValue", selector]);
@@ -72,6 +73,12 @@ function fakeUiPage({
         },
         async click() {
           operations.push(["click", selector]);
+          if (
+            selector ===
+            'label[for="mf_wfm_mainFrame_rad_mvprpBidLst_input_2"]'
+          ) {
+            bidAllChecked = true;
+          }
         },
       };
     },
@@ -146,13 +153,23 @@ test("UI fallback submits the official WebSquare search form", async () => {
       ([operation, , value]) => operation === "fill" && value === "2026.07.31",
     ),
   );
-  assert.equal(
-    operations.filter(([operation]) => operation === "click").length,
-    1,
+  assert.deepEqual(
+    operations.filter(([operation]) => operation === "click"),
+    [
+      [
+        "click",
+        'label[for="mf_wfm_mainFrame_rad_mvprpBidLst_input_2"]',
+      ],
+      ["click", "#mf_wfm_mainFrame_btn_gdsDtlSrch"],
+    ],
   );
   assert.equal(
-    operations.filter(([operation]) => operation === "check").length,
-    1,
+    operations.filter(
+      ([operation, selector]) =>
+        operation === "isChecked" &&
+        selector === "#mf_wfm_mainFrame_rad_mvprpBidLst_input_2",
+    ).length,
+    2,
   );
 });
 
@@ -350,8 +367,19 @@ test("live source initializes the UI once and reuses that browser session", asyn
   assert.equal(browserPostCalls, 0);
   assert.equal(source.listTransportCalls, 3);
   assert.equal(
-    operations.filter(([operation]) => operation === "click").length,
-    2,
+    operations.filter(
+      ([operation, selector]) =>
+        operation === "click" &&
+        selector === "#mf_wfm_mainFrame_btn_gdsDtlSrch",
+    ).length,
+    1,
+  );
+  assert.equal(
+    operations.filter(
+      ([operation, selector]) =>
+        operation === "click" && selector.endsWith("_page_2"),
+    ).length,
+    1,
   );
   await source.close();
 
@@ -362,8 +390,12 @@ test("live source initializes the UI once and reuses that browser session", asyn
   assert.equal(browserPostCalls, 0);
   assert.equal(source.listTransportCalls, 5);
   assert.equal(
-    operations.filter(([operation]) => operation === "click").length,
-    3,
+    operations.filter(
+      ([operation, selector]) =>
+        operation === "click" &&
+        selector === "#mf_wfm_mainFrame_btn_gdsDtlSrch",
+    ).length,
+    2,
   );
   await source.close();
 });
