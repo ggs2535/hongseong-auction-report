@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
   "reportDate": "2026-07-17",
-  "generatedAt": "2026-07-17T02:08:39.624Z",
+  "generatedAt": "2026-07-17T03:43:02.796Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -27,13 +27,13 @@
     "reviewCount": 0,
     "fetchMode": "http",
     "blocked": false,
-    "errorCode": "UPSTREAM_ERROR",
-    "errorMessage": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
+    "errorCode": "FIRST_PAGE_FAILED",
+    "errorMessage": "locator.check: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#mf_wfm_mainFrame_rad_mvprpBidLst_input_2')\n    - locator resolved to <input title=\"전체\" type=\"radio\" data-index=\"2\" class=\"w2radio_input\" name=\"mf_wfm_mainFrame_rad_mvprpBidLst_input\" id=\"mf_wfm_mainFrame_rad_mvprpBidLst_input_2\"/>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <label data-index=\"2\" class=\"w2radio_label \" for=\"mf_wfm_mainFrame_rad_mvprpBidLst_input_2\">전체</label> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <label data-index=\"2\" class=\"w2radio_label \" for=\"mf_wfm_mainFrame_rad_mvprpBidLst_input_2\">전체</label> intercepts pointer events\n  2 × retrying click action\n      - waiting 100ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n  14 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <label data-index=\"2\" class=\"w2radio_label \" for=\"mf_wfm_mainFrame_rad_mvprpBidLst_input_2\">전체</label> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <label data-index=\"2\" class=\"w2radio_label \" for=\"mf_wfm_mainFrame_rad_mvprpBidLst_input_2\">전체</label> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - element is outside of the viewport\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - element is outside of the viewport\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <label data-index=\"2\" class=\"w2radio_label \" for=\"mf_wfm_mainFrame_rad_mvprpBidLst_input_2\">전체</label> intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n",
     "errorStatusCode": 400,
     "upstreamUrl": "/pgj/pgjsearch/searchControllerMain.on",
     "upstreamMessage": "사용에 불편을 드려서 죄송합니다. 잠시 후 다시 이용해 주십시오. (동일한 상황이 지속되는 경우 사용자지원센터로 문의주시기 바랍니다.)",
-    "startedAt": "2026-07-17T02:07:39.507Z",
-    "finishedAt": "2026-07-17T02:08:39.624Z"
+    "startedAt": "2026-07-17T03:40:50.500Z",
+    "finishedAt": "2026-07-17T03:43:02.796Z"
   },
   "summary": {
     "totalCount": null,
