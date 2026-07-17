@@ -443,9 +443,12 @@ test("live source initializes the UI once and reuses that browser session", asyn
     },
   );
 
-  const first = await source.searchProperties(searchParams(1));
+  const first = await source.searchProperties({
+    ...searchParams(1),
+    requireUi: true,
+  });
   assert.equal(first.page.pageSize, 40);
-  assert.equal(source.listTransportCalls, 3);
+  assert.equal(source.listTransportCalls, 2);
   const second = await source.searchProperties(searchParams(2));
   const third = await source.searchProperties(searchParams(3));
   const fourth = await source.searchProperties(searchParams(4));
@@ -454,10 +457,10 @@ test("live source initializes the UI once and reuses that browser session", asyn
   assert.equal(second._fetchMode, "playwright");
   assert.equal(third._fetchMode, "playwright");
   assert.equal(fourth._fetchMode, "playwright");
-  assert.equal(httpSearchCalls, 1);
+  assert.equal(httpSearchCalls, 0);
   assert.equal(second.page.pageSize, 40);
   assert.equal(browserPostCalls, 0);
-  assert.equal(source.listTransportCalls, 6);
+  assert.equal(source.listTransportCalls, 5);
   assert.equal(
     operations.filter(
       ([operation, selector]) =>
@@ -486,10 +489,10 @@ test("live source initializes the UI once and reuses that browser session", asyn
   const afterClose = await source.searchProperties(searchParams(1));
   assert.equal(afterClose._fetchMode, "playwright");
   assert.equal(afterClose.page.pageSize, 10);
-  assert.equal(httpSearchCalls, 2);
+  assert.equal(httpSearchCalls, 1);
   assert.equal(browserClients, 2);
   assert.equal(browserPostCalls, 0);
-  assert.equal(source.listTransportCalls, 8);
+  assert.equal(source.listTransportCalls, 7);
   assert.equal(
     operations.filter(
       ([operation, selector]) =>
