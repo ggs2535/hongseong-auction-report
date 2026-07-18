@@ -8,23 +8,19 @@ const {
   STATE_RELATIVE_PATH,
   evaluateSafetyWindow,
   isValidLatest,
-  validateInstantQueryState,
-} = require("./instant-query-state");
+  validateQuerySafetyState,
+} = require("./query-safety-state");
 
-const INSTANT_QUERY_COOLDOWN_MS = QUERY_COOLDOWN_MS;
-const IMMEDIATE_EVENTS = new Set(["issues", "workflow_dispatch"]);
+const MIN_QUERY_INTERVAL_MS = QUERY_COOLDOWN_MS;
 
-function evaluateInstantQuery(options = {}) {
-  const eventName = String(options.eventName || "");
+function evaluateScheduledQuery(options = {}) {
   const latest = options.latest || null;
   const safetyState = options.safetyState || null;
-  const runAttempt = Number(options.runAttempt || 1);
-  const immediate = IMMEDIATE_EVENTS.has(eventName) || runAttempt > 1;
   const now =
     options.now instanceof Date ? options.now : new Date(options.now || Date.now());
   const cooldownMs =
     options.cooldownMs === undefined
-      ? INSTANT_QUERY_COOLDOWN_MS
+      ? MIN_QUERY_INTERVAL_MS
       : Number(options.cooldownMs);
 
   if (Number.isNaN(now.getTime())) {
@@ -32,9 +28,6 @@ function evaluateInstantQuery(options = {}) {
   }
   if (!Number.isFinite(cooldownMs) || cooldownMs < 0) {
     throw new TypeError("cooldownMs must be a non-negative number");
-  }
-  if (!Number.isInteger(runAttempt) || runAttempt < 1) {
-    throw new TypeError("runAttempt must be a positive integer");
   }
 
   const safety = evaluateSafetyWindow({
@@ -47,8 +40,7 @@ function evaluateInstantQuery(options = {}) {
   });
   return {
     ...safety,
-    immediate,
-    reason: safety.allowed && !immediate ? "scheduled" : safety.reason,
+    reason: safety.allowed ? "scheduled" : safety.reason,
   };
 }
 
@@ -74,7 +66,7 @@ function readPolicyInputs(rootDir) {
   );
   const safetyState = readJsonStatus(
     path.join(rootDir, STATE_RELATIVE_PATH),
-    validateInstantQueryState,
+    validateQuerySafetyState,
   );
   return { latest, safetyState };
 }
@@ -85,7 +77,6 @@ function writeGithubOutputs(filePath, result) {
     filePath,
     [
       `allowed=${String(result.allowed)}`,
-      `immediate=${String(result.immediate)}`,
       `reason=${result.reason}`,
       `wait_seconds=${result.waitSeconds}`,
       "",
@@ -97,19 +88,19 @@ function writeGithubOutputs(filePath, result) {
 function writeStepSummary(filePath, result) {
   if (!filePath || result.allowed) return;
   let message =
-    "안전 상태 파일을 확인할 수 없어 즉시 조회를 실행하지 않았습니다.";
+    "안전 상태 파일을 확인할 수 없어 이번 예약 조회를 실행하지 않았습니다.";
   if (result.reason === "blocked_today") {
     message =
-      "오늘 법원 차단이 감지되어 같은 날 즉시 조회를 다시 실행하지 않았습니다.";
+      "오늘 법원 차단이 감지되어 남은 예약 조회를 실행하지 않습니다.";
   } else if (result.reason === "uncertain_today") {
     message =
-      "법원 요청을 시작한 실행이 비정상 종료되어 같은 날 즉시 재조회를 실행하지 않았습니다.";
+      "이전 예약 조회가 비정상 종료되어 오늘 남은 예약 조회를 실행하지 않습니다.";
   } else if (result.reason === "cooldown") {
-    message = `법원 과부하 방지를 위해 약 ${Math.ceil(result.waitSeconds / 60)}분 뒤 다시 요청할 수 있습니다.`;
+    message = `최근 조회 후 안전 간격이 지나지 않아 이번 예약을 건너뜁니다. 남은 시간: 약 ${Math.ceil(result.waitSeconds / 60)}분`;
   }
   fs.appendFileSync(
     filePath,
-    `## 즉시 조회 안전 보호\n\n${message}\n`,
+    `## 예약 조회 안전 보호\n\n${message}\n`,
     "utf8",
   );
 }
@@ -117,9 +108,7 @@ function writeStepSummary(filePath, result) {
 function main() {
   const rootDir = path.resolve(__dirname, "..");
   const inputs = readPolicyInputs(rootDir);
-  const result = evaluateInstantQuery({
-    eventName: process.env.GITHUB_EVENT_NAME,
-    runAttempt: process.env.GITHUB_RUN_ATTEMPT,
+  const result = evaluateScheduledQuery({
     latest: inputs.latest.value,
     latestAvailable: inputs.latest.available,
     safetyState: inputs.safetyState.value,
@@ -134,9 +123,8 @@ function main() {
 if (require.main === module) main();
 
 module.exports = {
-  IMMEDIATE_EVENTS,
-  INSTANT_QUERY_COOLDOWN_MS,
-  evaluateInstantQuery,
+  MIN_QUERY_INTERVAL_MS,
+  evaluateScheduledQuery,
   isValidLatest,
   readJsonStatus,
   readPolicyInputs,

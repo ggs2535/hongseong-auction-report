@@ -166,7 +166,9 @@ gcloud scheduler jobs create http "${JOB}-daily" \
   --max-retry-attempts 0
 ```
 
-GitHub Actions의 live schedule은 중복 수집을 막기 위해 비활성화해야 합니다. `workflow_dispatch`와 Pages 게시 단계는 남겨도 됩니다.
+Cloud Run Scheduler를 운영에 사용하면 중복 수집을 막기 위해 GitHub Actions의 live
+schedule을 비활성화해야 합니다. 프론트엔드 전용 `deploy-pages.yml`의 수동 Pages
+게시 기능은 법원 조회를 실행하지 않으므로 남겨도 됩니다.
 
 ## 6. GCS 결과를 Pages로 게시하기
 

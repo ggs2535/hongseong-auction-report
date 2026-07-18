@@ -5,9 +5,10 @@ const path = require("node:path");
 
 const { dateInTimezone, writeJsonAtomic } = require("./storage");
 
-const STATE_RELATIVE_PATH = path.join("data", "instant-query-state.json");
+const STATE_RELATIVE_PATH = path.join("data", "query-safety-state.json");
 const QUERY_COOLDOWN_MS = 10 * 60 * 1000;
-const EVENTS = new Set(["issues", "schedule", "workflow_dispatch"]);
+// `legacy` preserves the final pre-migration result until the first schedule run.
+const EVENTS = new Set(["legacy", "schedule"]);
 const RESULTS = new Set([
   "never",
   "started",
@@ -47,7 +48,7 @@ function isDateOnly(value) {
   );
 }
 
-function validateInstantQueryState(value) {
+function validateQuerySafetyState(value) {
   if (!value || typeof value !== "object" || Array.isArray(value)) return false;
   if (value.schemaVersion !== 1) return false;
   if (!RESULTS.has(String(value.lastResult || ""))) return false;
@@ -142,7 +143,7 @@ function evaluateSafetyWindow(options = {}) {
     options.latestAvailable === false ||
     options.safetyStateAvailable === false ||
     !isValidLatest(latest) ||
-    !validateInstantQueryState(safetyState)
+    !validateQuerySafetyState(safetyState)
   ) {
     return { allowed: false, reason: "state_unavailable", waitSeconds: 0 };
   }
@@ -195,8 +196,8 @@ function evaluateSafetyWindow(options = {}) {
 }
 
 function reserveState(state, options = {}) {
-  if (!validateInstantQueryState(state)) {
-    throw new Error("instant-query state is invalid");
+  if (!validateQuerySafetyState(state)) {
+    throw new Error("query safety state is invalid");
   }
   const now =
     options.now instanceof Date ? options.now : new Date(options.now || Date.now());
@@ -221,15 +222,15 @@ function reserveState(state, options = {}) {
     lastResult: "started",
     updatedAt: now.toISOString(),
   };
-  if (!validateInstantQueryState(reserved)) {
-    throw new Error("reserved instant-query state is invalid");
+  if (!validateQuerySafetyState(reserved)) {
+    throw new Error("reserved query safety state is invalid");
   }
   return reserved;
 }
 
 function finalizeState(state, options = {}) {
-  if (!validateInstantQueryState(state)) {
-    throw new Error("instant-query state is invalid");
+  if (!validateQuerySafetyState(state)) {
+    throw new Error("query safety state is invalid");
   }
   const now =
     options.now instanceof Date ? options.now : new Date(options.now || Date.now());
@@ -349,7 +350,7 @@ async function main() {
     return;
   }
 
-  throw new Error("usage: node src/instant-query-state.js reserve|finalize");
+  throw new Error("usage: node src/query-safety-state.js reserve|finalize");
 }
 
 if (require.main === module) {
@@ -371,6 +372,6 @@ module.exports = {
   normalizeErrorCode,
   normalizeErrorStatusCode,
   reserveState,
-  validateInstantQueryState,
+  validateQuerySafetyState,
   writeOutcomeOutputs,
 };

@@ -2,55 +2,24 @@ name: Update auction report
 
 on:
   schedule:
-    - cron: "37 9 * * *"
-  workflow_dispatch:
-  issues:
-    types:
-      - opened
+    - cron: "37 9-18 * * *"
+      timezone: "Asia/Seoul"
 
 concurrency:
-  group: >-
-    ${{
-      (
-        github.event_name != 'issues' ||
-        (
-          github.repository == 'ggs2535/hongseong-auction-report' &&
-          github.actor == 'ggs2535' &&
-          github.triggering_actor == 'ggs2535' &&
-          github.event.issue.user.login == 'ggs2535' &&
-          github.event.issue.author_association == 'OWNER' &&
-          github.event.issue.title == '[즉시조회]'
-        )
-      )
-      && 'hongseong-auction-report-update'
-      || format('ignored-issue-{0}', github.run_id)
-    }}
+  group: hongseong-auction-report-update
   cancel-in-progress: false
 
 permissions: {}
 
 jobs:
   gate:
-    name: Authorize and protect query
-    if: >-
-      ${{
-        github.event_name != 'issues' ||
-        (
-          github.repository == 'ggs2535/hongseong-auction-report' &&
-          github.actor == 'ggs2535' &&
-          github.triggering_actor == 'ggs2535' &&
-          github.event.issue.user.login == 'ggs2535' &&
-          github.event.issue.author_association == 'OWNER' &&
-          github.event.issue.title == '[즉시조회]'
-        )
-      }}
+    name: Protect scheduled query
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: read
     outputs:
       allowed: ${{ steps.policy.outputs.allowed }}
-      immediate: ${{ steps.policy.outputs.immediate }}
       reason: ${{ steps.policy.outputs.reason }}
       wait_seconds: ${{ steps.policy.outputs.wait_seconds }}
     steps:
@@ -64,9 +33,9 @@ jobs:
         with:
           node-version: 22
 
-      - name: Apply immediate-query safety policy
+      - name: Apply scheduled-query safety policy
         id: policy
-        run: node src/instant-query-policy.js
+        run: node src/query-safety-policy.js
 
   update:
     name: Test, collect, and build report
@@ -76,12 +45,6 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: write
-    outputs:
-      report_complete: ${{ steps.instant_outcome.outputs.complete }}
-      report_blocked: ${{ steps.instant_outcome.outputs.blocked }}
-      report_error_code: ${{ steps.instant_outcome.outputs.error_code }}
-      report_error_status: ${{ steps.instant_outcome.outputs.error_status }}
-      report_result: ${{ steps.instant_outcome.outputs.result }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -112,10 +75,10 @@ jobs:
         id: reserve
         shell: bash
         run: |
-          node src/instant-query-state.js reserve
+          node src/query-safety-state.js reserve
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/instant-query-state.json
+          git add -- data/query-safety-state.json
           git commit -m "chore(state): reserve auction query"
           git push
 
@@ -135,8 +98,8 @@ jobs:
           UPDATE_OUTCOME: ${{ steps.update.outcome }}
         run: node src/actions-summary.js
 
-      - name: Record immediate-query outcome
-        id: instant_outcome
+      - name: Record scheduled-query outcome
+        id: query_outcome
         if: >-
           ${{
             always() &&
@@ -144,19 +107,19 @@ jobs:
           }}
         env:
           UPDATE_OUTCOME: ${{ steps.update.outcome }}
-        run: node src/instant-query-state.js finalize
+        run: node src/query-safety-state.js finalize
 
-      - name: Persist immediate-query outcome
+      - name: Persist scheduled-query outcome
         if: >-
           ${{
             always() &&
-            steps.instant_outcome.outcome == 'success'
+            steps.query_outcome.outcome == 'success'
           }}
         shell: bash
         run: |
-          git add -- data/instant-query-state.json
+          git add -- data/query-safety-state.json
           if git diff --cached --quiet; then
-            echo "No immediate-query state change to commit."
+            echo "No query safety state change to commit."
           else
             git commit -m "chore(state): record auction query outcome"
             git push
@@ -195,79 +158,3 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
-  finish_instant_query:
-    name: Report instant-query result
-    needs:
-      - gate
-      - update
-      - deploy
-    if: >-
-      ${{
-        always() &&
-        github.event_name == 'issues' &&
-        github.repository == 'ggs2535/hongseong-auction-report' &&
-        github.actor == 'ggs2535' &&
-        github.triggering_actor == 'ggs2535' &&
-        github.event.issue.user.login == 'ggs2535' &&
-        github.event.issue.author_association == 'OWNER' &&
-        github.event.issue.title == '[즉시조회]'
-      }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      issues: write
-    steps:
-      - name: Comment with result and close request
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          POLICY_ALLOWED: ${{ needs.gate.outputs.allowed }}
-          POLICY_REASON: ${{ needs.gate.outputs.reason }}
-          WAIT_SECONDS: ${{ needs.gate.outputs.wait_seconds }}
-          UPDATE_RESULT: ${{ needs.update.result }}
-          DEPLOY_RESULT: ${{ needs.deploy.result }}
-          REPORT_COMPLETE: ${{ needs.update.outputs.report_complete }}
-          REPORT_BLOCKED: ${{ needs.update.outputs.report_blocked }}
-          REPORT_ERROR_CODE: ${{ needs.update.outputs.report_error_code }}
-          REPORT_ERROR_STATUS: ${{ needs.update.outputs.report_error_status }}
-          REPORT_RESULT: ${{ needs.update.outputs.report_result }}
-        run: |
-          run_url="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          report_url="https://ggs2535.github.io/hongseong-auction-report/"
-          error_label="${REPORT_ERROR_CODE}"
-          if [[ -n "${REPORT_ERROR_STATUS}" ]]; then
-            error_label="${error_label} (HTTP ${REPORT_ERROR_STATUS})"
-          fi
-
-          if [[ "${POLICY_ALLOWED}" != "true" ]]; then
-            if [[ "${POLICY_REASON}" == "blocked_today" ]]; then
-              body="오늘 법원 사이트의 차단 응답이 기록되어 같은 날 즉시 조회를 다시 실행하지 않았습니다. 다음 정기 실행을 기다려 주세요."
-            elif [[ "${POLICY_REASON}" == "uncertain_today" ]]; then
-              body="법원 요청을 시작한 이전 실행이 비정상 종료되어 안전을 위해 오늘 즉시 재조회를 실행하지 않았습니다. 다음 정기 실행을 기다려 주세요."
-            elif [[ "${POLICY_REASON}" == "cooldown" ]]; then
-              wait_minutes=$(( (WAIT_SECONDS + 59) / 60 ))
-              body="법원 사이트 과부하 방지를 위해 최근 실행 후 10분 동안은 다시 조회하지 않습니다. 약 ${wait_minutes}분 뒤 다시 요청해 주세요."
-            elif [[ "${POLICY_REASON}" == "state_unavailable" ]]; then
-              body="안전 상태 파일을 확인할 수 없어 즉시 조회를 실행하지 않았습니다. 실행 기록을 확인해 주세요. 실행 기록: ${run_url}"
-            else
-              body="안전 정책에 따라 이번 즉시 조회 요청을 실행하지 않았습니다."
-            fi
-          elif [[ "${REPORT_BLOCKED}" == "true" ]]; then
-            body="법원 사이트 차단이 감지되어 전체조회는 완료되지 않았습니다. 배포 상태와 관계없이 오늘은 다시 요청하지 마세요. 오류: ${error_label} 보고서: ${report_url} 실행 기록: ${run_url}"
-          elif [[ "${UPDATE_RESULT}" == "success" && "${DEPLOY_RESULT}" == "success" && "${REPORT_COMPLETE}" == "true" ]]; then
-            body="즉시 전체조회와 보고서 배포가 완료되었습니다. 보고서: ${report_url} 실행 기록: ${run_url}"
-          elif [[ "${UPDATE_RESULT}" == "success" && "${DEPLOY_RESULT}" == "success" ]]; then
-            body="보고서는 배포했지만 법원 원본 전체조회는 완료되지 않았습니다. 오류: ${error_label} 상태: ${REPORT_RESULT} 보고서: ${report_url} 실행 기록: ${run_url}"
-          else
-            body="즉시 조회 자동화가 완료되지 않았습니다. 실행 기록에서 실패 단계를 확인해 주세요. 실행 기록: ${run_url}"
-          fi
-
-          gh api --method POST \
-            "repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}/comments" \
-            -f body="${body}"
-          gh api --method PATCH \
-            "repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}" \
-            -f state=closed \
-            -f state_reason=completed

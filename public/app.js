@@ -843,7 +843,7 @@
     if (refreshInProgress) return;
 
     const button = document.getElementById("refresh-report-button");
-    const status = document.getElementById("instant-query-status");
+    const status = document.getElementById("report-refresh-status");
     if (!button || !status) return;
 
     if (!navigator.onLine) {
@@ -901,24 +901,15 @@
     }
   }
 
-  function installInstantQueryControls() {
-    const requestLink = document.getElementById("instant-query-link");
+  function installReportRefreshControls() {
     const refreshButton = document.getElementById("refresh-report-button");
-    const status = document.getElementById("instant-query-status");
-
-    requestLink?.addEventListener("click", () => {
-      if (status) {
-        status.textContent =
-          "GitHub 요청 화면에서 Submit new issue를 누르세요. 완료 댓글 알림 후 이 화면에서 최신 결과를 확인할 수 있습니다.";
-      }
-    });
     refreshButton?.addEventListener("click", checkLatestReport);
   }
 
   updateSummary();
   installFilters();
   installCopyHandler();
-  installInstantQueryControls();
+  installReportRefreshControls();
   renderItems();
   renderReviewItems();
   updateNetworkStatus();

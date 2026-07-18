@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "lastAttemptAt": "2026-07-17T17:24:13.849Z",
-  "lastEvent": "issues",
+  "lastEvent": "legacy",
   "lastRunId": "29599854916",
   "lastResult": "incomplete",
   "blockedDate": null,
