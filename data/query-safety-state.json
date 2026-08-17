@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-08-17T09:22:10.105Z",
+  "lastAttemptAt": "2026-08-17T10:08:23.085Z",
   "lastEvent": "schedule",
-  "lastRunId": "32014783151",
-  "lastResult": "incomplete",
+  "lastRunId": "32018615001",
+  "lastResult": "started",
   "blockedDate": null,
-  "updatedAt": "2026-08-17T09:24:22.928Z"
+  "updatedAt": "2026-08-17T10:08:23.085Z"
 }
