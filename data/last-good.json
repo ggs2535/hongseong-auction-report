@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
-  "reportDate": "2026-08-31",
-  "generatedAt": "2026-08-31T14:24:18.345Z",
+  "reportDate": "2026-09-01",
+  "generatedAt": "2026-09-01T10:28:36.063Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -15,16 +15,16 @@
     "complete": true,
     "countsKnown": true,
     "courtCode": "B000281",
-    "totalCount": 144,
+    "totalCount": 214,
     "pageSize": 40,
-    "expectedPages": 4,
-    "fetchedPages": 4,
+    "expectedPages": 6,
+    "fetchedPages": 6,
     "failedPages": [],
-    "fetchedRawCount": 144,
-    "fetchedUniqueCount": 144,
+    "fetchedRawCount": 214,
+    "fetchedUniqueCount": 214,
     "missingCount": 0,
-    "matchedResidentialCount": 20,
-    "reviewCount": 22,
+    "matchedResidentialCount": 35,
+    "reviewCount": 55,
     "fetchMode": "playwright",
     "blocked": false,
     "errorCode": null,
@@ -32,15 +32,15 @@
     "errorStatusCode": null,
     "upstreamUrl": null,
     "upstreamMessage": null,
-    "startedAt": "2026-08-31T14:23:12.132Z",
-    "finishedAt": "2026-08-31T14:24:18.345Z"
+    "startedAt": "2026-09-01T10:27:23.236Z",
+    "finishedAt": "2026-09-01T10:28:36.063Z"
   },
   "summary": {
-    "totalCount": 144,
-    "checkedCount": 144,
+    "totalCount": 214,
+    "checkedCount": 214,
     "missingCount": 0,
-    "residentialCount": 20,
-    "reviewCount": 22,
+    "residentialCount": 35,
+    "reviewCount": 55,
     "success": true,
     "countsKnown": true
   },
@@ -78,7 +78,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "7599ef59dcc850008c9dd693d995a76ef3ded4971929108adb36ca59e04074de",
       "region": "홍성군"
@@ -116,7 +116,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "9648ea31fbc7e991071c6012a6565ab965546291926b8ce6cf9a0a179606efbd",
       "region": "홍성군"
@@ -154,7 +154,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "da46cd67474c4d0066b0f3d6fb2a34c19e3dcf751645cc6b2c678be477f816f5",
       "region": "홍성군"
@@ -192,7 +192,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "fe42327597c42a6e80a8dedcec227345e62878cdd99f6a98fac0a1c6ad9d50e3",
       "region": "홍성군"
@@ -230,10 +230,40 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "6d9ce9a4c0a6cca10da2117f8d9beb415dfab3ce6eb32ec25fc6727230b59147",
       "region": "홍성군"
+    },
+    {
+      "id": "20250130001182-1",
+      "caseNumber": "20250130001182",
+      "itemNumber": "1",
+      "usage": "철근콘크리트조 84.84㎡",
+      "address": "충청남도 예산군 예산읍 향천리 177 신천아파트",
+      "appraisedPrice": 67000000,
+      "minimumSalePrice": 32830000,
+      "priceRatio": 49,
+      "failedBidCount": 3,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "PRICE_DOWN",
+        "FAILED_BID_INCREMENT",
+        "SALE_DATE_CHANGED",
+        "RESTARTED"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "7477f06121075f18cedb663f7f591ea460bab7facda54d664734a0d47245975f",
+      "region": "예산군"
     },
     {
       "id": "20250130001226-2",
@@ -255,10 +285,40 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "e8d8e5441cbca4294dc1af1da36c12b55914058f9213eda12c94b7c3ebf05403",
       "region": "홍성군"
+    },
+    {
+      "id": "20250130001234-1",
+      "caseNumber": "20250130001234",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 84.8318㎡",
+      "address": "충청남도 예산군 삽교읍 목리 894 원목마을이지더원2차아파트",
+      "appraisedPrice": 341000000,
+      "minimumSalePrice": 238700000,
+      "priceRatio": 70,
+      "failedBidCount": 2,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "PRICE_DOWN",
+        "FAILED_BID_INCREMENT",
+        "SALE_DATE_CHANGED",
+        "RESTARTED"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "a9f2468bdd3dbd1835a8d5d61ad0e977eb18c201e12885f42fcf16ac5fc19938",
+      "region": "예산군"
     },
     {
       "id": "20250130015746-1",
@@ -280,7 +340,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "b8ea9c9b3fcdb420e5e854197289da6c35ce18e43355a13e9ba77450eaaf7569",
       "region": "예산군"
@@ -329,7 +389,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "d68514d6bed4bb39e9ecf8c868008a2805f22464bb82861b6e4d1ff482a3444b",
       "region": "홍성군"
@@ -354,7 +414,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "f7eaa9f4fdc8a6e6e0e4a914158b41dcd8147cd7bde329495468e6217b75e5dc",
       "region": "홍성군"
@@ -379,10 +439,68 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "d8ba3f20cbc8d718a13124311694245c04898781630232eb81ae683ad9e9c1bd",
       "region": "홍성군"
+    },
+    {
+      "id": "20250130016189-1",
+      "caseNumber": "20250130016189",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 78.4246㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 300000000,
+      "minimumSalePrice": 300000000,
+      "priceRatio": 100,
+      "failedBidCount": 1,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "FAILED_BID_INCREMENT",
+        "SALE_DATE_CHANGED",
+        "RESTARTED"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "8540a81615d7cc65f3c5e2d1bbb29df89672037571f9ba4f2691e9dde5aff5e9",
+      "region": "예산군"
+    },
+    {
+      "id": "20250130016193-1",
+      "caseNumber": "20250130016193",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 78.4246㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 293000000,
+      "minimumSalePrice": 293000000,
+      "priceRatio": 100,
+      "failedBidCount": 1,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "FAILED_BID_INCREMENT",
+        "SALE_DATE_CHANGED",
+        "RESTARTED"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "e3a44503d76fcc9cf34b5e67c5cb697c36dfac569d909c4e3c2fd4a496e7a0ca",
+      "region": "예산군"
     },
     {
       "id": "20250130016195-1",
@@ -404,9 +522,38 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "e74d4f61ce2d08250cf2161584603216b937d539befd24e9588b3812939aaf06",
+      "region": "예산군"
+    },
+    {
+      "id": "20250130016197-1",
+      "caseNumber": "20250130016197",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 84.3152",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 320000000,
+      "minimumSalePrice": 320000000,
+      "priceRatio": 100,
+      "failedBidCount": 1,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "FAILED_BID_INCREMENT",
+        "SALE_DATE_CHANGED",
+        "RESTARTED"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "ac199a4b63a1f7f0b0a7a63c82e9600351fa81c46f5ae8ead4c75df14cf4ef0d",
       "region": "예산군"
     },
     {
@@ -429,7 +576,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "f969c62b4d07195f12d29ca5daa08c763bd2fdbd7dd78ba87eb15f3d8dfbc637",
       "region": "예산군"
@@ -454,7 +601,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "2638dc894911261412900f349b080cb419438a5cfef44673cd2e854d3e198230",
       "region": "홍성군"
@@ -514,35 +661,90 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "24bf37389c89e5493fc5c65584007b6276b43509bd34adeee1f92072aebdb634",
       "region": "홍성군"
     },
     {
-      "id": "20260130015010-1",
-      "caseNumber": "20260130015010",
+      "id": "20260130000072-1",
+      "caseNumber": "20260130000072",
       "itemNumber": "1",
-      "usage": "철근콘크리트구조 84.6218㎡",
-      "address": "충청남도 홍성군 홍성읍 고암리 1212 홍성자이",
-      "appraisedPrice": 380000000,
-      "minimumSalePrice": 380000000,
+      "usage": "",
+      "address": "충청남도 예산군 예산읍 주교리 213-15",
+      "appraisedPrice": 209571400,
+      "minimumSalePrice": 209571400,
       "priceRatio": 100,
-      "failedBidCount": 1,
-      "saleDate": "2026-09-01",
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
       "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
+      "remarks": [
+        "일괄매각"
+      ],
+      "remarksEvidence": [
+        {
+          "keyword": "일괄매각",
+          "field": "remarks",
+          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
+        },
+        {
+          "keyword": "일괄매각",
+          "field": "raw.mulBigo",
+          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
+        }
+      ],
       "documentVerification": {
         "saleSpecificationChecked": false,
         "fieldSurveyChecked": false,
         "appraisalChecked": false
       },
-      "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
-      "listFingerprint": "70bc25c26938857cd63ca870a0d63409e879d9d113d591709b7f0ace39e513de",
-      "region": "홍성군"
+      "listFingerprint": "ed4af4be308b9ba0b7a469b8a180d2a681478261c508009050b0c0c41e8cebdf",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130000072-2",
+      "caseNumber": "20260130000072",
+      "itemNumber": "2",
+      "usage": "시멘트벽돌조 기와지붕 2층 주택 지층 14.85㎡ 1층 85.05㎡ 2층 43.83㎡",
+      "address": "충청남도 예산군 예산읍 주교리 213-15",
+      "appraisedPrice": 209571400,
+      "minimumSalePrice": 209571400,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [
+        "일괄매각"
+      ],
+      "remarksEvidence": [
+        {
+          "keyword": "일괄매각",
+          "field": "remarks",
+          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
+        },
+        {
+          "keyword": "일괄매각",
+          "field": "raw.mulBigo",
+          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
+        }
+      ],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "07cee7795139543aa7fc070885c8f91759537af7ea38da20bbc98ce59b0abb5c",
+      "region": "예산군"
     },
     {
       "id": "20260130015044-1",
@@ -588,10 +790,37 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "aa2414fb82d8971b37899b37d29d107134abcbf54ce0a5ae2e272fd0bf66d8d0",
       "region": "홍성군"
+    },
+    {
+      "id": "20260130015047-1",
+      "caseNumber": "20260130015047",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 84.3152㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 314000000,
+      "minimumSalePrice": 314000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "16be38dcd1f9c7802d5cd9ac73df1f9307a99f22908866d4f90456954abaf97b",
+      "region": "예산군"
     },
     {
       "id": "20260130015049-1",
@@ -613,9 +842,36 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "33f8b10dbd208857c985b03f5abd4ab4e68f28374f4bc546e60abf129e7c2d26",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015051-1",
+      "caseNumber": "20260130015051",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 84.3152㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 313000000,
+      "minimumSalePrice": 313000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "da479ac3076c2e8259c7235ce462fdd08277b45510253c27f737c7255c0c6e1f",
       "region": "예산군"
     },
     {
@@ -638,7 +894,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "27aa035a042db36d0bd852b3f2694a0ce172f8c6fabbbd509c317e97997b2d68",
       "region": "예산군"
@@ -663,9 +919,198 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "77381d3d3a0f40a9f18c1e47ad268eaccd3de64d400c5ce4953d9113b6ecc9ef",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015116-1",
+      "caseNumber": "20260130015116",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 78.4246㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 292000000,
+      "minimumSalePrice": 292000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "365ed1e2ab12deec2ea5b006acc8495c3628a307ad0cdc6d536aebfcdcbfe7f2",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015125-1",
+      "caseNumber": "20260130015125",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 68.684㎡",
+      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
+      "appraisedPrice": 91000000,
+      "minimumSalePrice": 91000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "00ca0d1ec53718e3cfbd83886f8bc946643939d998a9199e1fe59ecb6d9368cf",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015125-2",
+      "caseNumber": "20260130015125",
+      "itemNumber": "2",
+      "usage": "철근콘크리트구조 68.684㎡",
+      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
+      "appraisedPrice": 94000000,
+      "minimumSalePrice": 94000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "34134771fb46363000c0b4ecd621d47d81eab56dee215da2a978cd78e9326b30",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015125-3",
+      "caseNumber": "20260130015125",
+      "itemNumber": "3",
+      "usage": "철근콘크리트구조 68.684㎡",
+      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
+      "appraisedPrice": 94000000,
+      "minimumSalePrice": 94000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "7523bdc6aec574205bcfe40241d105228e4a0379e07e2c3ae97e2025bad0de44",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015125-4",
+      "caseNumber": "20260130015125",
+      "itemNumber": "4",
+      "usage": "철근콘크리트구조 68.684㎡",
+      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
+      "appraisedPrice": 94000000,
+      "minimumSalePrice": 94000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "d3746a1127656bc84b0d73538364ab2a06b0f3ecd2640f13966179b6d5630a02",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015140-1",
+      "caseNumber": "20260130015140",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 78.4246㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 292000000,
+      "minimumSalePrice": 292000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "8281a3ac01a21144a1cf417f3ca76c0eb9c03e70c48e6a0ee6a1f34f9f0e55e7",
+      "region": "예산군"
+    },
+    {
+      "id": "20260130015149-1",
+      "caseNumber": "20260130015149",
+      "itemNumber": "1",
+      "usage": "철근콘크리트구조 78.4246㎡",
+      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
+      "appraisedPrice": 268000000,
+      "minimumSalePrice": 268000000,
+      "priceRatio": 100,
+      "failedBidCount": 0,
+      "saleDate": "2026-09-15",
+      "status": "01",
+      "remarks": [],
+      "remarksEvidence": [],
+      "documentVerification": {
+        "saleSpecificationChecked": false,
+        "fieldSurveyChecked": false,
+        "appraisalChecked": false
+      },
+      "changeType": [
+        "NEW"
+      ],
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+      "detailStatus": "상세조회 대기",
+      "listFingerprint": "4e35e93f44197e63db757d8347367c0da25adc4ad4174bd626debae68bee3bb2",
       "region": "예산군"
     },
     {
@@ -688,13 +1133,199 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+      "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "2d7e90b627587d8a29d0f65b75ae9f2d0962d0f145aa4c1e8525c7d48e3f0eae",
       "region": "예산군"
     }
   ],
   "reviewItems": [
+    {
+      "item": {
+        "id": "20240130018126-1",
+        "caseNumber": "20240130018126",
+        "itemNumber": "1",
+        "usage": "",
+        "address": "충청남도 홍성군 홍성읍 오관리 305-9",
+        "appraisedPrice": 3252378900,
+        "minimumSalePrice": 1593666000,
+        "priceRatio": 49,
+        "failedBidCount": 6,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "65820143ac8009d1145406b3888d4115735da6c673cfef2ead113078b7b58407"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20240130018126-2",
+        "caseNumber": "20240130018126",
+        "itemNumber": "2",
+        "usage": "철근콘크리트조 슬래브지붕 2층 1종 근린생활시설 및 2종 근린생활시설 1층 420.82㎡(일용품점) 2층 445.54㎡(일용품점) 지하 320.62㎡(일반음식점)",
+        "address": "충청남도 홍성군 홍성읍 오관리 305-9",
+        "appraisedPrice": 3252378900,
+        "minimumSalePrice": 1593666000,
+        "priceRatio": 49,
+        "failedBidCount": 6,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "b739beab2498c0b08363d1c71c56a17c6414e8b3a23b1c5e6d6efc17c70b26f6"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20240130018126-3",
+        "caseNumber": "20240130018126",
+        "itemNumber": "3",
+        "usage": "",
+        "address": "충청남도 홍성군 홍성읍 오관리 305-18",
+        "appraisedPrice": 3252378900,
+        "minimumSalePrice": 1593666000,
+        "priceRatio": 49,
+        "failedBidCount": 6,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각. 제시외 건물 포함 - 목록 1 현황 '상업용 건부지' 상태이며 목록 3 현황 '도로 등' 상태임 - 목록 2는 상업용 건물이며 1, 2층은 근린생활시설로 이용 중이고, 지하층은 공실 상태임 - 목록 2 등기사항전부증명서에는 철근콘크리트조 슬래브지붕으로 등재되어 있으나, 현황 및 일반건축물대장상 1층 창고(증축)부분은 일반철골조 조립식판넬지붕임 - 목록 1 지상 건물로 제1호, 제2호 건물이 등기되어 있으나 현황 '소재불명'임"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "61d0d06c74e5a8e50701284246ceaff28f67f035a6966e930ce277df047fe333"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
+        ]
+      }
+    },
     {
       "item": {
         "id": "20250130001009-1",
@@ -716,7 +1347,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "7c251d0f25712cb25e69b6d1d790433384b2c2ebf63b42497ec561a9a77a7304"
       },
@@ -753,7 +1384,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "7c4f4d1616f3c12bc88eff9fe2e7f948d075fe3ce821a3900901779a6ab98ad7"
       },
@@ -790,7 +1421,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "000f65da5162bc36875ce6816a0e966a71ef2901348e5edc189721d6561cd5cc"
       },
@@ -827,7 +1458,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "02e18cf2b8e6dcd1fcd1f64b1037f5dc1cfb86adb26584209a24ff8443588d74"
       },
@@ -863,7 +1494,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "8d7ef424f7d8ce50f641f307dee8541e52ec0f5e203c1748c5bf4ab46c293a8d"
       },
@@ -899,7 +1530,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "0331d481f1e5c32d896961d7afb26bba1bb82946b6bd223dbe456d26be7ca7a1"
       },
@@ -935,7 +1566,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "45deb4cfb7668f4190dbde320cd52f95015de9dfcfa610a858d700c778ff78c0"
       },
@@ -984,7 +1615,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c25b476ddf937086148900405e528f30a2b50fa5b5eda6affb342aed353ba8a7"
       },
@@ -998,6 +1629,106 @@
         ],
         "excluded": [
           "근린생활시설"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001148-1",
+        "caseNumber": "20250130001148",
+        "itemNumber": "1",
+        "usage": "철근콘크리트구조 68.08㎡",
+        "address": "충청남도 예산군 삽교읍 목리 964 에드가프라자1차",
+        "appraisedPrice": 1668000000,
+        "minimumSalePrice": 572124000,
+        "priceRatio": 34.3,
+        "failedBidCount": 4,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1, 2는 벽체 구분 없이 근린생활시설로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1, 2는 벽체 구분 없이 근린생활시설로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "b8c405068f76a8cdd77d058fe429707ffeed8fcd09f960396be0b23109f56aa4"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001148-2",
+        "caseNumber": "20250130001148",
+        "itemNumber": "2",
+        "usage": "철근콘크리트구조 68.08㎡",
+        "address": "충청남도 예산군 삽교읍 목리 964 에드가프라자1차",
+        "appraisedPrice": 1668000000,
+        "minimumSalePrice": 572124000,
+        "priceRatio": 34.3,
+        "failedBidCount": 4,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1, 2는 벽체 구분 없이 근린생활시설로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1, 2는 벽체 구분 없이 근린생활시설로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "a6167887a399a66e242922d422d80fc7e6d79884ace521e24e63eec84bc8b0a9"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가"
         ]
       }
     },
@@ -1035,7 +1766,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "b14035c8e4dee2d159df19967574c945299a73b79ef1bbe816e0aabbeaf61f95"
       },
@@ -1049,6 +1780,554 @@
           "근린생활시설",
           "상가",
           "여관"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001168-1",
+        "caseNumber": "20250130001168",
+        "itemNumber": "1",
+        "usage": "철근콘크리트구조 소매점 30.77㎡",
+        "address": "충청남도 홍성군 홍성읍 남장리 540 주1동",
+        "appraisedPrice": 359000000,
+        "minimumSalePrice": 251300000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [],
+        "remarksEvidence": [],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "95f9307829de50cfeefc81937ef2df7497babf28c8af334739ecfb56204bb95c"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001168-2",
+        "caseNumber": "20250130001168",
+        "itemNumber": "2",
+        "usage": "철근콘크리트구조 소매점 30㎡",
+        "address": "충청남도 홍성군 홍성읍 남장리 540 주1동",
+        "appraisedPrice": 359000000,
+        "minimumSalePrice": 251300000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [],
+        "remarksEvidence": [],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "b312a0020182d05da3551ad7a6755fb1a59c4e2d3fe9c3e3f32dcf7f2907d38a"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001219-1",
+        "caseNumber": "20250130001219",
+        "itemNumber": "1",
+        "usage": "",
+        "address": "충청남도 홍성군 홍성읍 오관리 301-1",
+        "appraisedPrice": 349043380,
+        "minimumSalePrice": 349043380,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "지분매각",
+          "일괄매각",
+          "제시외 건물",
+          "임차인"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "지분매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "임차인",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "지분매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "임차인",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "e15cf447c3d1244fd701d52e961c1f36b527744d02206b95c5d23dc95b82f160"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001219-2",
+        "caseNumber": "20250130001219",
+        "itemNumber": "2",
+        "usage": "경량철골조 기타(조립식판넬)지붕 2층 근린생활시설 1층 155.7㎡ 2층 155.7㎡",
+        "address": "충청남도 홍성군 홍성읍 오관리 301-1",
+        "appraisedPrice": 349043380,
+        "minimumSalePrice": 349043380,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "지분매각",
+          "일괄매각",
+          "제시외 건물",
+          "임차인"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "지분매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "임차인",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "지분매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          },
+          {
+            "keyword": "임차인",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ,ᄂ)포함. -지분매각(단, 공유자 우선 매수는 1회에 한함) -매수인에게 대항할수 있는 임차인이 있으며, 배당에서 보증금이 전액 변제되지 아니하면 잔액을 매수인이 인수함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "fa30e9b83fd63248100c99589edb67b5fcce6336a2f55485a0d66e0cb6b7e3fc"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001245-1",
+        "caseNumber": "20250130001245",
+        "itemNumber": "1",
+        "usage": "",
+        "address": "충청남도 예산군 예산읍 신례원리 249-5",
+        "appraisedPrice": 1904081000,
+        "minimumSalePrice": 1332857000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "0c5334ce8dcd04b9151589fb4288c1e2fa0ecbc2746b08ee96664c604cdf4876"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001245-2",
+        "caseNumber": "20250130001245",
+        "itemNumber": "2",
+        "usage": "",
+        "address": "충청남도 예산군 예산읍 신례원리 249-8",
+        "appraisedPrice": 1904081000,
+        "minimumSalePrice": 1332857000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "4da5fce149b898e527bb93683a9072d3427460014256cd076f1e4a74d4614c64"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001245-3",
+        "caseNumber": "20250130001245",
+        "itemNumber": "3",
+        "usage": "",
+        "address": "충청남도 예산군 예산읍 신례원리 249-17",
+        "appraisedPrice": 1904081000,
+        "minimumSalePrice": 1332857000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "6a60f2c1624dede4e8dfe8e784c633b1124d371c56738a55a89200b9a5b06ace"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고",
+          "답"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001245-4",
+        "caseNumber": "20250130001245",
+        "itemNumber": "4",
+        "usage": "일반철골조 기타지붕(판넬) 2층 제1종근린생활시설 1층(제1종근린생활시설) 688.78㎡ 1층(제2종근린생활시설) 26㎡ 2층(제2종근린생활시설) 106.05㎡",
+        "address": "충청남도 예산군 예산읍 신례원리 249-8 1호",
+        "appraisedPrice": 1904081000,
+        "minimumSalePrice": 1332857000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "cce261a83632d512ee210f1540d807fe99335b714276093a1ee10612d0470d8e"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130001245-5",
+        "caseNumber": "20250130001245",
+        "itemNumber": "5",
+        "usage": "일반철골조 기타지붕(판넬) 단층 창고시설 198㎡",
+        "address": "충청남도 예산군 예산읍 신례원리 249-8 2호",
+        "appraisedPrice": 1904081000,
+        "minimumSalePrice": 1332857000,
+        "priceRatio": 70,
+        "failedBidCount": 2,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(비가림시설) 매각 포함 -목록3은 공부상 '답'이나, 현황 '도로'로 이용중임 -목록4는 근린생활시설(현재 공실임)이며, 1, 2층의 증축부분의 면적 포함(건축물대장상 998.4m2임)함. -목록 5는 창고로 이용중임."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "0cf3a314db04963327d71ea8620d172b6a440aa8c78ff250496bdf10becd9fed"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고"
         ]
       }
     },
@@ -1073,7 +2352,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e52aa12ed8313fe3b4170656f5633f2884f57064c1800af436e7b94185fdb79a"
       },
@@ -1133,7 +2412,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c7d7cb2b3c064c047026019af6ae0c0c7b0426697106880ffb6b1005c1cab84b"
       },
@@ -1170,7 +2449,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e962855ba2defdf34970192bcf2e5aafd7c8a0037af0c2d31b89b1ada7d61709"
       },
@@ -1206,7 +2485,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "d785cf1490e9bb8ab6f4ad2390d3711857fa25044e14345019a179f719d7e14f"
       },
@@ -1243,7 +2522,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "95c4a938f337c41ea5765f958b0c3a55401d2b1c48912316d353d18dc97d6656"
       },
@@ -1255,6 +2534,89 @@
         ],
         "excluded": [
           "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130015967-3",
+        "caseNumber": "20250130015967",
+        "itemNumber": "3",
+        "usage": "벽돌조 (철근)콘크리트지붕 2층 단독주택 1층 103.21㎡ 2층 96.5㎡",
+        "address": "충청남도 예산군 예산읍 간양리 57-2",
+        "appraisedPrice": 2300328200,
+        "minimumSalePrice": 2300328200,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "매각 제외",
+          "특별매각조건"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "특별매각조건",
+            "field": "remarks",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          },
+          {
+            "keyword": "특별매각조건",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. 제시외 건물(감정서상 ᄀ~ᄆ) 매각 포함 -목록 2,3은 사회복지시설로 이용중이고, 목록2의 현황은 '간양리 46번지'상에 소재함. -목록2 의 옥탑부분으로 가는 외부계단 매각 포함 -목록4 지상 소재 제시외 이동식 저온창고 매각 제외 -본건은 사회복지법인의 기본재산으로 매수인이 소유권을 취득함에 있어 주무관청의 처분허가서를 제출하여야 하는 특별매각조건있음.(미제출시 보증금 몰수)"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "5910028f64e54968ccfb61de9c9f631c16dd56abb828805e0d5666cc6d541832"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "단독주택",
+          "주택"
+        ],
+        "excluded": [
+          "창고"
         ]
       }
     },
@@ -1325,7 +2687,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "74c2ad54aafd01a4b128743320e23a15f170baf81cdb9da75e5bc07176c36d7a"
       },
@@ -1419,7 +2781,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e5dce62695b55166efb00882f9c116bcff3360349d5e3ff96edac67390756e0f"
       },
@@ -1513,7 +2875,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "b15f8355d7e8e6f46a3643d4b49b4b465180e614815cee5eec44a68495b4b420"
       },
@@ -1585,7 +2947,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "473d0fcb501aa6d8750e3ea4bef0818d9fc031c2396e891286344785244f9bac"
       },
@@ -1656,7 +3018,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "341ae9a0793aee712432afacd184813499e69fb0a5a3ba0c1375cb0838f67f07"
       },
@@ -1671,6 +3033,914 @@
           "근린생활시설",
           "상가",
           "사무실"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-1",
+        "caseNumber": "20250130016152",
+        "itemNumber": "1",
+        "usage": "",
+        "address": "충청남도 홍성군 은하면 장곡리 25",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "df5d3646d63736b4242027601dcf0efd4bd0dd81227a7a4a5bfb1ece3c674f12"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-2",
+        "caseNumber": "20250130016152",
+        "itemNumber": "2",
+        "usage": "",
+        "address": "충청남도 홍성군 은하면 장곡리 26",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "f25b0831902b9a7ab267dcc3b53c5ef1f372ec153165b01f355bb5e358cc08e9"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고",
+          "전"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-3",
+        "caseNumber": "20250130016152",
+        "itemNumber": "3",
+        "usage": "",
+        "address": "충청남도 홍성군 은하면 장곡리 28",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "85b9913bec7ca6f0fbb2bda0484e73d80bdf3fdd6eb1ad7d9d7d018b61e2a692"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고",
+          "답"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-4",
+        "caseNumber": "20250130016152",
+        "itemNumber": "4",
+        "usage": "",
+        "address": "충청남도 홍성군 은하면 장곡리 29",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "3873b013dd3f6969ce1d27a8888eb6445be2ca3b15bafaf08440ecf65c0defaf"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-5",
+        "caseNumber": "20250130016152",
+        "itemNumber": "5",
+        "usage": "일반철골구조 기타(샌드위치판넬)지붕 단층 분뇨.쓰레기처리시설 397.89㎡ 부속건물 경량철골구조 기타(샌드위치판넬)지붕 단층 관리동 151.8㎡",
+        "address": "충청남도 홍성군 은하면 장곡리 29 1동",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "f6bb7ff94f1f37956e2293a1466c8e2216898a2a5803781cb9d615766136cce1"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-6",
+        "caseNumber": "20250130016152",
+        "itemNumber": "6",
+        "usage": "일반철골구조 기타(샌드위치판넬)지붕 단층 분뇨.쓰레기처리시설 203.7㎡",
+        "address": "충청남도 홍성군 은하면 장곡리 29 2동",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "fa5d313ef2154b82f385e82c96f9a7d291811c466ddf19568b6a31e1a291b658"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-7",
+        "caseNumber": "20250130016152",
+        "itemNumber": "7",
+        "usage": "일반철골구조 기타(샌드위치판넬)지붕 단층 분뇨.쓰레기처리시설 203.7㎡",
+        "address": "충청남도 홍성군 은하면 장곡리 29 3동",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "262ba3967a7a2bd1e5142d4aaa104b54e417e09b254b1059a54685e7cb979f9f"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20250130016152-8",
+        "caseNumber": "20250130016152",
+        "itemNumber": "8",
+        "usage": "일반철골구조 기타(샌드위치판넬)지붕 단층 분뇨.쓰레기처리시설 397.89㎡",
+        "address": "충청남도 홍성군 은하면 장곡리 29 4동",
+        "appraisedPrice": 1322062560,
+        "minimumSalePrice": 1322062560,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "농지취득자격증명"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          },
+          {
+            "keyword": "농지취득자격증명",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록1,4는 '분뇨, 쓰레기 처리시설 용도의 건부지'로 이용중이며, 목록5~8은 현재 공실임 -목록2는 '전 및 일부 진입도로'로 이용중임 -목록 2,3은 농지취득자격증명서 제출 요(미 제출시 보증금 미반환) -목록5의 부속건물은 '주택'으로 이용중이며, 주택에 부합된 제시외 건물(창고 및 보일러실) 매각 포함."
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "f3a84a5f8abe9c00c2e6f17d5287cec65eb87efbb2833e2ba0e42f7c05419e3b"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "주택"
+        ],
+        "excluded": [
+          "창고"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130000037-1",
+        "caseNumber": "20260130000037",
+        "itemNumber": "1",
+        "usage": "",
+        "address": "충청남도 홍성군 구항면 황곡리 303-1",
+        "appraisedPrice": 944560200,
+        "minimumSalePrice": 944560200,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "매각 제외",
+          "임차인"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "adeb701e2ecf1c1db74fc5acca80d1b7eed5496b2db2934e355278ac371a48dc"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가",
+          "창고",
+          "기계"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130000037-2",
+        "caseNumber": "20260130000037",
+        "itemNumber": "2",
+        "usage": "",
+        "address": "충청남도 홍성군 구항면 황곡리 305-7",
+        "appraisedPrice": 944560200,
+        "minimumSalePrice": 944560200,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "매각 제외",
+          "임차인"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "80df7740aaa92aaa5884bd500d92577ecd38c5d43de7bf6a0428e181f7a659a5"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가",
+          "창고",
+          "기계"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130000037-3",
+        "caseNumber": "20260130000037",
+        "itemNumber": "3",
+        "usage": "강관조 기타(샌드위치판넬)지붕 단층 제1종근린생활시설 및 제2종근린생활시설 217.1㎡",
+        "address": "충청남도 홍성군 구항면 황곡리 303-1 주1동",
+        "appraisedPrice": 944560200,
+        "minimumSalePrice": 944560200,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "매각 제외",
+          "임차인"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "49cbc5b8520c418082d545f4511e7e9e012521efce6bd29be0a44f9dc03d2dfc"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고",
+          "기계"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130000037-4",
+        "caseNumber": "20260130000037",
+        "itemNumber": "4",
+        "usage": "철근콘크리트조 및 조적조 (철근)콘크리트 지붕 3층 제2종근린생활시설 1층 224.66㎡ 2층 201.26㎡ 3층 41.85㎡ 부속건물 기타강구조 갈바륨 지붕 단층 창고 27㎡",
+        "address": "충청남도 홍성군 구항면 황곡리 303-1 주2동",
+        "appraisedPrice": 944560200,
+        "minimumSalePrice": 944560200,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물",
+          "매각 제외",
+          "임차인"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "remarks",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "매각 제외",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          },
+          {
+            "keyword": "임차인",
+            "field": "raw.mulBigo",
+            "sourceText": "- 일괄매각 - 목록3,4의 부합물 및 종물인 제시외 건물 매각 포함 - 목록 3은 농기계 수리점으로 이용중이며, 내부에 설치된 호이스트는 임차인 소유로 탐문되어 매각 제외 -목록4의 부속건물 단층창고 27m2는 현황 멸실상태임이고, 일반음식점은 현재 '운휴'중임. - 지상소재 이동식컨테이너, 저장창고는 매각 제외 - 목록 1,2 지상 소재 제시외 관정(건물의 상수도 대체용수로 이용중인것으로 탐문조사됨) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "f123ff18fc054f896e01cade71d8a1842d1c170507988ddd8de90de857cfe5ca"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "창고",
+          "기계"
         ]
       }
     },
@@ -1695,7 +3965,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "d5f4ac69f0a1b306c89cbd0f1511e95a9dff63a9ff5e03f99067f8d02385dc36"
       },
@@ -1744,7 +4014,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "35c1239d43bd9038f1d4517f9a29aa1c4637944e3c4d5501f13bcb7e9c035969"
       },
@@ -1795,7 +4065,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "121becd056a14a37562b83069e0e397bf66d4e036d23026784a4c7a4fc574776"
       },
@@ -1808,6 +4078,328 @@
         "excluded": [
           "상가",
           "임야"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130015055-1",
+        "caseNumber": "20260130015055",
+        "itemNumber": "1",
+        "usage": "철근콘크리트구조 23.65㎡",
+        "address": "충청남도 예산군 삽교읍 목리 960 내포에드가오피스텔2차",
+        "appraisedPrice": 79000000,
+        "minimumSalePrice": 79000000,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [],
+        "remarksEvidence": [],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "3ebd7676a3bf72e3f59027c7af951053077dde9a6f63a35cfbbc95f8a74a482c"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130015154-1",
+        "caseNumber": "20260130015154",
+        "itemNumber": "1",
+        "usage": "",
+        "address": "충청남도 예산군 예산읍 산성리 734",
+        "appraisedPrice": 1372225320,
+        "minimumSalePrice": 1372225320,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "e217916ab135d15b8b7e3be464554e42668ac7df4c6cd47784763f0bfaf67497"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가",
+          "사무실"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130015154-2",
+        "caseNumber": "20260130015154",
+        "itemNumber": "2",
+        "usage": "",
+        "address": "충청남도 예산군 예산읍 산성리 734-1",
+        "appraisedPrice": 1372225320,
+        "minimumSalePrice": 1372225320,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "07e7fd88dc1abf0adf532a6449476ce4a28ceaa069c058b87288305b44ee2b94"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "상가",
+          "사무실"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130015154-3",
+        "caseNumber": "20260130015154",
+        "itemNumber": "3",
+        "usage": "철근콘크리트구조 철근콘크리트지붕 4층 제1,2종 근린생활시설 지1층 제2종근린생활시설(노래연습장) 289.28㎡ 1층 제1종근린생활시설(소매점) 251㎡ 2층 제2종근린생활시설(일반음식점) 257.16㎡ 3층 제2종근린생활시설(일반음식점) 199.86㎡ 4층 제2종근린생활시설(사무소) 151.46㎡",
+        "address": "충청남도 예산군 예산읍 산성리 734",
+        "appraisedPrice": 1372225320,
+        "minimumSalePrice": 1372225320,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각",
+          "제시외 건물"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "remarks",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          },
+          {
+            "keyword": "제시외 건물",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각 -목록3은 일부가 공부상 용도와 현황이 상이(3층은 공부상 일반음식점이나 현황'사무실', 4층은 공부상 사무소이나 현황'주거용'임) -건물에 부합된 제시외 건물(감정서상 기호 ᄀ~ᄇ) 매각 포함"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "4cf0ccbaf878d5710f2841f72543d7550155c69c2dfc62f8c4cd43688c69070d"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "오피스텔"
+        ],
+        "excluded": [
+          "근린생활시설",
+          "상가",
+          "사무실"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130015180-1",
+        "caseNumber": "20260130015180",
+        "itemNumber": "1",
+        "usage": "시멘트벽돌조 슬래브지붕 2층 주택 1층 85.37㎡ 2층 59.13㎡",
+        "address": "충청남도 홍성군 홍성읍 오관리 284-6",
+        "appraisedPrice": 297258000,
+        "minimumSalePrice": 297258000,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. -주택에 부합된 제시외 물건(다용도실, 창고)매각 포함 -동측 일부(면적 약65m2)는 타인점유(홍성요양병원 주차장)로 이용중임"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. -주택에 부합된 제시외 물건(다용도실, 창고)매각 포함 -동측 일부(면적 약65m2)는 타인점유(홍성요양병원 주차장)로 이용중임"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "c4152ce47aba5a9786f2c28968b5db0dcc1a8acb59813b6f472bb5a9f0095421"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "단독주택",
+          "주택"
+        ],
+        "excluded": [
+          "창고",
+          "병원"
+        ]
+      }
+    },
+    {
+      "item": {
+        "id": "20260130015180-2",
+        "caseNumber": "20260130015180",
+        "itemNumber": "2",
+        "usage": "",
+        "address": "충청남도 홍성군 홍성읍 오관리 284-6",
+        "appraisedPrice": 297258000,
+        "minimumSalePrice": 297258000,
+        "priceRatio": 100,
+        "failedBidCount": 0,
+        "saleDate": "2026-09-15",
+        "status": "01",
+        "remarks": [
+          "일괄매각"
+        ],
+        "remarksEvidence": [
+          {
+            "keyword": "일괄매각",
+            "field": "remarks",
+            "sourceText": "-일괄매각. -주택에 부합된 제시외 물건(다용도실, 창고)매각 포함 -동측 일부(면적 약65m2)는 타인점유(홍성요양병원 주차장)로 이용중임"
+          },
+          {
+            "keyword": "일괄매각",
+            "field": "raw.mulBigo",
+            "sourceText": "-일괄매각. -주택에 부합된 제시외 물건(다용도실, 창고)매각 포함 -동측 일부(면적 약65m2)는 타인점유(홍성요양병원 주차장)로 이용중임"
+          }
+        ],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-09-01T10:28:36.063Z",
+        "detailStatus": "수동확인 필요",
+        "listFingerprint": "c2c7bdb7438f654fa64045e15e796dbe6d34988b92afa49f0379500df3b5a2a2"
+      },
+      "reasonCode": "MIXED_USE",
+      "reason": "복합용도·수동확인 필요",
+      "matchedKeywords": {
+        "residential": [
+          "단독주택",
+          "주택"
+        ],
+        "excluded": [
+          "창고",
+          "병원"
         ]
       }
     }
@@ -1853,6 +4445,9 @@
     "20230130019634-2",
     "20230130019634-3",
     "20230130019634-4",
+    "20240130018126-1",
+    "20240130018126-2",
+    "20240130018126-3",
     "20240130020204-1",
     "20240130021979-1",
     "20240130021979-2",
@@ -1861,6 +4456,9 @@
     "20250130000535-1",
     "20250130000535-2",
     "20250130000535-3",
+    "20250130000832-1",
+    "20250130000832-2",
+    "20250130001004-1",
     "20250130001009-1",
     "20250130001009-2",
     "20250130001009-3",
@@ -1874,16 +4472,35 @@
     "20250130001113-4",
     "20250130001113-5",
     "20250130001113-6",
+    "20250130001148-1",
+    "20250130001148-2",
+    "20250130001164-1",
+    "20250130001164-2",
+    "20250130001164-3",
+    "20250130001164-4",
     "20250130001166-1",
     "20250130001166-2",
+    "20250130001168-1",
+    "20250130001168-2",
+    "20250130001182-1",
+    "20250130001219-1",
+    "20250130001219-2",
     "20250130001220-1",
     "20250130001220-2",
     "20250130001220-3",
     "20250130001221-1",
     "20250130001221-2",
     "20250130001226-2",
+    "20250130001234-1",
     "20250130001242-1",
     "20250130001242-2",
+    "20250130001245-1",
+    "20250130001245-2",
+    "20250130001245-3",
+    "20250130001245-4",
+    "20250130001245-5",
+    "20250130001261-1",
+    "20250130001261-2",
     "20250130001270-1",
     "20250130001270-2",
     "20250130001270-3",
@@ -1901,6 +4518,8 @@
     "20250130015658-3",
     "20250130015658-4",
     "20250130015658-5",
+    "20250130015707-1",
+    "20250130015707-2",
     "20250130015724-7",
     "20250130015724-8",
     "20250130015746-1",
@@ -1912,6 +4531,10 @@
     "20250130015946-1",
     "20250130015946-2",
     "20250130015964-1",
+    "20250130015967-1",
+    "20250130015967-2",
+    "20250130015967-3",
+    "20250130015967-4",
     "20250130015970-1",
     "20250130015970-2",
     "20250130015970-3",
@@ -1928,12 +4551,21 @@
     "20250130016056-2",
     "20250130016092-1",
     "20250130016092-2",
+    "20250130016104-1",
     "20250130016106-1",
     "20250130016130-1",
     "20250130016130-2",
     "20250130016133-1",
     "20250130016133-2",
     "20250130016136-1",
+    "20250130016152-1",
+    "20250130016152-2",
+    "20250130016152-3",
+    "20250130016152-4",
+    "20250130016152-5",
+    "20250130016152-6",
+    "20250130016152-7",
+    "20250130016152-8",
     "20250130016163-1",
     "20250130016163-2",
     "20250130016168-1",
@@ -1941,22 +4573,52 @@
     "20250130016168-3",
     "20250130016168-4",
     "20250130016168-5",
+    "20250130016189-1",
+    "20250130016193-1",
     "20250130016195-1",
+    "20250130016197-1",
     "20250130016199-1",
+    "20250130016204-1",
+    "20250130016204-2",
     "20260130000008-1",
+    "20260130000015-1",
+    "20260130000015-2",
+    "20260130000024-1",
     "20260130000034-1",
     "20260130000034-2",
     "20260130000034-3",
     "20260130000034-4",
     "20260130000034-5",
+    "20260130000037-1",
+    "20260130000037-2",
+    "20260130000037-3",
+    "20260130000037-4",
     "20260130000040-1",
-    "20260130015010-1",
+    "20260130000072-1",
+    "20260130000072-2",
     "20260130015026-1",
     "20260130015026-2",
     "20260130015044-1",
+    "20260130015047-1",
     "20260130015049-1",
+    "20260130015051-1",
     "20260130015053-1",
+    "20260130015055-1",
     "20260130015058-1",
+    "20260130015116-1",
+    "20260130015125-1",
+    "20260130015125-2",
+    "20260130015125-3",
+    "20260130015125-4",
+    "20260130015140-1",
+    "20260130015149-1",
+    "20260130015154-1",
+    "20260130015154-2",
+    "20260130015154-3",
+    "20260130015176-1",
+    "20260130015176-2",
+    "20260130015180-1",
+    "20260130015180-2",
     "20260130015229-1"
   ],
   "withdrawalCandidates": {
@@ -2342,39 +5004,6 @@
       "confirmed": true,
       "confirmedAt": "2026-08-05T10:14:57.343Z"
     },
-    "20250130001182-1": {
-      "item": {
-        "id": "20250130001182-1",
-        "caseNumber": "20250130001182",
-        "itemNumber": "1",
-        "usage": "철근콘크리트조 84.84㎡",
-        "address": "충청남도 예산군 예산읍 향천리 177 신천아파트",
-        "appraisedPrice": 67000000,
-        "minimumSalePrice": 46900000,
-        "priceRatio": 70,
-        "failedBidCount": 2,
-        "saleDate": "2026-08-11",
-        "status": "01",
-        "remarks": [],
-        "remarksEvidence": [],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-08-11T10:33:48.662Z",
-        "detailStatus": "상세조회 실패·목록정보 사용",
-        "listFingerprint": "2641969e6f706b0b7167882ada0d28612427d94da8b32cd6af84d866cb3316cd",
-        "region": "예산군"
-      },
-      "consecutiveCompleteMisses": 2,
-      "firstMissingAt": "2026-08-12T03:09:32.582Z",
-      "lastMissingAt": "2026-08-12T05:18:20.244Z",
-      "lastSeenAt": "2026-08-11T10:33:48.662Z",
-      "confirmed": true,
-      "confirmedAt": "2026-08-12T05:18:20.244Z"
-    },
     "20250130001206-1": {
       "item": {
         "id": "20250130001206-1",
@@ -2399,39 +5028,6 @@
         "sourceUpdatedAt": "2026-08-11T10:33:48.662Z",
         "detailStatus": "상세조회 대기",
         "listFingerprint": "e27f5d9625676750fc190f75f969321eb70b1452c5c872e4686a45f820bd6754",
-        "region": "예산군"
-      },
-      "consecutiveCompleteMisses": 2,
-      "firstMissingAt": "2026-08-12T03:09:32.582Z",
-      "lastMissingAt": "2026-08-12T05:18:20.244Z",
-      "lastSeenAt": "2026-08-11T10:33:48.662Z",
-      "confirmed": true,
-      "confirmedAt": "2026-08-12T05:18:20.244Z"
-    },
-    "20250130001234-1": {
-      "item": {
-        "id": "20250130001234-1",
-        "caseNumber": "20250130001234",
-        "itemNumber": "1",
-        "usage": "철근콘크리트구조 84.8318㎡",
-        "address": "충청남도 예산군 삽교읍 목리 894 원목마을이지더원2차아파트",
-        "appraisedPrice": 341000000,
-        "minimumSalePrice": 341000000,
-        "priceRatio": 100,
-        "failedBidCount": 1,
-        "saleDate": "2026-08-11",
-        "status": "01",
-        "remarks": [],
-        "remarksEvidence": [],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-08-11T10:33:48.662Z",
-        "detailStatus": "상세조회 대기",
-        "listFingerprint": "af8b7720909a12789053cbd07a670758cfbf5487b666a3745c222d5af697848d",
         "region": "예산군"
       },
       "consecutiveCompleteMisses": 2,
@@ -2565,105 +5161,6 @@
         "detailStatus": "상세조회 대기",
         "listFingerprint": "4470bc37ea4b56267557a23c7fb4f307e2bcd1e83173b5f0ada51b2df8b37274",
         "region": "홍성군"
-      },
-      "consecutiveCompleteMisses": 2,
-      "firstMissingAt": "2026-08-12T03:09:32.582Z",
-      "lastMissingAt": "2026-08-12T05:18:20.244Z",
-      "lastSeenAt": "2026-08-11T10:33:48.662Z",
-      "confirmed": true,
-      "confirmedAt": "2026-08-12T05:18:20.244Z"
-    },
-    "20250130016189-1": {
-      "item": {
-        "id": "20250130016189-1",
-        "caseNumber": "20250130016189",
-        "itemNumber": "1",
-        "usage": "철근콘크리트구조 78.4246㎡",
-        "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-        "appraisedPrice": 300000000,
-        "minimumSalePrice": 300000000,
-        "priceRatio": 100,
-        "failedBidCount": 0,
-        "saleDate": "2026-08-11",
-        "status": "01",
-        "remarks": [],
-        "remarksEvidence": [],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-08-11T10:33:48.662Z",
-        "detailStatus": "상세조회 대기",
-        "listFingerprint": "e82cd183a05eb27cd8c6df8f1b5b74d7f8440c267f2495b0c8740c12f9d2015c",
-        "region": "예산군"
-      },
-      "consecutiveCompleteMisses": 2,
-      "firstMissingAt": "2026-08-12T03:09:32.582Z",
-      "lastMissingAt": "2026-08-12T05:18:20.244Z",
-      "lastSeenAt": "2026-08-11T10:33:48.662Z",
-      "confirmed": true,
-      "confirmedAt": "2026-08-12T05:18:20.244Z"
-    },
-    "20250130016193-1": {
-      "item": {
-        "id": "20250130016193-1",
-        "caseNumber": "20250130016193",
-        "itemNumber": "1",
-        "usage": "철근콘크리트구조 78.4246㎡",
-        "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-        "appraisedPrice": 293000000,
-        "minimumSalePrice": 293000000,
-        "priceRatio": 100,
-        "failedBidCount": 0,
-        "saleDate": "2026-08-11",
-        "status": "01",
-        "remarks": [],
-        "remarksEvidence": [],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-08-11T10:33:48.662Z",
-        "detailStatus": "상세조회 대기",
-        "listFingerprint": "1e854144a93508a7c49954b1b8a09fcbef2a255a7f7984b4faff7f34b96d7697",
-        "region": "예산군"
-      },
-      "consecutiveCompleteMisses": 2,
-      "firstMissingAt": "2026-08-12T03:09:32.582Z",
-      "lastMissingAt": "2026-08-12T05:18:20.244Z",
-      "lastSeenAt": "2026-08-11T10:33:48.662Z",
-      "confirmed": true,
-      "confirmedAt": "2026-08-12T05:18:20.244Z"
-    },
-    "20250130016197-1": {
-      "item": {
-        "id": "20250130016197-1",
-        "caseNumber": "20250130016197",
-        "itemNumber": "1",
-        "usage": "철근콘크리트구조 84.3152",
-        "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-        "appraisedPrice": 320000000,
-        "minimumSalePrice": 320000000,
-        "priceRatio": 100,
-        "failedBidCount": 0,
-        "saleDate": "2026-08-11",
-        "status": "01",
-        "remarks": [],
-        "remarksEvidence": [],
-        "documentVerification": {
-          "saleSpecificationChecked": false,
-          "fieldSurveyChecked": false,
-          "appraisalChecked": false
-        },
-        "changeType": [],
-        "sourceUpdatedAt": "2026-08-11T10:33:48.662Z",
-        "detailStatus": "상세조회 대기",
-        "listFingerprint": "01f3dcbe4d4fae42064e43263113c0bbab360b638c433f6c9c12db0b67c25146",
-        "region": "예산군"
       },
       "consecutiveCompleteMisses": 2,
       "firstMissingAt": "2026-08-12T03:09:32.582Z",
@@ -3316,17 +5813,50 @@
       "lastSeenAt": "2026-08-25T09:19:40.665Z",
       "confirmed": true,
       "confirmedAt": "2026-08-26T04:23:41.728Z"
+    },
+    "20260130015010-1": {
+      "item": {
+        "id": "20260130015010-1",
+        "caseNumber": "20260130015010",
+        "itemNumber": "1",
+        "usage": "철근콘크리트구조 84.6218㎡",
+        "address": "충청남도 홍성군 홍성읍 고암리 1212 홍성자이",
+        "appraisedPrice": 380000000,
+        "minimumSalePrice": 380000000,
+        "priceRatio": 100,
+        "failedBidCount": 1,
+        "saleDate": "2026-09-01",
+        "status": "01",
+        "remarks": [],
+        "remarksEvidence": [],
+        "documentVerification": {
+          "saleSpecificationChecked": false,
+          "fieldSurveyChecked": false,
+          "appraisalChecked": false
+        },
+        "changeType": [],
+        "sourceUpdatedAt": "2026-08-31T14:24:18.345Z",
+        "detailStatus": "상세조회 대기",
+        "listFingerprint": "70bc25c26938857cd63ca870a0d63409e879d9d113d591709b7f0ace39e513de",
+        "region": "홍성군"
+      },
+      "consecutiveCompleteMisses": 1,
+      "firstMissingAt": "2026-09-01T10:28:36.063Z",
+      "lastMissingAt": "2026-09-01T10:28:36.063Z",
+      "lastSeenAt": "2026-08-31T14:24:18.345Z",
+      "confirmed": false,
+      "confirmedAt": null
     }
   },
   "detailSummary": {
-    "requested": 20,
+    "requested": 35,
     "attempted": 5,
     "succeeded": 0,
     "failed": 5,
-    "pending": 15,
+    "pending": 30,
     "blocked": false
   },
-  "lastGoodGeneratedAt": "2026-08-31T14:24:18.345Z",
+  "lastGoodGeneratedAt": "2026-09-01T10:28:36.063Z",
   "notices": [
     "매각물건명세서·현황조사서 미검증",
     "감정평가서 미검증",
