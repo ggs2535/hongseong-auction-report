@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
-  "reportDate": "2026-09-03",
-  "generatedAt": "2026-09-03T10:05:13.483Z",
+  "reportDate": "2026-09-04",
+  "generatedAt": "2026-09-04T05:04:22.930Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -32,8 +32,8 @@
     "errorStatusCode": null,
     "upstreamUrl": null,
     "upstreamMessage": null,
-    "startedAt": "2026-09-03T10:04:04.060Z",
-    "finishedAt": "2026-09-03T10:05:13.483Z"
+    "startedAt": "2026-09-04T05:03:15.172Z",
+    "finishedAt": "2026-09-04T05:04:22.930Z"
   },
   "summary": {
     "totalCount": 185,
@@ -65,7 +65,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "7477f06121075f18cedb663f7f591ea460bab7facda54d664734a0d47245975f",
       "region": "예산군"
@@ -90,7 +90,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "e8d8e5441cbca4294dc1af1da36c12b55914058f9213eda12c94b7c3ebf05403",
       "region": "홍성군"
@@ -115,9 +115,9 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
-      "listFingerprint": "a9f2468bdd3dbd1835a8d5d61ad0e977eb18c201e12885f42fcf16ac5fc19938",
+      "listFingerprint": "01af8e6e559560ca029a40a65ed5601a6002c9d7d156d88203067d70d33e56a7",
       "region": "예산군"
     },
     {
@@ -164,7 +164,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "d68514d6bed4bb39e9ecf8c868008a2805f22464bb82861b6e4d1ff482a3444b",
       "region": "홍성군"
@@ -189,7 +189,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "d8ba3f20cbc8d718a13124311694245c04898781630232eb81ae683ad9e9c1bd",
       "region": "홍성군"
@@ -214,7 +214,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "8540a81615d7cc65f3c5e2d1bbb29df89672037571f9ba4f2691e9dde5aff5e9",
       "region": "예산군"
@@ -239,7 +239,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "e3a44503d76fcc9cf34b5e67c5cb697c36dfac569d909c4e3c2fd4a496e7a0ca",
       "region": "예산군"
@@ -264,7 +264,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "e74d4f61ce2d08250cf2161584603216b937d539befd24e9588b3812939aaf06",
       "region": "예산군"
@@ -289,7 +289,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "ac199a4b63a1f7f0b0a7a63c82e9600351fa81c46f5ae8ead4c75df14cf4ef0d",
       "region": "예산군"
@@ -314,7 +314,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "f969c62b4d07195f12d29ca5daa08c763bd2fdbd7dd78ba87eb15f3d8dfbc637",
       "region": "예산군"
@@ -339,7 +339,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "2638dc894911261412900f349b080cb419438a5cfef44673cd2e854d3e198230",
       "region": "홍성군"
@@ -399,7 +399,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "c143eb05f101da9e0a754b12b572481f1273fddfa8e0d4c82f61b28fee9de349",
       "region": "홍성군"
@@ -437,7 +437,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "ed4af4be308b9ba0b7a469b8a180d2a681478261c508009050b0c0c41e8cebdf",
       "region": "예산군"
@@ -475,7 +475,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "07cee7795139543aa7fc070885c8f91759537af7ea38da20bbc98ce59b0abb5c",
       "region": "예산군"
@@ -500,7 +500,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "16be38dcd1f9c7802d5cd9ac73df1f9307a99f22908866d4f90456954abaf97b",
       "region": "예산군"
@@ -525,7 +525,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "33f8b10dbd208857c985b03f5abd4ab4e68f28374f4bc546e60abf129e7c2d26",
       "region": "예산군"
@@ -550,7 +550,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "da479ac3076c2e8259c7235ce462fdd08277b45510253c27f737c7255c0c6e1f",
       "region": "예산군"
@@ -575,7 +575,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "27aa035a042db36d0bd852b3f2694a0ce172f8c6fabbbd509c317e97997b2d68",
       "region": "예산군"
@@ -600,7 +600,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "77381d3d3a0f40a9f18c1e47ad268eaccd3de64d400c5ce4953d9113b6ecc9ef",
       "region": "예산군"
@@ -625,7 +625,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "365ed1e2ab12deec2ea5b006acc8495c3628a307ad0cdc6d536aebfcdcbfe7f2",
       "region": "예산군"
@@ -650,7 +650,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "00ca0d1ec53718e3cfbd83886f8bc946643939d998a9199e1fe59ecb6d9368cf",
       "region": "예산군"
@@ -675,7 +675,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "34134771fb46363000c0b4ecd621d47d81eab56dee215da2a978cd78e9326b30",
       "region": "예산군"
@@ -700,7 +700,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "7523bdc6aec574205bcfe40241d105228e4a0379e07e2c3ae97e2025bad0de44",
       "region": "예산군"
@@ -725,7 +725,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "d3746a1127656bc84b0d73538364ab2a06b0f3ecd2640f13966179b6d5630a02",
       "region": "예산군"
@@ -750,7 +750,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "8281a3ac01a21144a1cf417f3ca76c0eb9c03e70c48e6a0ee6a1f34f9f0e55e7",
       "region": "예산군"
@@ -775,9 +775,9 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
-      "listFingerprint": "4e35e93f44197e63db757d8347367c0da25adc4ad4174bd626debae68bee3bb2",
+      "listFingerprint": "e596be4633d3ba3d13d75ac7fd3d9cf5c548cde461271e7d011786a3174fdf03",
       "region": "예산군"
     },
     {
@@ -800,7 +800,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+      "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "2d7e90b627587d8a29d0f65b75ae9f2d0962d0f145aa4c1e8525c7d48e3f0eae",
       "region": "예산군"
@@ -852,7 +852,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "65820143ac8009d1145406b3888d4115735da6c673cfef2ead113078b7b58407"
       },
@@ -914,7 +914,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "b739beab2498c0b08363d1c71c56a17c6414e8b3a23b1c5e6d6efc17c70b26f6"
       },
@@ -976,7 +976,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "61d0d06c74e5a8e50701284246ceaff28f67f035a6966e930ce277df047fe333"
       },
@@ -1014,7 +1014,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "88a0ee1c18993e8f29b1c79a6fa2d18c6e788a9e23831deced624bb7fc656499"
       },
@@ -1050,7 +1050,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "9f01086d09248c525888406180193fe62e1c5f683cdc9916fec87802091faeed"
       },
@@ -1086,7 +1086,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "09f0c783ffe83f6e4448f95c08da93a48611f12a3cc493b1cee0ccb07f522a4a"
       },
@@ -1122,7 +1122,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "aa830d4caa5bb62cc0e51eb1c5c559469269579e15f8a2a73fa547221b5c2e33"
       },
@@ -1171,7 +1171,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "ea39fc52fbf626359d361a2b9a3c40d450815de90ccd5c43d667182d7d9df217"
       },
@@ -1221,7 +1221,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c945e5226bda43f0a687656d57dfd04158345e95feb576fa64beacfb9abd0a69"
       },
@@ -1271,7 +1271,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "b14035c8e4dee2d159df19967574c945299a73b79ef1bbe816e0aabbeaf61f95"
       },
@@ -1309,7 +1309,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "95f9307829de50cfeefc81937ef2df7497babf28c8af334739ecfb56204bb95c"
       },
@@ -1345,7 +1345,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "b312a0020182d05da3551ad7a6755fb1a59c4e2d3fe9c3e3f32dcf7f2907d38a"
       },
@@ -1427,7 +1427,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e15cf447c3d1244fd701d52e961c1f36b527744d02206b95c5d23dc95b82f160"
       },
@@ -1509,7 +1509,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "fa30e9b83fd63248100c99589edb67b5fcce6336a2f55485a0d66e0cb6b7e3fc"
       },
@@ -1570,9 +1570,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "0c5334ce8dcd04b9151589fb4288c1e2fa0ecbc2746b08ee96664c604cdf4876"
+        "listFingerprint": "456dcd206f6a14bfede0140757ad5b71e37d002cdc67aaa24fc9e1c5b9a45305"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -1632,9 +1632,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "4da5fce149b898e527bb93683a9072d3427460014256cd076f1e4a74d4614c64"
+        "listFingerprint": "f9fdb1f4f62983574a488492243c99f58de7cd83a6c859d4de1ab87f75dd93d0"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -1694,9 +1694,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "6a60f2c1624dede4e8dfe8e784c633b1124d371c56738a55a89200b9a5b06ace"
+        "listFingerprint": "b6fd37ceab0c728d4c5a343e44afd30337491e81e1a71db2b7d7931ad2f56d27"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -1757,9 +1757,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "cce261a83632d512ee210f1540d807fe99335b714276093a1ee10612d0470d8e"
+        "listFingerprint": "26572f2cbd95ec99ac769a66ae05bbfcbbf8749281c95df0786bb93d4d707768"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -1819,9 +1819,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "0cf3a314db04963327d71ea8620d172b6a440aa8c78ff250496bdf10becd9fed"
+        "listFingerprint": "46d81ff38d0a04bd7e091990996a0ba8f188751cab5be3f2ed2fa081978023a4"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -1857,7 +1857,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "19794f99705b28d9c4f9e6c6fd1ec0132518b63e30f066478c6f25c8e5d3d433"
       },
@@ -1917,7 +1917,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c7d7cb2b3c064c047026019af6ae0c0c7b0426697106880ffb6b1005c1cab84b"
       },
@@ -1954,7 +1954,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "95c4a938f337c41ea5765f958b0c3a55401d2b1c48912316d353d18dc97d6656"
       },
@@ -2036,7 +2036,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "5910028f64e54968ccfb61de9c9f631c16dd56abb828805e0d5666cc6d541832"
       },
@@ -2119,7 +2119,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "74c2ad54aafd01a4b128743320e23a15f170baf81cdb9da75e5bc07176c36d7a"
       },
@@ -2213,7 +2213,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e5dce62695b55166efb00882f9c116bcff3360349d5e3ff96edac67390756e0f"
       },
@@ -2307,7 +2307,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "b15f8355d7e8e6f46a3643d4b49b4b465180e614815cee5eec44a68495b4b420"
       },
@@ -2379,7 +2379,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "473d0fcb501aa6d8750e3ea4bef0818d9fc031c2396e891286344785244f9bac"
       },
@@ -2450,7 +2450,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "341ae9a0793aee712432afacd184813499e69fb0a5a3ba0c1375cb0838f67f07"
       },
@@ -2524,7 +2524,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "df5d3646d63736b4242027601dcf0efd4bd0dd81227a7a4a5bfb1ece3c674f12"
       },
@@ -2595,7 +2595,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "f25b0831902b9a7ab267dcc3b53c5ef1f372ec153165b01f355bb5e358cc08e9"
       },
@@ -2667,7 +2667,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "85b9913bec7ca6f0fbb2bda0484e73d80bdf3fdd6eb1ad7d9d7d018b61e2a692"
       },
@@ -2739,7 +2739,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "3873b013dd3f6969ce1d27a8888eb6445be2ca3b15bafaf08440ecf65c0defaf"
       },
@@ -2810,7 +2810,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "f6bb7ff94f1f37956e2293a1466c8e2216898a2a5803781cb9d615766136cce1"
       },
@@ -2881,7 +2881,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "fa5d313ef2154b82f385e82c96f9a7d291811c466ddf19568b6a31e1a291b658"
       },
@@ -2952,7 +2952,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "262ba3967a7a2bd1e5142d4aaa104b54e417e09b254b1059a54685e7cb979f9f"
       },
@@ -3023,7 +3023,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "f3a84a5f8abe9c00c2e6f17d5287cec65eb87efbb2833e2ba0e42f7c05419e3b"
       },
@@ -3105,7 +3105,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "adeb701e2ecf1c1db74fc5acca80d1b7eed5496b2db2934e355278ac371a48dc"
       },
@@ -3189,7 +3189,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "80df7740aaa92aaa5884bd500d92577ecd38c5d43de7bf6a0428e181f7a659a5"
       },
@@ -3273,7 +3273,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "49cbc5b8520c418082d545f4511e7e9e012521efce6bd29be0a44f9dc03d2dfc"
       },
@@ -3358,7 +3358,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "f123ff18fc054f896e01cade71d8a1842d1c170507988ddd8de90de857cfe5ca"
       },
@@ -3397,7 +3397,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "d5f4ac69f0a1b306c89cbd0f1511e95a9dff63a9ff5e03f99067f8d02385dc36"
       },
@@ -3433,7 +3433,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "3ebd7676a3bf72e3f59027c7af951053077dde9a6f63a35cfbbc95f8a74a482c"
       },
@@ -3493,7 +3493,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e217916ab135d15b8b7e3be464554e42668ac7df4c6cd47784763f0bfaf67497"
       },
@@ -3554,7 +3554,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "07e7fd88dc1abf0adf532a6449476ce4a28ceaa069c058b87288305b44ee2b94"
       },
@@ -3615,7 +3615,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "4cf0ccbaf878d5710f2841f72543d7550155c69c2dfc62f8c4cd43688c69070d"
       },
@@ -3666,7 +3666,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c4152ce47aba5a9786f2c28968b5db0dcc1a8acb59813b6f472bb5a9f0095421"
       },
@@ -3717,7 +3717,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-03T10:05:13.483Z",
+        "sourceUpdatedAt": "2026-09-04T05:04:22.930Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c2c7bdb7438f654fa64045e15e796dbe6d34988b92afa49f0379500df3b5a2a2"
       },
@@ -5511,7 +5511,7 @@
     "pending": 22,
     "blocked": false
   },
-  "lastGoodGeneratedAt": "2026-09-03T10:05:13.483Z",
+  "lastGoodGeneratedAt": "2026-09-04T05:04:22.930Z",
   "notices": [
     "매각물건명세서·현황조사서 미검증",
     "감정평가서 미검증",
