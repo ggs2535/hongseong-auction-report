@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
-  "reportDate": "2026-09-16",
-  "generatedAt": "2026-09-16T10:17:24.029Z",
+  "reportDate": "2026-09-17",
+  "generatedAt": "2026-09-17T10:24:46.972Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -32,8 +32,8 @@
     "errorStatusCode": null,
     "upstreamUrl": null,
     "upstreamMessage": null,
-    "startedAt": "2026-09-16T10:16:33.277Z",
-    "finishedAt": "2026-09-16T10:17:24.029Z"
+    "startedAt": "2026-09-17T10:23:53.807Z",
+    "finishedAt": "2026-09-17T10:24:46.972Z"
   },
   "summary": {
     "totalCount": 90,
@@ -65,7 +65,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "a39d8bed8684041173ee3c9dd4227bb4a0d6ac8b7c17f8613f181e55e71fd5d9",
       "region": "예산군"
@@ -136,7 +136,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
       "listFingerprint": "07d9c87d5dd401ac480fc7d8bfec19020360fa626877f2c3c9826f3c3b032c02",
       "region": "예산군"
@@ -185,9 +185,9 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
-      "listFingerprint": "169cdfc7820df0c826cb39dba5434a5e11db3aa9032b13cc542c089d279530bb",
+      "listFingerprint": "042ed7f07ce424a48e831d9b4f41cc9d40934eafce938943e0ed666e5594b318",
       "region": "예산군"
     },
     {
@@ -234,9 +234,9 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
-      "listFingerprint": "268ff826e2f5efdfbea54c943768debd13a14304f5075877a124b962bfab2f60",
+      "listFingerprint": "e3f12e38c11d8787fd18373714f227ed108241cd003291ea968a6f33ecbbeb80",
       "region": "예산군"
     },
     {
@@ -283,9 +283,9 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 실패·목록정보 사용",
-      "listFingerprint": "971b04ac5a44ae5c874c023e44c8be30896e6e49c90681dacf371158266976fe",
+      "listFingerprint": "cda0766f6fd3b7fd970f193a86d7ad6763353db62a78f839dbc0dd11e6e8c012",
       "region": "예산군"
     },
     {
@@ -343,7 +343,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "e4e98672fbaef9d6b63ee3213e62e8321eadafff92a88d51c1db35e798f05396",
       "region": "홍성군"
@@ -381,7 +381,7 @@
         "appraisalChecked": false
       },
       "changeType": [],
-      "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+      "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
       "detailStatus": "상세조회 대기",
       "listFingerprint": "22b8b0e3f2ffb6b2c6256cfee4d970c3d3c6131fcf724fc53a7449380381ddf8",
       "region": "예산군"
@@ -409,7 +409,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "2bb790eeeed92b9c9540ba04d8c4bd166ffc531859062dce448e173a5db66a12"
       },
@@ -447,7 +447,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "60bf797324b34eab88e31b196dc801c24e4e64f2a275d0fb086d1cd504d31115"
       },
@@ -509,7 +509,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "942f47e6dde289215117ed019aba974af22bcd523dbcaf3bc664e5d78cb588da"
       },
@@ -545,7 +545,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e8a3bc28ba3fc7d667111ee970934fe8577a6483ac1a035710cc3c969bf3234c"
       },
@@ -605,7 +605,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "46eabbdd3fc72913324ab0b856330ba22ccecef531fe130c14ab70ec3cb2e8b0"
       },
@@ -666,7 +666,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "cbe2e60eb3d35391d5e50de6cd4a993bf98faebfbc1da373fa9eca0ab8a6f06d"
       },
@@ -703,7 +703,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "58ae65f4abc57968929929f995005688e00ae3b80b8cd5db27f8dc92c2bd0116"
       },
@@ -785,7 +785,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "c008bfe09f8907c9126d7199ed24f7474cb6f249120145d0f9627d8524517cdf"
       },
@@ -847,9 +847,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "43edb3b296dc6be3d529adb8dcb9963f51d57801251a43db1717d10c98394032"
+        "listFingerprint": "139d7334216e074997e1fd47801ed475f425644fa7b800779407eae31f4e1a11"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -909,9 +909,9 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
-        "listFingerprint": "b74f4dc4a1c6b049d290825abc71001219739a93969cd7b02596847a6e7fbde0"
+        "listFingerprint": "856b9b906fe8c241d8ba0c8045c6c5d519f7a5e993892d93f05ebfbbe203994a"
       },
       "reasonCode": "MIXED_USE",
       "reason": "복합용도·수동확인 필요",
@@ -982,7 +982,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "91708daf74b8d0eb09e4d92269a28bc6504a245eca055da111b3765fbcd151d0"
       },
@@ -1056,7 +1056,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "6936c24852adfcce6bac568c17c81f69e743ef0e99bacb69955cce23891ff15f"
       },
@@ -1118,7 +1118,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "bf06b1047965022f90c66688b449d50428bd8a586b1a2bd05339afd03ac223bb"
       },
@@ -1179,7 +1179,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "8ba17add08cef4041195229ff0a020602bce1f8c61ab4522a9df4241db3bdabb"
       },
@@ -1240,7 +1240,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "5d720d028c0dc3a78ca1db34a13331f8990cb4757025b92c59415befe26a47a3"
       },
@@ -1301,7 +1301,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "2373b5c3ba928402a0beca0e639ec39dea8b8fcd409e913757ed4ecf63dc2691"
       },
@@ -1362,7 +1362,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "87e95ab45f4398a7d287885a84483a66b208a1d533d4102ff6721ecb0c3e05cf"
       },
@@ -1423,7 +1423,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "a19de403d8bf217f628abe6426fbde78b2cf5219c023cf3a29f3685f20001fa4"
       },
@@ -1484,7 +1484,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "5249aaf5e5eff366d5936c3544320b365cec3b4e8aa01389f0f3fe75c692c8b4"
       },
@@ -1522,7 +1522,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "d02d7642470bd006d6530a619b19f4a36268f18233d3b368a8e5b4dcad4cf084"
       },
@@ -1558,7 +1558,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "83142dc55a5040884766be5b24d9ad67cea87a1f3f8b44b75510a8b2b8650997"
       },
@@ -1594,7 +1594,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "a871410f368c0b932bb0d968e3aa897061bad755655e14893ede473915d10b12"
       },
@@ -1665,7 +1665,7 @@
           "appraisalChecked": false
         },
         "changeType": [],
-        "sourceUpdatedAt": "2026-09-16T10:17:24.029Z",
+        "sourceUpdatedAt": "2026-09-17T10:24:46.972Z",
         "detailStatus": "수동확인 필요",
         "listFingerprint": "e1d94b397e7fba97899fd96feb9466ca1b05b147033b563e5199547d6c4c0e09"
       },
@@ -1681,498 +1681,7 @@
       }
     }
   ],
-  "withdrawnItems": [
-    {
-      "id": "20250130001182-1",
-      "caseNumber": "20250130001182",
-      "itemNumber": "1",
-      "usage": "철근콘크리트조 84.84㎡",
-      "address": "충청남도 예산군 예산읍 향천리 177 신천아파트",
-      "appraisedPrice": 67000000,
-      "minimumSalePrice": 32830000,
-      "priceRatio": 49,
-      "failedBidCount": 3,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 실패·목록정보 사용",
-      "listFingerprint": "7477f06121075f18cedb663f7f591ea460bab7facda54d664734a0d47245975f",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20250130001234-1",
-      "caseNumber": "20250130001234",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 84.8318㎡",
-      "address": "충청남도 예산군 삽교읍 목리 894 원목마을이지더원2차아파트",
-      "appraisedPrice": 341000000,
-      "minimumSalePrice": 238700000,
-      "priceRatio": 70,
-      "failedBidCount": 2,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "63ae1b29a6a3f551ce8ee1b3a07c227592ef23ae81f9177a7015848fc221cd81",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20250130016189-1",
-      "caseNumber": "20250130016189",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 78.4246㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 300000000,
-      "minimumSalePrice": 300000000,
-      "priceRatio": 100,
-      "failedBidCount": 1,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "94f09887ab5bc3406b2da395a6cf0cc23a9168a15085ffa3b232a3698a4ab014",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20250130016193-1",
-      "caseNumber": "20250130016193",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 78.4246㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 293000000,
-      "minimumSalePrice": 293000000,
-      "priceRatio": 100,
-      "failedBidCount": 1,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "7da781a44c03f94699519aa0c7cdbdc777fb4be57f32b6b1198ff323558245dd",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20250130016197-1",
-      "caseNumber": "20250130016197",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 84.3152",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 320000000,
-      "minimumSalePrice": 320000000,
-      "priceRatio": 100,
-      "failedBidCount": 1,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "0444270365cbc797877c32ab64b61542426438f3cf5ec0f9fac1e49e9facffe2",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130000072-1",
-      "caseNumber": "20260130000072",
-      "itemNumber": "1",
-      "usage": "",
-      "address": "충청남도 예산군 예산읍 주교리 213-15",
-      "appraisedPrice": 209571400,
-      "minimumSalePrice": 209571400,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [
-        "일괄매각"
-      ],
-      "remarksEvidence": [
-        {
-          "keyword": "일괄매각",
-          "field": "remarks",
-          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
-        },
-        {
-          "keyword": "일괄매각",
-          "field": "raw.mulBigo",
-          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
-        }
-      ],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "ed4af4be308b9ba0b7a469b8a180d2a681478261c508009050b0c0c41e8cebdf",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130000072-2",
-      "caseNumber": "20260130000072",
-      "itemNumber": "2",
-      "usage": "시멘트벽돌조 기와지붕 2층 주택 지층 14.85㎡ 1층 85.05㎡ 2층 43.83㎡",
-      "address": "충청남도 예산군 예산읍 주교리 213-15",
-      "appraisedPrice": 209571400,
-      "minimumSalePrice": 209571400,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [
-        "일괄매각"
-      ],
-      "remarksEvidence": [
-        {
-          "keyword": "일괄매각",
-          "field": "remarks",
-          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
-        },
-        {
-          "keyword": "일괄매각",
-          "field": "raw.mulBigo",
-          "sourceText": "-일괄매각. -지상 소재 수목 매각 포함 -목록 2 건물 1,2층에 부합된 제시외 물건 각 매각 포함"
-        }
-      ],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "07cee7795139543aa7fc070885c8f91759537af7ea38da20bbc98ce59b0abb5c",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015047-1",
-      "caseNumber": "20260130015047",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 84.3152㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 314000000,
-      "minimumSalePrice": 314000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "253e9932f2fd4a15e62b09a1764bce31bc89ccfba2922109caecfd8777d30cc9",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015051-1",
-      "caseNumber": "20260130015051",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 84.3152㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 313000000,
-      "minimumSalePrice": 313000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "1480018e84de76e33e2c56e3af27ab1855f54f628672058cb10f624d6ac43080",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015116-1",
-      "caseNumber": "20260130015116",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 78.4246㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 292000000,
-      "minimumSalePrice": 292000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "c5bc78305072bedbd71808bcb3667b8d968c6eb47cb1967089fbf8ab8e66272c",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015125-1",
-      "caseNumber": "20260130015125",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 68.684㎡",
-      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
-      "appraisedPrice": 91000000,
-      "minimumSalePrice": 91000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "00ca0d1ec53718e3cfbd83886f8bc946643939d998a9199e1fe59ecb6d9368cf",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015125-2",
-      "caseNumber": "20260130015125",
-      "itemNumber": "2",
-      "usage": "철근콘크리트구조 68.684㎡",
-      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
-      "appraisedPrice": 94000000,
-      "minimumSalePrice": 94000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "34134771fb46363000c0b4ecd621d47d81eab56dee215da2a978cd78e9326b30",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015125-3",
-      "caseNumber": "20260130015125",
-      "itemNumber": "3",
-      "usage": "철근콘크리트구조 68.684㎡",
-      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
-      "appraisedPrice": 94000000,
-      "minimumSalePrice": 94000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "7523bdc6aec574205bcfe40241d105228e4a0379e07e2c3ae97e2025bad0de44",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015125-4",
-      "caseNumber": "20260130015125",
-      "itemNumber": "4",
-      "usage": "철근콘크리트구조 68.684㎡",
-      "address": "충청남도 예산군 덕산면 옥계리 33-5 101동",
-      "appraisedPrice": 94000000,
-      "minimumSalePrice": 94000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "d3746a1127656bc84b0d73538364ab2a06b0f3ecd2640f13966179b6d5630a02",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015140-1",
-      "caseNumber": "20260130015140",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 78.4246㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 292000000,
-      "minimumSalePrice": 292000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "a64869c2af433a22f867a12bb76a06a6cc8d9c2864509bfe35f7c3ced7ab8ea0",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    },
-    {
-      "id": "20260130015149-1",
-      "caseNumber": "20260130015149",
-      "itemNumber": "1",
-      "usage": "철근콘크리트구조 78.4246㎡",
-      "address": "충청남도 예산군 삽교읍 목리 1271 학재마을도나우에듀파크2차",
-      "appraisedPrice": 268000000,
-      "minimumSalePrice": 268000000,
-      "priceRatio": 100,
-      "failedBidCount": 0,
-      "saleDate": "2026-09-15",
-      "status": "01",
-      "remarks": [],
-      "remarksEvidence": [],
-      "documentVerification": {
-        "saleSpecificationChecked": false,
-        "fieldSurveyChecked": false,
-        "appraisalChecked": false
-      },
-      "changeType": [
-        "WITHDRAWN"
-      ],
-      "sourceUpdatedAt": "2026-09-15T10:25:31.668Z",
-      "detailStatus": "상세조회 대기",
-      "listFingerprint": "293f1b61ca6745250a98751ec1382df772a5005b8fa0c851e2db60544ba131ab",
-      "region": "예산군",
-      "withdrawn": true,
-      "withdrawnAt": "2026-09-16T10:17:24.029Z"
-    }
-  ],
+  "withdrawnItems": [],
   "sourceItemIds": [
     "20240130017178-1",
     "20240130017178-2",
@@ -4432,7 +3941,7 @@
     "pending": 2,
     "blocked": false
   },
-  "lastGoodGeneratedAt": "2026-09-16T10:17:24.029Z",
+  "lastGoodGeneratedAt": "2026-09-17T10:24:46.972Z",
   "notices": [
     "매각물건명세서·현황조사서 미검증",
     "감정평가서 미검증",
