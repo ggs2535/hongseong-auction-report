@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
   "reportDate": "2026-09-24",
-  "generatedAt": "2026-09-24T05:22:13.922Z",
+  "generatedAt": "2026-09-24T10:31:15.658Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -27,13 +27,13 @@
     "reviewCount": 0,
     "fetchMode": "http",
     "blocked": false,
-    "errorCode": "NETWORK_ERROR",
-    "errorMessage": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00\", waiting until \"domcontentloaded\"\n",
+    "errorCode": "FIRST_PAGE_FAILED",
+    "errorMessage": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#mf_wfm_mainFrame_sbx_rletCortOfc') to be visible\n",
     "errorStatusCode": null,
-    "upstreamUrl": "/pgj/index.on",
+    "upstreamUrl": null,
     "upstreamMessage": null,
-    "startedAt": "2026-09-24T05:20:02.602Z",
-    "finishedAt": "2026-09-24T05:22:13.922Z"
+    "startedAt": "2026-09-24T10:29:12.817Z",
+    "finishedAt": "2026-09-24T10:31:15.658Z"
   },
   "summary": {
     "totalCount": null,
