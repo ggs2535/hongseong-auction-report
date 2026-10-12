@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "projectName": "hongseong-auction-report",
-  "reportDate": "2026-10-12",
-  "generatedAt": "2026-10-12T06:30:46.158Z",
+  "reportDate": "2026-10-13",
+  "generatedAt": "2026-10-12T16:05:13.626Z",
   "timezone": "Asia/Seoul",
   "source": {
     "mode": "live",
@@ -32,8 +32,8 @@
     "errorStatusCode": null,
     "upstreamUrl": "/pgj/index.on",
     "upstreamMessage": null,
-    "startedAt": "2026-10-12T06:28:34.493Z",
-    "finishedAt": "2026-10-12T06:30:46.158Z"
+    "startedAt": "2026-10-12T16:03:02.158Z",
+    "finishedAt": "2026-10-12T16:05:13.626Z"
   },
   "summary": {
     "totalCount": null,
